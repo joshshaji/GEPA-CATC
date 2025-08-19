@@ -1,0 +1,33 @@
+name: catpllm  # model name
+
+llm: llama2-7b  # llm type
+rank: 64  # lora rank, -1 means no lora
+context_len: 10  # context length
+
+train: true
+test: true
+
+train_plan_pool: src/catpllm/data/training_data/seq_plan_pool.pkl  # training plan pool
+num_plans: -1  # number of plans sampled from the pool for training
+
+reward_type: cost_aware
+gamma: 0.9
+alpha: 0.5
+batch_size: 1
+grad_accum_steps: 4
+warmup_steps: 2000
+weight_decay: 0.0001
+lr: 0.0001
+epochs: 2
+episodes_per_epoch: 1400
+fast_eval: true
+scheduled_sampling_rate: 0.1  # The rate for scheduled sampling, a common method to reduce exposure bias to improve
+                              # sequence generation by mixing teacher-forcing generation and auto-regressive generation. If set to -1, it is not enabled.
+                              # see: https://www.activeloop.ai/resources/glossary/scheduled-sampling
+scale: 1  # scale up reward
+seed: 42
+
+test_task_list: [0, 8, 10, 16, 18, 27, 29, 39, 45, 49, 55, 62, 75, 76, 84, 89, 93, 96]
+target_return_scale: 1.0
+
+load_model_dir: null
