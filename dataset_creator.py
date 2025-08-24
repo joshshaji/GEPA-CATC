@@ -2,11 +2,30 @@ import argparse
 import json
 import os
 import pickle
+from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 from src.config import GlobalMetricsConfig
 from src.catpllm.utils.cost_utils import calc_plan_price
 from src.metrics.evaluator import calculate_qop
+
+
+_TASK_DESCRIPTIONS: List[str] = []
+
+
+def _load_task_descriptions(path: Path) -> List[str]:
+    if not path.exists():
+        return []
+    with path.open("r", encoding="utf-8") as f:
+        return [line.rstrip("\n") for line in f]
+
+
+def _task_query_for(task_id: int) -> str | None:
+    if 1 <= task_id <= len(_TASK_DESCRIPTIONS):
+        return _TASK_DESCRIPTIONS[task_id - 1]
+    if 0 <= task_id < len(_TASK_DESCRIPTIONS):
+        return _TASK_DESCRIPTIONS[task_id]
+    return None
 
 
 def _ensure_list_shape(plans, scores, tools_exec_time, tools_cpu_mem, tools_gpu_mem):
@@ -82,7 +101,8 @@ def process_pkl(path: str) -> Tuple[Dict[int, Dict[int, Any]], Dict[int, Dict[in
                             "task_score": GlobalMetricsConfig.score_penalty,
                             "cost_price": GlobalMetricsConfig.cost_penalty,
                             "exec_time": None,
-                            "qop": None
+                            "qop": None,
+                            "task_query": _task_query_for(task_id)
                         })
                         continue
 
@@ -97,7 +117,8 @@ def process_pkl(path: str) -> Tuple[Dict[int, Dict[int, Any]], Dict[int, Dict[in
                             "task_score": GlobalMetricsConfig.score_penalty,
                             "cost_price": GlobalMetricsConfig.cost_penalty,
                             "exec_time": None,
-                            "qop": None
+                            "qop": None,
+                            "task_query": _task_query_for(task_id)
                         })
                         continue
 
@@ -109,7 +130,8 @@ def process_pkl(path: str) -> Tuple[Dict[int, Dict[int, Any]], Dict[int, Dict[in
                         "task_score": float(score_value),
                         "cost_price": float(cost_price),
                         "exec_time": float(exec_time_total),
-                        "qop": float(qop)
+                        "qop": float(qop),
+                        "task_query": _task_query_for(task_id)
                     })
 
                 if valid_variants:
@@ -131,6 +153,10 @@ def main():
     args = parser.parse_args()
 
     os.makedirs(args.out_dir, exist_ok=True)
+
+    global _TASK_DESCRIPTIONS
+    repo_root = Path(__file__).parent
+    _TASK_DESCRIPTIONS = _load_task_descriptions(repo_root / "catp-llm/dataset/task_descriptions.txt")
 
     merged_valid_best: Dict[int, Dict[int, Any]] = {}
     merged_invalid_best: Dict[int, Dict[int, Any]] = {}

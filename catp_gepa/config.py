@@ -5,6 +5,8 @@ from pydantic import BaseModel
 from openai import OpenAI
 from src.catpllm.data.plan_dataset import PlanDataset
 
+from catp_gepa.dataset import CATPDataset, load_catp_dataset
+
 project_root = Path(__file__).parent.parent
 
 class Config(BaseModel):
@@ -40,7 +42,6 @@ def get_catp_dataset(config: Config, seq: bool) -> PlanDataset:
     plan_dataset = PlanDataset(plan_pools, alpha=config.catp_alpha)
     return plan_dataset
 
-@cache
-def get_dataset(config: Config) -> Dataset:
+def get_dataset(config: Config) -> CATPDataset:
     dataset_path = project_root / config.dataset
-    return Dataset(dataset_path)
+    return load_catp_dataset(dataset_path)
