@@ -1,0 +1,224 @@
+Given low-resolutioned noisy blurry grayscale image, how to return the regular image step by step?
+Given noisy blurry grayscale image, how to return the regular image step by step?
+Given low-resolutioned noisy grayscale image, how to return the regular image step by step?
+Given noisy grayscale image, how to return the regular image step by step?
+Given low-resolutioned grayscale image, how to return the regular image step by step?
+Given grayscale image, how to return the regular image step by step?
+Given low-resolutioned noisy blurry image, how to return the regular image step by step?
+Given noisy blurry image, how to return the regular image step by step?
+Given low-resolutioned blurry image, how to return the regular image step by step?
+Given low-resolutioned noisy image, how to return the regular image step by step?
+Given noisy image, how to return the regular image step by step?
+Given low-resolutioned image, how to return the regular image step by step?
+Given low-resolutioned noisy blurry grayscale image, how to return the class label in German step by step?
+Given low-resolutioned noisy blurry grayscale image, how to return the caption in English step by step?
+Given low-resolutioned noisy blurry grayscale image, how to return the class label in English step by step?
+Given low-resolutioned noisy blurry grayscale image, how to return the object names in English step by step?
+Given noisy blurry grayscale image, how to return the object names in German step by step?
+Given noisy blurry grayscale image, how to return the caption in English step by step?
+Given noisy blurry grayscale image, how to return the class label in English step by step?
+Given noisy blurry grayscale image, how to return the object names in English step by step?
+Given low-resolutioned blurry grayscale image, how to return the caption in German step by step?
+Given low-resolutioned blurry grayscale image, how to return the object names in German step by step?
+Given low-resolutioned blurry grayscale image, how to return the caption in English step by step?
+Given low-resolutioned blurry grayscale image, how to return the class label in English step by step?
+Given low-resolutioned blurry grayscale image, how to return the object names in English step by step?
+Given blurry grayscale image, how to return the caption in German step by step?
+Given blurry grayscale image, how to return the class label in German step by step?
+Given blurry grayscale image, how to return the object names in German step by step?
+Given blurry grayscale image, how to return the caption in English step by step?
+Given blurry grayscale image, how to return the class label in English step by step?
+Given blurry grayscale image, how to return the object names in English step by step?
+Given low-resolutioned noisy grayscale image, how to return the caption in German step by step?
+Given low-resolutioned noisy grayscale image, how to return the class label in German step by step?
+Given low-resolutioned noisy grayscale image, how to return the object names in German step by step?
+Given low-resolutioned noisy grayscale image, how to return the class label in English step by step?
+Given low-resolutioned noisy grayscale image, how to return the object names in English step by step?
+Given noisy grayscale image, how to return the caption in German step by step?
+Given noisy grayscale image, how to return the class label in German step by step?
+Given noisy grayscale image, how to return the object names in German step by step?
+Given noisy grayscale image, how to return the caption in English step by step?
+Given noisy grayscale image, how to return the class label in English step by step?
+Given noisy grayscale image, how to return the object names in English step by step?
+Given low-resolutioned grayscale image, how to return the caption in German step by step?
+Given low-resolutioned grayscale image, how to return the class label in German step by step?
+Given low-resolutioned grayscale image, how to return the object names in German step by step?
+Given low-resolutioned grayscale image, how to return the caption in English step by step?
+Given low-resolutioned grayscale image, how to return the class label in English step by step?
+Given low-resolutioned grayscale image, how to return the object names in English step by step?
+Given grayscale image, how to return the caption in German step by step?
+Given grayscale image, how to return the object names in German step by step?
+Given grayscale image, how to return the caption in English step by step?
+Given grayscale image, how to return the object names in English step by step?
+Given low-resolutioned noisy blurry image, how to return the caption in German step by step?
+Given low-resolutioned noisy blurry image, how to return the class label in German step by step?
+Given low-resolutioned noisy blurry image, how to return the object names in German step by step?
+Given low-resolutioned noisy blurry image, how to return the class label in English step by step?
+Given low-resolutioned noisy blurry image, how to return the object names in English step by step?
+Given noisy blurry image, how to return the object names in German step by step?
+Given noisy blurry image, how to return the caption in English step by step?
+Given noisy blurry image, how to return the class label in English step by step?
+Given noisy blurry image, how to return the object names in English step by step?
+Given low-resolutioned blurry image, how to return the caption in German step by step?
+Given low-resolutioned blurry image, how to return the class label in German step by step?
+Given low-resolutioned blurry image, how to return the object names in German step by step?
+Given low-resolutioned blurry image, how to return the class label in English step by step?
+Given low-resolutioned blurry image, how to return the object names in English step by step?
+Given blurry image, how to return the caption in German step by step?
+Given blurry image, how to return the class label in German step by step?
+Given blurry image, how to return the object names in German step by step?
+Given blurry image, how to return the caption in English step by step?
+Given blurry image, how to return the class label in English step by step?
+Given blurry image, how to return the object names in English step by step?
+Given low-resolutioned noisy image, how to return the caption in German step by step?
+Given low-resolutioned noisy image, how to return the class label in German step by step?
+Given low-resolutioned noisy image, how to return the object names in German step by step?
+Given low-resolutioned noisy image, how to return the caption in English step by step?
+Given low-resolutioned noisy image, how to return the class label in English step by step?
+Given low-resolutioned noisy image, how to return the object names in English step by step?
+Given noisy image, how to return the caption in German step by step?
+Given noisy image, how to return the class label in German step by step?
+Given noisy image, how to return the object names in German step by step?
+Given noisy image, how to return the caption in English step by step?
+Given noisy image, how to return the class label in English step by step?
+Given noisy image, how to return the object names in English step by step?
+Given low-resolutioned image, how to return the caption in German step by step?
+Given low-resolutioned image, how to return the object names in German step by step?
+Given low-resolutioned image, how to return the class label in English step by step?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Given a low-resolutioned noisy and blurry image, how to return a regular image and return the object step by step?
+Given a low-resolutioned noisy and blurry image, how to return a regular image and return the caption step by step?
+Given a blurry grayscale image, how to return the object, return a regular image and return the caption step by step?
+Given a noisy blurry image, how to return the object in English and caption in German and return the regular image step by step?
+Given a low-resolutioned noisy image, how to return the label and return the regular image step by step?
+Given a noisy blurry grayscale image, how to return the label of the image and return the caption of the image in German step by step?
+Given a noisy grayscale image, how return the regular image and return the caption in German step by step?
+Given a blurry noisy image, how to return the regular image and return the label of the image in German step by step?
+Given a blurry image, how to return the label and return the caption in German step by step?
+Given a low-resolutioned noisy blurry grayscale image, how to return the regular image and return the object step by step?
+Given a low-resolutioned noisy and blurry grayscale image, how to return the object and return the caption step by step?
+Given a low-resolutioned noisy grayscale image, how to return the label and return the regular image step by step?
+Given a low-resolutioned noisy grayscale image, how to return the regular image, return the caption in Germany and return the detected objects step by step?
+Given a blurry noisy image, how to return the object in German and return the caption step by step?
+Given a low-resolutioned noisy image, how to return the label and return the caption in German step by step?
+Given a low-resolutioned grayscale image, how to return the caption in German and return the object of the image step by step?
+Given a low-resolutioned grayscale image, how to return a regular image, return the object and return the label in German step by step?
+Given a noisy blurry grayscale image, how to return the regular image, return the object and return the label step by step?
+Given a noisy grayscale image, how to  return the object ,return the regular image and return the label in German step by step?
+Given a low-resolutioned noisy and blurry image, how to return the label in German and return the object step by step?
+Given a low-resolutioned noisy and blurry image, how to return regular image and return the object in German step by step?
+Given a low-resolutioned noisy image, how to return the caption and return the object step by step?
+Given a low-resolutioned noisy blurry grayscale image, how to return the caption and return the object step by step?
+Given a low-resolutioned noisy blurry image, how to return the caption and return the label in German step by step?

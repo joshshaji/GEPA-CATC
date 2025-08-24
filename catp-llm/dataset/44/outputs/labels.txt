@@ -1,0 +1,100 @@
+potted plant, tv, tv, chair, chair, chair, person, microwave, refrigerator, book, book, clock, vase, vase, chair, vase, vase, dining table
+Bären
+bed, potted plant, book, book, book, book, book, chair, potted plant, book, book, book, book, book, book, book, book, book, book, book, book, book, book, book, book, book, book, book, book, book, book, book
+Stoppsignal, LKW, Auto, Stoppsignal
+Teddybär, Teddybär, Teddybär, Bett
+Person, Ski
+Kühlschrank, Ofen
+sportball, Person, Person, Baseballhandschuh
+Person, Person, Person, Person, Tennisschläger, Person, Person, Person
+Tennisschläger, Handtasche, Handtasche, Person, Person, Person, Person, Person, Person, Person, Person, Person, Person, Rucksack, Rucksack, Person, Person
+bird, boat, boat, person, person, person, cell phone, backpack, handbag, boat
+cell phone, clock, person, person
+train, person, person, person, person, person, person
+Sandwich, Bowl
+Person, Surfbrett
+Laptop, Maus, Tastatur, TV, Maus
+Auto, Auto, Auto, Auto, LKW, Auto, Auto, Auto
+bus, person, person, person, person, person, bus, person, person, person, person, bus
+cat, Keyboard
+Flugzeug, Flugzeug, Person, Person, Person, Person, Person
+Zebra, Zebra
+Bett, Stuhl, Stuhl, Esstisch
+bus, person, tie, tie, person, traffic light, traffic light
+Schüssel, Apfel
+Person, Person, Baseballschläger, Person, Person
+Messer, Messer, Kuchen, Weinglas, Weinglas, Weinglas, Weinglas, Weinglas, Weinglas, Weinglas, Weinglas, Weinglas, Weinglas, Tasse, Tasse, Esstisch, Messer
+Person, Surfbrett
+tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie
+Weinglas, Tasse, Tasse, Messer, Löffel, Löffel, Esstisch, Person, Person
+Person, Person, Person, Person, Ski
+Person, Ski
+Banane, Donut
+Tisch, Becher, Messer
+bottle, bottle, bottle, bottle, bottle, bottle, bottle, bottle, bottle, person, person, person, bottle, wine glass, cup, person, handbag, wine glass, cup, person
+Vogel, Vogel, Vogel, Boot, Boot, Boot, Boot
+Person, Waschbecken, Toilette
+Person, Person, Person, Person, Ski, Rucksack, Rucksack, Person, Rucksack, Person
+Brokkoli, Brokkoli, Schüssel
+Person, Skateboard
+Banane, Tastatur, Becher
+Tisch, Becher, Gabel, Brokkoli, Brokkoli, Brokkoli, Karotte, Karotte, Karotte, Löffel, Karotte
+couch, person, person, cup, remote, remote, person, person, wine glass, wine glass, wine glass, person, person
+tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie, tie.
+tie, person
+TV, Couch, Stuhl
+Person, Surfbrett
+Katze, Laptop, TV
+Schere, Person, Person, Person, Person, Person, Person, Person, Person, Person, Person, Person, Person, Person, Handtasche, Fahrrad, Person, Schere, Person
+Bus, Auto, Person, Person, Person, Person, Person, Person, Person, Auto
+Handy, Person
+Person, Person, Person, Person, Surfbrett, Surfbrett, Flasche, Person
+Flugzeug, Flugzeug
+Toilette
+Person, Ski
+person, person, tennisschläger, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person
+Löffel, Schale, Schale
+Schaf, Schaf, Schaf, Schaf
+Banane, Banane
+Bahn, Person, Person, Auto, Person, Person, Person, Person, Person, Person, LKW
+Waschbecken, Waschbecken
+surfboard, person
+Person, Person, Person, Person, Person, Baseballschläger, Person, Bank, Bank, Baseballhandschuh, Flasche, Person, Person, Flasche, Person
+Apfel, Orange
+Auto, Auto, Auto, Bus, LKW, LKW
+tv, person, person, tie, dining table, cell phone, person
+cell phone, person, person, person, person, person, person, person, person, person, person
+Toilette
+Person, Elefanten
+Person, Person, Person, Person, Frisbee, Frisbee
+Schirm, LKW, Person, Auto
+elephant, elephant, elephant, elephant, elephant
+Person, Surfbrett
+Pferd, Pferd, Person, Person, Person, Person, Person, Person, Person, Person, Person, Person, Person
+Hunde, Motorrad, Fahrrad, Fahrrad, LKW
+person, person, person, person, person, kite, kite, backpack, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person, person
+Flasche, Flasche, Kühlschrank, Weinglas, Weinglas, Ofen, Spülbecken, Schüssel, Schüssel, Mikrowelle, Vase, Vase
+Drachen
+Bett, Bett, Uhr, Fernbedienung
+motorcycle, person, person, person, person, person, person, person, person, person, person, person
+Tisch, Weinglas, Weinglas, Messer, Vase, Gabel, Stuhl, Messer, Messer, Stuhl
+Uhr, Uhr
+Person, Skateboard, Person, Person, Person, Person
+Messer, Zuckerbrot, Messer
+tie, person, person, person, bottle, bottle, bottle
+motorcycle, chair, chair, person, person, bicycle
+Gabel, Schüssel, Brokkoli, Brokkoli, Brokkoli, Brokkoli, Brokkoli, Brokkoli, Brokkoli, Brokkoli, Brokkoli
+tie, person
+Gabel, Pizza, Pizza, Pizza, Pizza, Pizza, Pizza
+Person, Person, Person, Person, Schaf
+Ampel, Ampel, Ampel, Ampel, Auto, Auto, Ampel
+Person, Banane, Banane, Banane, Person
+Feuerlöscher, Fahrrad
+Person, Person, Person, Person, Frisbee, Person, Person, Person, Person, Person
+person, person, person, laptop, laptop, laptop, mouse, keyboard, person, person, person, person, person, person, cup, laptop, keyboard, keyboard, keyboard, cup, cup, cup, keyboard, person
+Schirm, Person
+tv, person, mouse, keyboard, tv, tv
+Flasche, Uhr, Speisetisch, Person, Person, Person, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Becher, Be
+Person, Feuerhydrant, Person, Person, LKW
+TV, Person, Spülbecken, Spülbecken
+Koffer, Koffer, Koffer, Koffer, Koffer, Koffer, Koffer, Koffer, Auto
