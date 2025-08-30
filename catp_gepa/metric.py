@@ -106,6 +106,7 @@ def metric_qop_feedback(example: dspy.Example, prediction: dspy.Prediction, trac
         feedback = f"""
         The user query is: {task_query}
         The tools with the costs are: {example['tool_catalog_json']}
+        The input attributes are: {example.get('input_attributes_json', '{}')}
         The generated plan is: {prediction['plan_json'] if 'plan_json' in prediction else prediction.plan_json}
         Invalid or unrecognized plan was generated for this task. Plan not found in known variants; This means that the generated plan is below the worst variant.
         The best plan (gold plan) for this task is: {gold_plan_json} which is both cost and accuracy optimal.
@@ -117,6 +118,7 @@ def metric_qop_feedback(example: dspy.Example, prediction: dspy.Prediction, trac
         feedback = f"""
         The user query is: {task_query}
         The tools with the costs are: {example['tool_catalog_json']}
+        The input attributes are: {example.get('input_attributes_json', '{}')}
         The generated plan is: {prediction['plan_json'] if 'plan_json' in prediction else prediction.plan_json}
         The best plan for this task is: {gold_plan_json} which is the same as the generated plan.
         This means that the generated plan is both cost and accuracy optimal.
@@ -127,11 +129,11 @@ def metric_qop_feedback(example: dspy.Example, prediction: dspy.Prediction, trac
         feedback = f"""
         The user query is: {task_query}
         The tools with the costs are: {example['tool_catalog_json']}
+        The input attributes are: {example.get('input_attributes_json', '{}')}
         The generated plan is: {prediction['plan_json'] if 'plan_json' in prediction else prediction.plan_json}
         The generated plan is not the most optimal plan for this task.
         The best plan (gold plan) for this task is: {gold_plan_json} which is both cost and accuracy optimal.
         Think carefully about why the gold plan makes sense, why it is both cost and accuracy optimal.
         """
         return dspy.Prediction(score=score, feedback=feedback)
-
 

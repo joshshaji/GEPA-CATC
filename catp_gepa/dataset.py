@@ -4,18 +4,23 @@ import ast
 import json
 import random
 from pathlib import Path
+import math
 from typing import Dict, List, Optional, Tuple
 
 import dspy
 try:
-    from src.config import GlobalToolConfig
+    from src.config import GlobalToolConfig, GlobalPathConfig, GlobalDataConfig
+    from src.catpllm.utils.utils import get_task_and_sample_info, determine_sample_size
+    from src.catpllm.utils.cost_utils import determine_input_level
 except Exception:
     import sys
     repo_root = Path(__file__).parent.parent
     catpllmdir = repo_root / "catp-llm"
     if str(catpllmdir) not in sys.path:
         sys.path.insert(0, str(catpllmdir))
-    from src.config import GlobalToolConfig
+    from src.config import GlobalToolConfig, GlobalPathConfig, GlobalDataConfig
+    from src.catpllm.utils.utils import get_task_and_sample_info, determine_sample_size
+    from src.catpllm.utils.cost_utils import determine_input_level
 from pydantic import BaseModel, ValidationError, field_validator, RootModel, model_validator
 
 
@@ -87,7 +92,101 @@ def load_catp_dataset(path: str | Path) -> CATPDataset:
         raise RuntimeError(f"Failed to parse {path}: {e}")
 
 
+def _compute_importance_vector(current_level: int, k: int) -> List[float]:
+    """Compute a cosine-centered importance vector over k levels.
+
+    Matches CATP-LLM's smoothing in TokenEncoder by assigning higher weight to
+    the current level and smoothly decaying weights to neighbors using a cosine
+    curve centered at ``current_level``.
+
+    For level index j in [0, k-1], define normalized distance
+        d(j) = |j - current_level| / max(1, (k - 1)).
+    The unnormalized weight is
+        w(j) = cos( d(j) * pi/2 ).
+    We then normalize so that sum_j v(j) = 1.
+    """
+    if k <= 0:
+        return []
+    if k == 1:
+        return [1.0]
+    # Clamp current_level to valid range for safety
+    cl = max(0, min(current_level, k - 1))
+    denom = float(k - 1)
+    weights = [math.cos((abs(j - cl) / denom) * (math.pi / 2.0)) for j in range(k)]
+    s = sum(weights)
+    if s <= 0:
+        return [0.0 for _ in range(k)]
+    return [w / s for w in weights]
+
+
+def _build_augmented_tool_catalog_json(input_attributes: Dict, current_size_level: Optional[int] = None) -> str:
+    """Build a tool catalog JSON augmented with cost-aware context features.
+
+    - Categorizes input size into levels using GlobalDataConfig.
+    - Includes per-tool cost attribute vector c(t_i) across k levels (from GlobalToolConfig.tool_prices).
+    - Adds importance vector v computed from the current input level.
+    - Provides per-tool cost-aware features as element-wise product c(t_i) * v and a weighted sum.
+    
+    If ``current_size_level`` is provided, it will be used as the current input
+    size level (preferred, e.g., when computed via ``determine_sample_size``). If
+    not provided, the level will be inferred from ``input_attributes`` using
+    ``determine_input_level``.
+    """
+    # Determine which size levels to use (image vs text) and compute current level
+    if input_attributes.get("has_image"):
+        size_levels = list(GlobalDataConfig.image_sizes)
+    elif input_attributes.get("has_text"):
+        size_levels = list(GlobalDataConfig.text_lengths)
+    else:
+        size_levels = []
+
+    # Current input size level (l)
+    level = current_size_level if current_size_level is not None else determine_input_level(input_attributes)
+    k = len(next(iter(GlobalToolConfig.tool_prices.values()))) if GlobalToolConfig.tool_prices else 0
+    importance = _compute_importance_vector(level if level is not None else 0, k)
+
+    tools = []
+    for name, prices in GlobalToolConfig.tool_prices.items():
+        io = GlobalToolConfig.tool_io_dict.get(name, ["unknown", "unknown"]) 
+        deps = GlobalToolConfig.tool_dependencies.get(name, [])
+        # cost-aware features
+        if len(importance) == len(prices):
+            cost_features = [p * w for p, w in zip(prices, importance)]
+            weighted_cost = sum(cost_features)
+        else:
+            cost_features = list(prices)
+            weighted_cost = sum(prices) / len(prices) if prices else 0.0
+
+        tools.append({
+            "name": name,
+            "input_type": io[0],
+            "output_type": io[1],
+            "dependencies": deps,
+            # original prices per level (c(t_i))
+            "price_estimates": prices,
+            # augmented cost-aware context
+            "cost_attributes": prices,
+            "cost_importance": importance,
+            "cost_features": cost_features,
+            "weighted_cost": weighted_cost,
+        })
+
+    payload = {
+        "tools": tools,
+        "notes": "Augmented with cost-aware features weighted by current input level.",
+        "k_levels": k,
+        "size_levels": size_levels,
+        "input_attributes": input_attributes,
+        "current_size_level": level,
+    }
+    return json.dumps(payload)
+
+
 def _build_tool_catalog_json() -> str:
+    """
+    Legacy plain tool catalog without context augmentation.
+    DEPRECATED: Use _build_augmented_tool_catalog_json instead.
+    """
     tools = []
     for name, prices in GlobalToolConfig.tool_prices.items():
         io = GlobalToolConfig.tool_io_dict.get(name, ["unknown", "unknown"]) 
@@ -101,6 +200,20 @@ def _build_tool_catalog_json() -> str:
         })
     payload = {"tools": tools, "notes": "Prices are estimates across input scales."}
     return json.dumps(payload)
+
+
+def _get_input_attributes(task_id: int, sample_id: int) -> Dict:
+    """Fetch input attributes compatible with CATP-LLM for the given task/sample.
+
+    Falls back to empty attributes if the dataset files are unavailable.
+    """
+    try:
+        _, sample_info = get_task_and_sample_info(task_id, sample_id, data_path=GlobalPathConfig.data_path)
+        # sample_info already follows the desired schema
+        return dict(sample_info)
+    except Exception:
+        # Best-effort fallback: unknown input
+        return {"has_image": False, "image_size": None, "has_text": False, "text_length": None}
 
 
 def _load_task_descriptions(repo_root: Path) -> List[str]:
@@ -126,7 +239,6 @@ def build_valid_plans_examples(
     seed: int = 0
 ) -> Tuple[List[dspy.Example], List[dspy.Example], List[dspy.Example]]:
     examples: List[dspy.Example] = []
-    tool_catalog_json = _build_tool_catalog_json()
     repo_root = Path(__file__).parent.parent
     task_descriptions = _load_task_descriptions(repo_root)
 
@@ -137,6 +249,16 @@ def build_valid_plans_examples(
             gold_idx = max(range(len(variants)), key=lambda i: (variants[i].qop or 0.0))
             task_query: Optional[str] = None
             plan_variants = []
+            # Build input attributes and augmented tool catalog for this specific sample
+            input_attributes = _get_input_attributes(task_id, sample_id)
+            # If possible, compute the discrete size level used by CATP-LLM
+            try:
+                size_level = determine_sample_size(input_attributes, task_id, sample_id, data_path=GlobalPathConfig.data_path)
+            except Exception:
+                size_level = determine_input_level(input_attributes)
+            augmented_tool_catalog_json = _build_augmented_tool_catalog_json({
+                **input_attributes,
+            }, current_size_level=size_level)
             for i, v in enumerate(variants):
                 if not task_query:
                     tq = getattr(v, "task_query", None)
@@ -159,11 +281,13 @@ def build_valid_plans_examples(
                 "task_id": task_id,
                 "sample_id": sample_id,
                 "task_query": task_query,
-                "tool_catalog_json": tool_catalog_json,
+                "tool_catalog_json": augmented_tool_catalog_json,
                 "plan_variants_json": plan_variants_json,
                 "gold_plan_json": gold_plan_json,
                 "gold_qop": gold_qop,
-            }).with_inputs("task_query", "tool_catalog_json")
+                "input_attributes_json": json.dumps(input_attributes),
+                "current_size_level": size_level,
+            }).with_inputs("task_query", "tool_catalog_json", "input_attributes_json")
             examples.append(ex)
 
     rng = random.Random(seed)
@@ -207,4 +331,3 @@ def build_valid_plans_examples(
     val_set = remaining
 
     return train_set, val_set, test_set
-
