@@ -171,6 +171,24 @@ class GlobalToolConfig:
         "mask_filling": sop_token + 16,
     }
     tool_token_vocabulary_reverse = {v: k for k, v in tool_token_vocabulary.items()}
+    
+    tool_descriptions = {
+        "image_colorization": "Add plausible colors to a grayscale image.",
+        "image_denoising": "Remove noise from an image while preserving details.",
+        "image_deblurring": "Reduce motion/defocus blur to sharpen an image.",
+        "image_super_resolution": "Upscale an image to higher resolution with detail restoration.",
+        "image_classification": "Predict the main category/object present in an image.",
+        "image_captioning": "Generate a natural-language caption describing an image.",
+        "object_detection": "Locate and label objects in an image with bounding boxes.",
+        "text_summarization": "Condense text into a concise summary of key points.",
+        "text_generation": "Continue or compose text conditioned on a prompt.",
+        "machine_translation": "Translate text from a source language to a target language.",
+        "mask_filling": "Predict masked tokens in text (fill-in-the-blank).",
+        "sentiment_analysis": "Classify the sentiment/polarity of text (e.g., positive/negative).",
+        "text_to_image": "Generate an image from a textual description (prompt).",
+        "question_answering": "Answer a question given supporting text/context.",
+        "visual_question_answering": "Answer a question about an image (optionally with text).",
+    }
 
     # dependency-token mapping
     dependency_token_vocabulary = {

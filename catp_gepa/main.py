@@ -3,6 +3,11 @@ import os
 import logging
 import time
 from dotenv import load_dotenv
+
+# Configure DSPy caching before importing dspy to avoid disk permission issues
+os.environ.setdefault("DSPY_DISABLE_DISK_CACHE", "1")
+os.environ.setdefault("DSPY_CACHE_DIR", os.path.abspath(".dspy_cache"))
+
 import dspy
 
 from catp_gepa.config import load_config, get_dataset
@@ -30,7 +35,7 @@ def optimize_and_evaluate():
     logger = logging.getLogger(__name__)
     openai_api_key = os.getenv("OPENAI_API_KEY")
     base_lm = dspy.LM("openai/gpt-4.1-nano", temperature=0, api_key=openai_api_key)
-    reflector_lm = dspy.LM("openai/o4-mini", temperature=1.0, api_key=openai_api_key, max_tokens=20000)
+    reflector_lm = dspy.LM("openai/gpt-5", temperature=1.0, api_key=openai_api_key, max_tokens=128000)
     dspy.configure(lm=base_lm)
 
     train_set, val_set, test_set = init_dataset()
@@ -47,10 +52,8 @@ def optimize_and_evaluate():
     optimizer = dspy.GEPA(
         metric=metric_qop_feedback,
         auto="heavy",
-        track_stats=True,
         reflection_lm=reflector_lm,
         add_format_failure_as_feedback=True,
-        track_best_outputs=True,
         log_dir="gepa_logs",
     )
     optimized_program = optimizer.compile(program, trainset=train_small, valset=val_small)

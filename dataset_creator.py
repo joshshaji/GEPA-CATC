@@ -156,7 +156,7 @@ def main():
 
     global _TASK_DESCRIPTIONS
     repo_root = Path(__file__).parent
-    _TASK_DESCRIPTIONS = _load_task_descriptions(repo_root / "catp-llm/dataset/task_descriptions.txt")
+    _TASK_DESCRIPTIONS = _load_task_descriptions(repo_root / "catp_base/dataset/task_descriptions.txt")
 
     merged_valid_best: Dict[int, Dict[int, Any]] = {}
     merged_invalid_best: Dict[int, Dict[int, Any]] = {}

@@ -43,13 +43,13 @@ dependencies = [
     "timm (>=1.0.19,<2.0.0)",
     "pydantic (>=2.7.0,<3.0.0)",
     "python-dotenv (>=1.0.1,<2.0.0)",
-    "openai (>=1.51.0,<2.0.0)",
+    "openai (>=1.51.0,<1.100.0)",
     "litellm (>=1.51.9,<2.0.0)"
 ]
 
 [tool.poetry]
 name = "gepa_catp"
-packages = [{ include = "src", from = "catp-llm" }]
+packages = [{ include = "src", from = "catp_base" }]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

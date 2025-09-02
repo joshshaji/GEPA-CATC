@@ -19,7 +19,7 @@ class GeneratePlan(dspy.Signature):
     Objective: Maximize task performance while minimizing execution cost. Prefer plans with lower `weighted_cost` while remaining functionally valid and sufficient for the task. Output format must strictly alternate tool then its dependency list.
     """
     task_query: str = dspy.InputField()
-    tool_catalog_json: str = dspy.InputField()
+    tool_catalog_json_with_description: str = dspy.InputField()
     input_attributes_json: str = dspy.InputField()
     plan_json: List[Union[str, List[str]]] = dspy.OutputField(
         desc=(
@@ -37,5 +37,10 @@ class PlanGenerator(dspy.Module):
         super().__init__()
         self.predict = dspy.Predict(GeneratePlan, **predict_kwargs)
 
-    def forward(self, task_query: str, tool_catalog_json: str, input_attributes_json: str):
-        return self.predict(task_query=task_query, tool_catalog_json=tool_catalog_json, input_attributes_json=input_attributes_json)
+    def forward(self, task_query: str, tool_catalog_json_with_description: str, input_attributes_json: str):
+        # The signature expects `tool_catalog_json_with_description` as the input field name.
+        return self.predict(
+            task_query=task_query,
+            tool_catalog_json_with_description=tool_catalog_json_with_description,
+            input_attributes_json=input_attributes_json,
+        )

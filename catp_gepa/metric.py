@@ -100,27 +100,27 @@ def metric_qop_feedback(example: dspy.Example, prediction: dspy.Prediction, trac
     try:
         task_query = example["task_query"] if "task_query" in example else getattr(example, "task_query", "")
     except Exception:
-        task_query = ""
+        logger.exception("No task query found in example")
+        raise ValueError("No task query found in example")
 
     if score < 0:
         feedback = f"""
         The user query is: {task_query}
-        The tools with the costs are: {example['tool_catalog_json']}
-        The input attributes are: {example.get('input_attributes_json', '{}')}
+        {example['tool_catalog_json_with_description']}
+        The input attributes for the current task are: {example.get('input_attributes_json', '{}')}
         The generated plan is: {prediction['plan_json'] if 'plan_json' in prediction else prediction.plan_json}
-        Invalid or unrecognized plan was generated for this task. Plan not found in known variants; This means that the generated plan is below the worst variant.
+        An invalid or unrecognized plan was generated for this task. Plan not found in known variants; This means that the generated plan is below the worst variant.
         The best plan (gold plan) for this task is: {gold_plan_json} which is both cost and accuracy optimal.
-        Think carefully about why the gold plan makes sense, why it is both cost and accuracy optimal.
         """
         return dspy.Prediction(score=score, feedback=feedback)
 
     elif score == best_qop:
         feedback = f"""
         The user query is: {task_query}
-        The tools with the costs are: {example['tool_catalog_json']}
-        The input attributes are: {example.get('input_attributes_json', '{}')}
+        {example['tool_catalog_json_with_description']}
+        The input attributes for the current task are: {example.get('input_attributes_json', '{}')}
         The generated plan is: {prediction['plan_json'] if 'plan_json' in prediction else prediction.plan_json}
-        The best plan for this task is: {gold_plan_json} which is the same as the generated plan.
+        The generated plan is the best plan for this task.
         This means that the generated plan is both cost and accuracy optimal.
         """
         return dspy.Prediction(score=score, feedback=feedback)
@@ -128,12 +128,11 @@ def metric_qop_feedback(example: dspy.Example, prediction: dspy.Prediction, trac
     else:
         feedback = f"""
         The user query is: {task_query}
-        The tools with the costs are: {example['tool_catalog_json']}
-        The input attributes are: {example.get('input_attributes_json', '{}')}
+        {example['tool_catalog_json_with_description']}
+        The input attributes for the current task are: {example.get('input_attributes_json', '{}')}
         The generated plan is: {prediction['plan_json'] if 'plan_json' in prediction else prediction.plan_json}
-        The generated plan is not the most optimal plan for this task.
+        The generated plan is NOT THE MOST OPTIMAL PLAN for this task.
         The best plan (gold plan) for this task is: {gold_plan_json} which is both cost and accuracy optimal.
-        Think carefully about why the gold plan makes sense, why it is both cost and accuracy optimal.
         """
         return dspy.Prediction(score=score, feedback=feedback)
 

@@ -15,7 +15,7 @@ try:
 except Exception:
     import sys
     repo_root = Path(__file__).parent.parent
-    catpllmdir = repo_root / "catp-llm"
+    catpllmdir = repo_root / "catp_base"
     if str(catpllmdir) not in sys.path:
         sys.path.insert(0, str(catpllmdir))
     from src.config import GlobalToolConfig, GlobalPathConfig, GlobalDataConfig
@@ -132,13 +132,6 @@ def _build_augmented_tool_catalog_json(input_attributes: Dict, current_size_leve
     not provided, the level will be inferred from ``input_attributes`` using
     ``determine_input_level``.
     """
-    # Determine which size levels to use (image vs text) and compute current level
-    if input_attributes.get("has_image"):
-        size_levels = list(GlobalDataConfig.image_sizes)
-    elif input_attributes.get("has_text"):
-        size_levels = list(GlobalDataConfig.text_lengths)
-    else:
-        size_levels = []
 
     # Current input size level (l)
     level = current_size_level if current_size_level is not None else determine_input_level(input_attributes)
@@ -148,7 +141,6 @@ def _build_augmented_tool_catalog_json(input_attributes: Dict, current_size_leve
     tools = []
     for name, prices in GlobalToolConfig.tool_prices.items():
         io = GlobalToolConfig.tool_io_dict.get(name, ["unknown", "unknown"]) 
-        deps = GlobalToolConfig.tool_dependencies.get(name, [])
         # cost-aware features
         if len(importance) == len(prices):
             cost_features = [p * w for p, w in zip(prices, importance)]
@@ -159,27 +151,14 @@ def _build_augmented_tool_catalog_json(input_attributes: Dict, current_size_leve
 
         tools.append({
             "name": name,
+            "description": GlobalToolConfig.tool_descriptions.get(name, ""),
             "input_type": io[0],
             "output_type": io[1],
-            "dependencies": deps,
-            # original prices per level (c(t_i))
-            "price_estimates": prices,
             # augmented cost-aware context
-            "cost_attributes": prices,
-            "cost_importance": importance,
-            "cost_features": cost_features,
-            "weighted_cost": weighted_cost,
+            "tool_cost": weighted_cost,
         })
-
-    payload = {
-        "tools": tools,
-        "notes": "Augmented with cost-aware features weighted by current input level.",
-        "k_levels": k,
-        "size_levels": size_levels,
-        "input_attributes": input_attributes,
-        "current_size_level": level,
-    }
-    return json.dumps(payload)
+        
+    return json.dumps(tools)
 
 
 def _build_tool_catalog_json() -> str:
@@ -217,7 +196,7 @@ def _get_input_attributes(task_id: int, sample_id: int) -> Dict:
 
 
 def _load_task_descriptions(repo_root: Path) -> List[str]:
-    desc_path = repo_root / "catp-llm/dataset/task_descriptions.txt"
+    desc_path = repo_root / "catp_base/dataset/task_descriptions.txt"
     if not desc_path.exists():
         return []
     with desc_path.open("r", encoding="utf-8") as f:
@@ -239,6 +218,8 @@ def build_valid_plans_examples(
     seed: int = 0
 ) -> Tuple[List[dspy.Example], List[dspy.Example], List[dspy.Example]]:
     examples: List[dspy.Example] = []
+    # Also collect per-task buckets as we go so we can split by task IDs
+    examples_by_task_build: Dict[int, List[dspy.Example]] = {}
     repo_root = Path(__file__).parent.parent
     task_descriptions = _load_task_descriptions(repo_root)
 
@@ -281,28 +262,45 @@ def build_valid_plans_examples(
                 "task_id": task_id,
                 "sample_id": sample_id,
                 "task_query": task_query,
+                "tool_catalog_json_with_description": f"These are all the tools available to you which also include the cost of each tool for the current image size:\n\n ```{augmented_tool_catalog_json}```",
                 "tool_catalog_json": augmented_tool_catalog_json,
                 "plan_variants_json": plan_variants_json,
                 "gold_plan_json": gold_plan_json,
                 "gold_qop": gold_qop,
                 "input_attributes_json": json.dumps(input_attributes),
                 "current_size_level": size_level,
-            }).with_inputs("task_query", "tool_catalog_json", "input_attributes_json")
+            }).with_inputs("task_query", "tool_catalog_json_with_description", "input_attributes_json")
             examples.append(ex)
+            examples_by_task_build.setdefault(int(task_id), []).append(ex)
 
     rng = random.Random(seed)
-    rng.shuffle(examples)
 
-    test_set = examples[:test_size]
-    train_val = examples[test_size:]
+    # Select whole tasks for the test set to avoid task ID overlap with train
+    all_task_ids = list(examples_by_task_build.keys())
+    rng.shuffle(all_task_ids)
+    selected_test_task_ids: List[int] = []
+    accumulated = 0
+    for tid in all_task_ids:
+        if test_size <= 0:
+            break
+        bucket = examples_by_task_build[tid]
+        if accumulated < test_size:
+            selected_test_task_ids.append(tid)
+            accumulated += len(bucket)
+        else:
+            break
 
-    # Build per-task index for remaining examples
-    examples_by_task: Dict[int, List[dspy.Example]] = {}
-    for ex in train_val:
-        tid = getattr(ex, "task_id", None)
-        if tid is None:
-            continue
-        examples_by_task.setdefault(int(tid), []).append(ex)
+    # Build test set from selected task IDs, shuffle within, and cap to test_size
+    test_set: List[dspy.Example] = []
+    for tid in selected_test_task_ids:
+        test_set.extend(examples_by_task_build[tid])
+    rng.shuffle(test_set)
+    if test_size > 0:
+        test_set = test_set[:test_size]
+
+    # Remaining examples (from non-test tasks) will form train/val pools
+    remaining_task_ids = [tid for tid in all_task_ids if tid not in selected_test_task_ids]
+    examples_by_task: Dict[int, List[dspy.Example]] = {tid: list(examples_by_task_build[tid]) for tid in remaining_task_ids}
 
     # Select up to N samples per task for training (default: 3)
     per_task_cap = 3
