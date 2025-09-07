@@ -21,8 +21,6 @@ def _load_task_descriptions(path: Path) -> List[str]:
 
 
 def _task_query_for(task_id: int) -> str | None:
-    if 1 <= task_id <= len(_TASK_DESCRIPTIONS):
-        return _TASK_DESCRIPTIONS[task_id - 1]
     if 0 <= task_id < len(_TASK_DESCRIPTIONS):
         return _TASK_DESCRIPTIONS[task_id]
     return None

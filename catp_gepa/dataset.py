@@ -190,7 +190,8 @@ def _get_input_attributes(task_id: int, sample_id: int) -> Dict:
         _, sample_info = get_task_and_sample_info(task_id, sample_id, data_path=GlobalPathConfig.data_path)
         # sample_info already follows the desired schema
         return dict(sample_info)
-    except Exception:
+    except Exception as e:
+        print(e)
         # Best-effort fallback: unknown input
         return {"has_image": False, "image_size": None, "has_text": False, "text_length": None}
 
@@ -204,8 +205,6 @@ def _load_task_descriptions(repo_root: Path) -> List[str]:
 
 
 def _task_query_for(task_id: int, desc: List[str]) -> Optional[str]:
-    if 1 <= task_id <= len(desc):
-        return desc[task_id - 1]
     if 0 <= task_id < len(desc):
         return desc[task_id]
     return None
@@ -220,8 +219,8 @@ def build_valid_plans_examples(
     examples: List[dspy.Example] = []
     # Also collect per-task buckets as we go so we can split by task IDs
     examples_by_task_build: Dict[int, List[dspy.Example]] = {}
-    repo_root = Path(__file__).parent.parent
-    task_descriptions = _load_task_descriptions(repo_root)
+    # Lazily load task descriptions only if needed (fallback path)
+    task_descriptions = None  # type: Optional[List[str]]
 
     for task_id, task_samples in dataset.tasks().items():
         for sample_id, variants in task_samples.items():
@@ -253,6 +252,10 @@ def build_valid_plans_examples(
                     "qop": v.qop if v.qop is not None else 0.0,
                 })
             if not task_query:
+                # Only load original descriptions if dataset lacks task_query
+                if task_descriptions is None:
+                    repo_root = Path(__file__).parent.parent
+                    task_descriptions = _load_task_descriptions(repo_root)
                 task_query = _task_query_for(task_id, task_descriptions) or ""
             plan_variants_json = json.dumps(plan_variants)
             gold_plan = variants[gold_idx].plan

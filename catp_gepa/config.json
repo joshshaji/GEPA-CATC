@@ -6,7 +6,8 @@
     "dataset": "results_from_pkls/valid_plans_all.json",
     "catp_seq_dataset": "catp_base/src/catpllm/data/training_data/seq_plan_pool.pkl",
     "catp_non_seq_dataset": "catp_base/src/catpllm/data/training_data/non_seq_plan_pool.pkl",
-    "training_size": 10,
-    "test_size": 5,
+    "use_vanila_gepa": false,
+    "training_size": 500,
+    "test_size": 50,
     "catp_alpha": 0.5
 }

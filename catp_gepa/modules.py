@@ -18,9 +18,21 @@ class GeneratePlan(dspy.Signature):
 
     Objective: Maximize task performance while minimizing execution cost. Prefer plans with lower `weighted_cost` while remaining functionally valid and sufficient for the task. Output format must strictly alternate tool then its dependency list.
     """
-    task_query: str = dspy.InputField()
-    tool_catalog_json_with_description: str = dspy.InputField()
-    input_attributes_json: str = dspy.InputField()
+    task_query: str = dspy.InputField(
+        desc=(
+            "A description of the task to be performed. "
+        )
+    )
+    tool_catalog_json_with_description: str = dspy.InputField(
+        desc=(
+            "A JSON list of tools with their descriptions, input and output types, and cost-aware features. "
+        )
+    )
+    input_attributes_json: str = dspy.InputField(
+        desc=(
+            "A JSON object containing the input attributes for the task. Whether the task has an image or text, and the size of the image or text."
+        )
+    )
     plan_json: List[Union[str, List[str]]] = dspy.OutputField(
         desc=(
             "A sequential list representing a plan of tool calls. "

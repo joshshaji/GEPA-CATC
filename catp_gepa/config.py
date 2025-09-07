@@ -4,7 +4,6 @@ import pickle
 from pydantic import BaseModel
 from openai import OpenAI
 from src.catpllm.data.plan_dataset import PlanDataset
-
 from catp_gepa.dataset import CATPDataset, load_catp_dataset
 
 project_root = Path(__file__).parent.parent
@@ -14,6 +13,7 @@ class Config(BaseModel):
     dataset: str
     catp_seq_dataset: str
     catp_non_seq_dataset: str
+    use_vanila_gepa: bool
     training_size: int
     test_size: int
     catp_alpha: float
