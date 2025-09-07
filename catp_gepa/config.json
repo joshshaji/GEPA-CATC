@@ -3,7 +3,7 @@
         "provider": "openai",
         "model": "gpt-5"
     },
-    "dataset": "results_from_pkls/valid_plans_all.json",
+    "dataset": "seq_data/valid_plans_all.json",
     "catp_seq_dataset": "catp_base/src/catpllm/data/training_data/seq_plan_pool.pkl",
     "catp_non_seq_dataset": "catp_base/src/catpllm/data/training_data/non_seq_plan_pool.pkl",
     "use_vanila_gepa": false,
