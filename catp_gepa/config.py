@@ -5,6 +5,7 @@ from pydantic import BaseModel
 from openai import OpenAI
 from src.catpllm.data.plan_dataset import PlanDataset
 from catp_gepa.dataset import CATPDataset, load_catp_dataset
+from catp_gepa.metric import metric_dag_loss, metric_qop_feedback, vanila_gepa_metric
 
 project_root = Path(__file__).parent.parent
 
@@ -13,11 +14,19 @@ class Config(BaseModel):
     dataset: str
     catp_seq_dataset: str
     catp_non_seq_dataset: str
-    use_vanila_gepa: bool
+    metric: str
     training_size: int
     test_size: int
     catp_alpha: float
 
+def get_metric(metric: str):# -> Callable[..., Prediction]:# -> Callable[..., Prediction]:
+    metrics = {
+        "dag": metric_dag_loss,
+        "vanilla": vanila_gepa_metric,
+        "qop": metric_qop_feedback
+    }
+    
+    return metrics[metric]
 
 def load_config() -> Config:
     config_path = Path(__file__).parent / "config.json"

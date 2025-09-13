@@ -1,0 +1,1587 @@
+{
+  "count": 50,
+  "items": [
+    {
+      "task_id": 63,
+      "sample_id": 40,
+      "gold_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "pred_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 18,
+      "sample_id": 21,
+      "gold_plan": [
+        "image_colorization",
+        [
+          "input_of_query"
+        ],
+        "image_denoising",
+        [
+          "image_colorization"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_classification",
+        [
+          "image_denoising"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 68,
+      "sample_id": 14,
+      "gold_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_denoising"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "pred_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 18,
+      "sample_id": 0,
+      "gold_plan": [
+        "image_colorization",
+        [
+          "input_of_query"
+        ],
+        "image_denoising",
+        [
+          "image_colorization"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_classification",
+        [
+          "image_denoising"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 18,
+      "sample_id": 90,
+      "gold_plan": [
+        "image_colorization",
+        [
+          "input_of_query"
+        ],
+        "image_denoising",
+        [
+          "image_colorization"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_classification",
+        [
+          "image_denoising"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 44,
+      "sample_id": 15,
+      "gold_plan": [
+        "image_colorization",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_colorization"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_denoising"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 55,
+      "sample_id": 86,
+      "gold_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "image_denoising",
+        [
+          "image_deblurring"
+        ],
+        "image_classification",
+        [
+          "image_denoising"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_super_resolution",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_super_resolution"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 55,
+      "sample_id": 65,
+      "gold_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_super_resolution",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_super_resolution"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 55,
+      "sample_id": 46,
+      "gold_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 50,
+      "sample_id": 27,
+      "gold_plan": [
+        "image_colorization",
+        [
+          "input_of_query"
+        ],
+        "image_captioning",
+        [
+          "image_colorization"
+        ]
+      ],
+      "pred_plan": [
+        "image_colorization",
+        [
+          "input_of_query"
+        ],
+        "image_captioning",
+        [
+          "image_colorization"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 65,
+      "sample_id": 31,
+      "gold_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_denoising"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 65,
+      "sample_id": 76,
+      "gold_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 50,
+      "sample_id": 3,
+      "gold_plan": [
+        "image_colorization",
+        [
+          "input_of_query"
+        ],
+        "image_captioning",
+        [
+          "image_colorization"
+        ]
+      ],
+      "pred_plan": [
+        "image_colorization",
+        [
+          "input_of_query"
+        ],
+        "image_captioning",
+        [
+          "image_colorization"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 44,
+      "sample_id": 12,
+      "gold_plan": [
+        "image_colorization",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_colorization"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_denoising"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 55,
+      "sample_id": 59,
+      "gold_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 18,
+      "sample_id": 59,
+      "gold_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "image_denoising",
+        [
+          "image_deblurring"
+        ],
+        "image_colorization",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_colorization"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_classification",
+        [
+          "image_denoising"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 44,
+      "sample_id": 36,
+      "gold_plan": [
+        "image_colorization",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_colorization"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_denoising"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 65,
+      "sample_id": 52,
+      "gold_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "image_denoising",
+        [
+          "image_deblurring"
+        ],
+        "object_detection",
+        [
+          "image_denoising"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 18,
+      "sample_id": 8,
+      "gold_plan": [
+        "image_colorization",
+        [
+          "input_of_query"
+        ],
+        "image_denoising",
+        [
+          "image_colorization"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_classification",
+        [
+          "image_denoising"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 55,
+      "sample_id": 82,
+      "gold_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "image_denoising",
+        [
+          "image_deblurring"
+        ],
+        "image_classification",
+        [
+          "image_denoising"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 55,
+      "sample_id": 62,
+      "gold_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "image_denoising",
+        [
+          "image_deblurring"
+        ],
+        "image_classification",
+        [
+          "image_denoising"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 55,
+      "sample_id": 34,
+      "gold_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_super_resolution",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_super_resolution"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 63,
+      "sample_id": 44,
+      "gold_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "pred_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 7,
+      "sample_id": 24,
+      "gold_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_colorization",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 18,
+      "sample_id": 11,
+      "gold_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_colorization",
+        [
+          "image_deblurring"
+        ],
+        "image_classification",
+        [
+          "image_colorization"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_classification",
+        [
+          "image_denoising"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 7,
+      "sample_id": 68,
+      "gold_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_colorization",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 7,
+      "sample_id": 23,
+      "gold_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_colorization",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 7,
+      "sample_id": 42,
+      "gold_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_colorization",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 7,
+      "sample_id": 59,
+      "gold_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_colorization",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 68,
+      "sample_id": 63,
+      "gold_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "pred_plan": [
+        "object_detection",
+        [
+          "input_of_query"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 63,
+      "sample_id": 55,
+      "gold_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "image_denoising",
+        [
+          "image_deblurring"
+        ],
+        "object_detection",
+        [
+          "image_denoising"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "pred_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 63,
+      "sample_id": 72,
+      "gold_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "pred_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 18,
+      "sample_id": 28,
+      "gold_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_colorization",
+        [
+          "image_deblurring"
+        ],
+        "image_classification",
+        [
+          "image_colorization"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_classification",
+        [
+          "image_denoising"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 7,
+      "sample_id": 79,
+      "gold_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_colorization",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 68,
+      "sample_id": 44,
+      "gold_plan": [
+        "image_super_resolution",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_super_resolution"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "pred_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 55,
+      "sample_id": 29,
+      "gold_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_super_resolution",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_super_resolution"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 68,
+      "sample_id": 15,
+      "gold_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_denoising"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "pred_plan": [
+        "object_detection",
+        [
+          "input_of_query"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 55,
+      "sample_id": 55,
+      "gold_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 7,
+      "sample_id": 67,
+      "gold_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_colorization",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 65,
+      "sample_id": 63,
+      "gold_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "image_denoising",
+        [
+          "image_deblurring"
+        ],
+        "object_detection",
+        [
+          "image_denoising"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_denoising"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 7,
+      "sample_id": 95,
+      "gold_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "image_denoising",
+        [
+          "image_deblurring"
+        ],
+        "image_super_resolution",
+        [
+          "image_denoising"
+        ],
+        "image_colorization",
+        [
+          "image_super_resolution"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 50,
+      "sample_id": 36,
+      "gold_plan": [
+        "image_colorization",
+        [
+          "input_of_query"
+        ],
+        "image_captioning",
+        [
+          "image_colorization"
+        ]
+      ],
+      "pred_plan": [
+        "image_colorization",
+        [
+          "input_of_query"
+        ],
+        "image_captioning",
+        [
+          "image_colorization"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 65,
+      "sample_id": 44,
+      "gold_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 55,
+      "sample_id": 2,
+      "gold_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "image_denoising",
+        [
+          "image_deblurring"
+        ],
+        "image_classification",
+        [
+          "image_denoising"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 65,
+      "sample_id": 72,
+      "gold_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 18,
+      "sample_id": 46,
+      "gold_plan": [
+        "image_colorization",
+        [
+          "input_of_query"
+        ],
+        "image_denoising",
+        [
+          "image_colorization"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ],
+        "image_classification",
+        [
+          "object_detection"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 44,
+      "sample_id": 72,
+      "gold_plan": [
+        "image_colorization",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_colorization"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_denoising"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 18,
+      "sample_id": 34,
+      "gold_plan": [
+        "image_colorization",
+        [
+          "input_of_query"
+        ],
+        "image_denoising",
+        [
+          "image_colorization"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_classification",
+        [
+          "image_denoising"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 55,
+      "sample_id": 91,
+      "gold_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "image_denoising",
+        [
+          "image_deblurring"
+        ],
+        "image_classification",
+        [
+          "image_denoising"
+        ]
+      ],
+      "pred_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "image_deblurring",
+        [
+          "image_denoising"
+        ],
+        "image_classification",
+        [
+          "image_deblurring"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    },
+    {
+      "task_id": 68,
+      "sample_id": 41,
+      "gold_plan": [
+        "image_denoising",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_denoising"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "pred_plan": [
+        "image_deblurring",
+        [
+          "input_of_query"
+        ],
+        "object_detection",
+        [
+          "image_deblurring"
+        ],
+        "machine_translation",
+        [
+          "object_detection"
+        ]
+      ],
+      "source_file": "run_state_success_20250907_133107.json"
+    }
+  ]
+}

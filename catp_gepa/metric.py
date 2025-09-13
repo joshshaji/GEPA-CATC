@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 import logging
-from typing import Any, Dict, List, Tuple, Optional, Callable
+from typing import Any, Dict, List, Tuple, Optional, Callable, Set
 
 import dspy
 import time
@@ -353,3 +353,205 @@ def make_logged_metric(
         return result
 
     return _wrapped
+
+
+# ------------------------------
+# DAG utilities for plan metrics
+# ------------------------------
+
+def _f1_from_sets(gold: Set[Any], pred: Set[Any]) -> float:
+    """Compute F1 between two sets (0..1)."""
+    if not gold and not pred:
+        return 1.0
+    if not gold or not pred:
+        return 0.0
+    tp = len(gold & pred)
+    precision = tp / len(pred) if pred else 0.0
+    recall = tp / len(gold) if gold else 0.0
+    return (2 * precision * recall / (precision + recall)) if (precision + recall) > 0 else 0.0
+
+
+def plan_to_dag(plan_obj: Any, *, include_input_edges: bool = False) -> Dict[str, Set[Tuple[str, str]] | Set[str]]:
+    """Convert a plan representation into a DAG (nodes, edges).
+
+    - Accepts the OpenCATP-style plan (alternating tool, [deps]) or its JSON/string form.
+    - Dependencies treated specially:
+      - 'input_of_query': optionally emits (INPUT, tool) edge if include_input_edges=True.
+      - 'output_of_previous_tool': resolved to the immediate previous tool if available.
+
+    Returns a dict with:
+      - nodes: Set[str]
+      - edges: Set[Tuple[str, str]] as (dep -> tool)
+    """
+    pairs = _normalize_pairs(plan_obj)
+    nodes: Set[str] = set()
+    edges: Set[Tuple[str, str]] = set()
+
+    INPUT = "input_of_query"
+    PREV = "output_of_previous_tool"
+
+    last_tool: Optional[str] = None
+    for idx, pair in enumerate(pairs):
+        if not isinstance(pair, list) or not pair:
+            continue
+        tool = str(pair[0])
+        deps = pair[1] if len(pair) > 1 and isinstance(pair[1], list) else []
+        nodes.add(tool)
+
+        # Build edges
+        for dep in deps:
+            dep_s = str(dep)
+            if dep_s == INPUT:
+                if include_input_edges:
+                    edges.add((INPUT, tool))
+                continue
+            if dep_s == PREV:
+                if last_tool is not None:
+                    edges.add((last_tool, tool))
+                # If no last_tool, we skip: malformed dependency for first tool
+                continue
+            # Normal dependency refers to a tool name
+            edges.add((dep_s, tool))
+
+        last_tool = tool
+
+    return {"nodes": nodes, "edges": edges}
+
+
+def dag_loss(
+    dag_a: Dict[str, Set[Any]],
+    dag_b: Dict[str, Set[Any]],
+    *,
+    node_weight: float = 0.5,
+    edge_weight: float = 0.5,
+) -> float:
+    """Compute a normalized loss (0..1) between two DAGs.
+
+    - Uses F1 over nodes and directed edges, then returns 1 - weighted score.
+    - Weights must be non-negative; if they don't sum to 1, they are normalized.
+
+    Example:
+        gold = plan_to_dag(gold_plan)
+        pred = plan_to_dag(pred_plan)
+        loss = dag_loss(gold, pred)
+    """
+    w_sum = max(1e-8, node_weight + edge_weight)
+    nw, ew = node_weight / w_sum, edge_weight / w_sum
+
+    gold_nodes: Set[Any] = set(dag_a.get("nodes", set()))
+    pred_nodes: Set[Any] = set(dag_b.get("nodes", set()))
+    gold_edges: Set[Any] = set(dag_a.get("edges", set()))
+    pred_edges: Set[Any] = set(dag_b.get("edges", set()))
+
+    node_f1 = _f1_from_sets(gold_nodes, pred_nodes)
+    edge_f1 = _f1_from_sets(gold_edges, pred_edges)
+
+    score = nw * node_f1 + ew * edge_f1
+    return 1.0 - float(score)
+
+
+def metric_dag_loss(
+    example: dspy.Example,
+    prediction: dspy.Prediction,
+    trace: object | None = None,
+    *_,
+    **__,
+) -> dspy.Prediction:
+    """DAG-similarity metric with GEPA-friendly feedback.
+
+    - Converts gold and predicted plans to DAGs and computes a similarity score = 1 - dag_loss (0..1).
+    - Feedback summarizes node/edge overlap and lists missing/extra tools and edges.
+    - Returns dspy.Prediction(score=..., feedback=...).
+    """
+    # Extract gold/predicted plan representations
+    try:
+        gold_plan_json = example["gold_plan_json"] if "gold_plan_json" in example else getattr(example, "gold_plan_json", "")
+        task_query = example["task_query"] if "task_query" in example else getattr(example, "task_query", "")
+        tool_catalog = example["tool_catalog_json_with_description"] if "tool_catalog_json_with_description" in example else getattr(example, "tool_catalog_json_with_description", "")
+        input_attrs = example.get("input_attributes_json", getattr(example, "input_attributes_json", "{}"))
+    except Exception:
+        logger.exception("Missing required fields in example for DAG metric")
+        return dspy.Prediction(score=0.0, feedback="Missing required fields in example.")
+
+    pred_plan_json = prediction["plan_json"] if "plan_json" in prediction else getattr(prediction, "plan_json", "")
+
+    # Build DAGs
+    gold_dag = plan_to_dag(gold_plan_json, include_input_edges=False)
+    pred_dag = plan_to_dag(pred_plan_json, include_input_edges=False)
+
+    # Compute score and diagnostics
+    loss = dag_loss(gold_dag, pred_dag, node_weight=0.5, edge_weight=0.5)
+    score = 1.0 - loss
+
+    gold_nodes = set(gold_dag["nodes"])  # type: ignore[index]
+    pred_nodes = set(pred_dag["nodes"])  # type: ignore[index]
+    gold_edges = set(gold_dag["edges"])  # type: ignore[index]
+    pred_edges = set(pred_dag["edges"])  # type: ignore[index]
+
+    node_f1 = _f1_from_sets(gold_nodes, pred_nodes)
+    edge_f1 = _f1_from_sets(gold_edges, pred_edges)
+
+    missing_nodes = sorted(list(gold_nodes - pred_nodes))
+    extra_nodes = sorted(list(pred_nodes - gold_nodes))
+    missing_edges = sorted(list(gold_edges - pred_edges))
+    extra_edges = sorted(list(pred_edges - gold_edges))
+
+    # Build feedback (GEPA-friendly, more descriptive and actionable)
+    feedback_lines: List[str] = []
+
+    # Context and objective
+    feedback_lines.append(f"The user query is: {task_query}")
+    feedback_lines.append(f"{tool_catalog}")
+    feedback_lines.append(f"Input attributes for this task: {input_attrs}")
+    feedback_lines.append("Your job is to produce a cost-aware, valid tool plan in this exact JSON format: [tool, [deps], tool, [deps], ...]. The dependency list for each tool must reference either 'input_of_query', 'output_of_previous_tool' (only from the second tool onward), or a specific earlier tool by name.")
+
+    # Metric summary
+    feedback_lines.append(f"Plan under review: {pred_plan_json}")
+    feedback_lines.append(f"DAG similarity to gold (higher is better) = {score:.3f} | Node F1 = {node_f1:.3f} | Edge F1 = {edge_f1:.3f}")
+
+    # Tool analysis
+    feedback_lines.append(f"Predicted tools (nodes): {sorted(list(pred_nodes))}")
+    feedback_lines.append(f"Gold tools (nodes): {sorted(list(gold_nodes))}")
+    if missing_nodes or extra_nodes:
+        feedback_lines.append(
+            f"Tool set differences — missing: {len(missing_nodes)}, extra: {len(extra_nodes)}."
+        )
+        if missing_nodes:
+            feedback_lines.append(
+                "Add the missing tools so the tool set matches the gold. For each added tool, choose one dependency that provides the correct input type: either 'input_of_query' (if it consumes raw input) or an earlier tool that produces the required type. Missing tools: "
+                + ", ".join(missing_nodes)
+            )
+        if extra_nodes:
+            feedback_lines.append(
+                "Remove tools that are not required for the task (they add cost and may break dependencies). Extra tools: "
+                + ", ".join(extra_nodes)
+            )
+    else:
+        feedback_lines.append("Tool sets match. Keep the same set of tools.")
+
+    # Edge analysis
+    def _edges_to_str(edges: List[Tuple[str, str]]) -> str:
+        return ", ".join([f"{a} -> {b}" for a, b in edges]) if edges else "(none)"
+
+    feedback_lines.append(f"Predicted edges (dep -> tool): {_edges_to_str(sorted(list(pred_edges)))}")
+    feedback_lines.append(f"Gold edges (dep -> tool): {_edges_to_str(sorted(list(gold_edges)))}")
+
+    if missing_edges or extra_edges:
+        feedback_lines.append(
+            f"Edge differences — missing: {len(missing_edges)}, extra: {len(extra_edges)}."
+        )
+        if missing_edges:
+            feedback_lines.append(
+                "Add these missing edges by wiring each dependent tool to the correct provider in its dependency list. Missing edges: "
+                + _edges_to_str(missing_edges)
+            )
+        if extra_edges:
+            feedback_lines.append(
+                "Remove edges that connect tools incorrectly. Replace them with the correct provider or remove the tool if unnecessary. Extra edges: "
+                + _edges_to_str(extra_edges)
+            )
+    else:
+        feedback_lines.append("Dependency edges match. Maintain the same wiring.")
+
+    feedback = "\n".join(feedback_lines)
+    return dspy.Prediction(score=float(score), feedback=feedback)

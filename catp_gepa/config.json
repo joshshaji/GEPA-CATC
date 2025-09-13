@@ -1,12 +1,12 @@
 {
     "llm": {
-        "provider": "openai",
-        "model": "gpt-5"
+        "base": "together_ai/meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
+        "reflector": "anthropic/claude-sonnet-4-20250514"
     },
     "dataset": "seq_data/valid_plans_all.json",
     "catp_seq_dataset": "catp_base/src/catpllm/data/training_data/seq_plan_pool.pkl",
     "catp_non_seq_dataset": "catp_base/src/catpllm/data/training_data/non_seq_plan_pool.pkl",
-    "use_vanila_gepa": false,
+    "metric": "dag",
     "training_size": 500,
     "test_size": 50,
     "catp_alpha": 0.5
