@@ -51,7 +51,7 @@ def get_task_and_sample_info(task_id, sample_id, data_path):
     :return task_info (str), sample_info (dict).
     """
     # first fetch task information
-    with open(os.path.join(data_path, 'task_descriptions.txt')) as file:
+    with open(os.path.join(data_path, 'task_description.txt')) as file:
         lines = file.readlines()
         task_info = lines[task_id].strip()
         file.close()

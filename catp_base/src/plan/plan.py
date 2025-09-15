@@ -106,9 +106,16 @@ class Plan:
                 used_devices.add(tool.device)
                 tool.to("cpu")
 
-        for device in used_devices:
-            with torch.cuda.device(device):
-                torch.cuda.empty_cache()
+        # Only clear CUDA cache if CUDA is available
+        if torch.cuda.is_available():
+            for device in used_devices:
+                try:
+                    with torch.cuda.device(device):
+                        torch.cuda.empty_cache()
+                except (AssertionError, RuntimeError) as e:
+                    # Handle cases where CUDA is not properly initialized
+                    print(f"Warning: Failed to clear CUDA cache on device {device}: {e}")
+                    pass
 
         gc.collect()
 

@@ -3,11 +3,16 @@ import json
 import os
 import pickle
 from pathlib import Path
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List, Tuple, Optional
 
-from src.config import GlobalMetricsConfig
+import torch
+from torch.utils.data import DataLoader
+
+from src.config import GlobalMetricsConfig, GlobalPathConfig
 from src.catpllm.utils.cost_utils import calc_plan_price
-from src.metrics.evaluator import calculate_qop
+from src.metrics.evaluator import calculate_qop, calculate_task_score
+from src.plan import Plan
+from src.data_loader import TaskDataset
 
 
 _TASK_DESCRIPTIONS: List[str] = []
@@ -59,6 +64,55 @@ def _compute_price_and_time(plan: List[Any], exec_times: List[float], cpu_short:
     return price, exec_time_total
 
 
+def _recompute_runtime_metrics(
+    plan: List[Any],
+    task_id: int,
+    sample_id: int,
+    *,
+    data_path: Optional[str] = None,
+) -> Optional[Dict[str, float]]:
+    """
+    Recompute task_score, cost_price, exec_time, and qop by actually executing the plan
+    on the specified sample — matching test_opencatp.py logic exactly.
+
+    Returns a dict with keys: task_score, cost_price, exec_time, qop; or None if execution fails.
+    """
+    try:
+        ds = TaskDataset(data_path or GlobalPathConfig.data_path, task_id=task_id)
+        dl = DataLoader(ds, batch_size=1, shuffle=False)
+        # Find the requested sample
+        batch = None
+        for b in dl:
+            if int(b["sample_id"]) == int(sample_id):
+                batch = b
+                break
+        if batch is None:
+            return None
+
+        p = Plan(plan)
+        try:
+            result = p.execute(batch["input"], cost_aware=True)
+        except torch.OutOfMemoryError:
+            return None
+
+        if result is None:
+            return None
+
+        task_score = calculate_task_score(result, batch["output"], sequential=task_id < 200)
+        cost_price = float(p.price)
+        exec_time = float(p.exec_time)
+        qop = float(calculate_qop(task_score, cost_price))
+
+        return {
+            "task_score": float(task_score),
+            "cost_price": cost_price,
+            "exec_time": exec_time,
+            "qop": qop,
+        }
+    except Exception:
+        return None
+
+
 def _stringify_plan(plan: Any) -> str:
     try:
         return str(plan)
@@ -66,7 +120,12 @@ def _stringify_plan(plan: Any) -> str:
         return json.dumps(plan, ensure_ascii=False)
 
 
-def process_pkl(path: str) -> Tuple[Dict[int, Dict[int, Any]], Dict[int, Dict[int, Any]], Dict[int, Dict[int, List[Any]]], Dict[int, Dict[int, List[Any]]]]:
+def process_pkl(
+    path: str,
+    *,
+    recompute_runtime: bool = False,
+    data_path: Optional[str] = None,
+) -> Tuple[Dict[int, Dict[int, Any]], Dict[int, Dict[int, Any]], Dict[int, Dict[int, List[Any]]], Dict[int, Dict[int, List[Any]]]]:
     obj = pickle.load(open(path, "rb"))
     plan_pools = obj if isinstance(obj, list) else [obj]
 
@@ -123,14 +182,22 @@ def process_pkl(path: str) -> Tuple[Dict[int, Dict[int, Any]], Dict[int, Dict[in
                     cost_price, exec_time_total = _compute_price_and_time(plan, exec_times, cpu_short, gpu_short)
                     qop = calculate_qop(score_value, cost_price)
 
-                    valid_variants.append({
+                    variant = {
                         "plan": _stringify_plan(plan),
                         "task_score": float(score_value),
                         "cost_price": float(cost_price),
                         "exec_time": float(exec_time_total),
                         "qop": float(qop),
                         "task_query": _task_query_for(task_id)
-                    })
+                    }
+
+                    # Optional: recompute using the exact runtime method used in testing.
+                    if recompute_runtime:
+                        recomputed = _recompute_runtime_metrics(plan, task_id, sample_id, data_path=data_path)
+                        if recomputed is not None:
+                            variant.update(recomputed)
+
+                    valid_variants.append(variant)
 
                 if valid_variants:
                     best = max(valid_variants, key=lambda x: x["qop"])
@@ -148,6 +215,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--pkls", nargs="+", required=True)
     parser.add_argument("--out_dir", type=str, required=True)
+    parser.add_argument("--recompute_runtime", action="store_true", help="Recompute score/price per plan by executing like test_opencatp.py")
+    parser.add_argument("--data_path", type=str, default=GlobalPathConfig.data_path)
     args = parser.parse_args()
 
     os.makedirs(args.out_dir, exist_ok=True)
@@ -162,7 +231,11 @@ def main():
     merged_invalid_all: Dict[int, Dict[int, List[Any]]] = {}
 
     for pkl_path in args.pkls:
-        v_best, i_best, v_all, i_all = process_pkl(pkl_path)
+        v_best, i_best, v_all, i_all = process_pkl(
+            pkl_path,
+            recompute_runtime=args.recompute_runtime,
+            data_path=args.data_path,
+        )
         for tid, samples in v_best.items():
             merged_valid_best.setdefault(tid, {}).update(samples)
         for tid, samples in i_best.items():

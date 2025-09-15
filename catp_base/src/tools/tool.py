@@ -94,12 +94,16 @@ class Tool:
             return self.process(*args, **kwargs, device=self.device)
 
         # Resource cleanup before measurement
-        if self.device != 'cpu':
-            with torch.cuda.device(self.device):
-                torch.cuda.synchronize()
-                torch.cuda.empty_cache()
-                torch.cuda.synchronize()
-                torch.cuda.reset_peak_memory_stats(self.device)
+        if self.device != 'cpu' and torch.cuda.is_available():
+            try:
+                with torch.cuda.device(self.device):
+                    torch.cuda.synchronize()
+                    torch.cuda.empty_cache()
+                    torch.cuda.synchronize()
+                    torch.cuda.reset_peak_memory_stats(self.device)
+            except (AssertionError, RuntimeError) as e:
+                # Handle cases where CUDA is not properly initialized
+                print(f"Warning: CUDA cleanup failed on device {self.device}: {e}")
         gc.collect()
 
         # Prepare monitors and baseline measurements
@@ -107,28 +111,44 @@ class Tool:
         time_before = time.perf_counter() * 1000
         cpu_mem_before = psutil.Process().memory_info().rss / (1024 ** 2)
         gpu_mem_before = 0
-        if self.device != 'cpu':
-            gpu_mem_before = torch.cuda.max_memory_allocated(self.device) / (1024 ** 2)
+        if self.device != 'cpu' and torch.cuda.is_available():
+            try:
+                gpu_mem_before = torch.cuda.max_memory_allocated(self.device) / (1024 ** 2)
+            except (AssertionError, RuntimeError) as e:
+                print(f"Warning: Failed to get GPU memory before execution on device {self.device}: {e}")
 
         # Start CPU memory monitoring and run process
         cpu_mem_monitor.start()
         result = self.process(*args, **kwargs, device=self.device)
-        if self.device != 'cpu':
-            torch.cuda.synchronize()
+        if self.device != 'cpu' and torch.cuda.is_available():
+            try:
+                torch.cuda.synchronize()
+            except (AssertionError, RuntimeError) as e:
+                print(f"Warning: CUDA synchronization failed on device {self.device}: {e}")
         cpu_mem_monitor.stop()
 
         # Get time and memory usage differences
         time_after = time.perf_counter() * 1000
         cpu_mem_after = cpu_mem_monitor.get_max_cpu_memory_allocated(unit='MB')
         gpu_mem_after = 0
-        if self.device != 'cpu':
-            gpu_mem_after = torch.cuda.max_memory_allocated(self.device) / (1024 ** 2)
+        if self.device != 'cpu' and torch.cuda.is_available():
+            try:
+                gpu_mem_after = torch.cuda.max_memory_allocated(self.device) / (1024 ** 2)
+            except (AssertionError, RuntimeError) as e:
+                print(f"Warning: Failed to get GPU memory after execution on device {self.device}: {e}")
+                # If we fail to get GPU memory after execution, reset both values to ensure consistency
+                gpu_mem_before = 0
+                gpu_mem_after = 0
 
         costs = {
             'exec_time': time_after - time_before,
             'short_term_cpu_memory': cpu_mem_after - cpu_mem_before,
             'short_term_gpu_memory': gpu_mem_after - gpu_mem_before
         }
+
+        # Ensure GPU memory change is non-negative for data consistency
+        assert costs['short_term_gpu_memory'] >= 0, \
+            f"GPU memory change should be non-negative, got {costs['short_term_gpu_memory']} (after: {gpu_mem_after}, before: {gpu_mem_before})"
 
         return result, costs
 
