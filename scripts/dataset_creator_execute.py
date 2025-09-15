@@ -12,6 +12,7 @@ try:
     from src.metrics.evaluator import calculate_qop, calculate_task_score
     from src.plan import Plan
     from src.data_loader import TaskDataset
+    from src.checkpoint import JsonCheckpointer
 except Exception:
     import sys as _sys
     from pathlib import Path as _Path
@@ -23,6 +24,7 @@ except Exception:
     from src.metrics.evaluator import calculate_qop, calculate_task_score  # type: ignore
     from src.plan import Plan  # type: ignore
     from src.data_loader import TaskDataset  # type: ignore
+    from src.checkpoint import JsonCheckpointer  # type: ignore
 
 
 _TASK_DESCRIPTIONS: List[str] = []
@@ -161,6 +163,8 @@ def main():
     parser.add_argument("--pkls", nargs="+", required=True)
     parser.add_argument("--out_dir", type=str, required=True)
     parser.add_argument("--task_descriptions", type=str, default=None)
+    parser.add_argument("--checkpoint_path", type=str, default=None)
+    parser.add_argument("--autosave_steps", type=int, default=0)
     args = parser.parse_args()
 
     os.makedirs(args.out_dir, exist_ok=True)
@@ -170,21 +174,112 @@ def main():
     td_path = Path(args.task_descriptions) if args.task_descriptions else (repo_root / "catp_base/dataset/task_descriptions.txt")
     _TASK_DESCRIPTIONS = _load_task_descriptions(td_path)
 
-    merged_valid_best: Dict[int, Dict[int, Any]] = {}
-    merged_invalid_best: Dict[int, Dict[int, Any]] = {}
-    merged_valid_all: Dict[int, Dict[int, List[Any]]] = {}
-    merged_invalid_all: Dict[int, Dict[int, List[Any]]] = {}
+    def _to_int_nested(d: Dict[Any, Any]) -> Dict[int, Dict[int, Any]]:
+        out: Dict[int, Dict[int, Any]] = {}
+        for k, v in d.items():
+            tk = int(k)
+            if isinstance(v, dict):
+                out[tk] = {int(kk): vv for kk, vv in v.items()}
+            else:
+                out[tk] = v
+        return out
+
+    cp: JsonCheckpointer | None = None
+    if args.checkpoint_path:
+        cp = JsonCheckpointer(args.checkpoint_path, args.autosave_steps)
+        loaded = cp.load_if_exists()
+        if not loaded:
+            cp.state = {
+                "inputs": {
+                    "pkls": list(args.pkls),
+                    "out_dir": args.out_dir,
+                    "task_descriptions": args.task_descriptions,
+                },
+                "started_at": int(Path(args.out_dir).stat().st_mtime if Path(args.out_dir).exists() else __import__("time").time()),
+                "elapsed_sec": 0.0,
+                "phase": "execute",
+                "processed_keys": [],
+                "merged_valid_best": {},
+                "merged_invalid_best": {},
+                "merged_valid_all": {},
+                "merged_invalid_all": {},
+            }
+            cp.save()
+
+    if cp is not None and cp.state.get("merged_valid_best") is not None:
+        merged_valid_best: Dict[int, Dict[int, Any]] = _to_int_nested(cp.state.get("merged_valid_best", {}))
+        merged_invalid_best: Dict[int, Dict[int, Any]] = _to_int_nested(cp.state.get("merged_invalid_best", {}))
+        merged_valid_all: Dict[int, Dict[int, List[Any]]] = _to_int_nested(cp.state.get("merged_valid_all", {}))  # type: ignore
+        merged_invalid_all: Dict[int, Dict[int, List[Any]]] = _to_int_nested(cp.state.get("merged_invalid_all", {}))  # type: ignore
+        processed_keys: List[str] = list(cp.state.get("processed_keys", []))
+    else:
+        merged_valid_best = {}
+        merged_invalid_best = {}
+        merged_valid_all = {}
+        merged_invalid_all = {}
+        processed_keys = []
+
+    processed_set = set(processed_keys)
 
     for pkl_path in args.pkls:
-        v_best, i_best, v_all, i_all = process_pkl_execute(pkl_path)
-        for tid, samples in v_best.items():
-            merged_valid_best.setdefault(tid, {}).update(samples)
-        for tid, samples in i_best.items():
-            merged_invalid_best.setdefault(tid, {}).update(samples)
-        for tid, samples in v_all.items():
-            merged_valid_all.setdefault(tid, {}).update(samples)
-        for tid, samples in i_all.items():
-            merged_invalid_all.setdefault(tid, {}).update(samples)
+        obj = pickle.load(open(pkl_path, "rb"))
+        plan_pools = obj if isinstance(obj, list) else [obj]
+        for plan_pool in plan_pools:
+            for task_id, samples in plan_pool.plans.items():
+                tid = int(task_id)
+                for sample_id in samples.keys():
+                    sid = int(sample_id)
+                    plans = plan_pool.plans[task_id][sample_id]
+                    plan_list = [plans] if isinstance(plans, tuple) else plans
+                    for idx, plan in enumerate(plan_list):
+                        key = f"{pkl_path}|{tid}|{sid}|{int(idx)}"
+                        if key in processed_set:
+                            continue
+                        plan_exec = _resolve_prev_deps(plan)
+                        res = _run_plan(tid, sid, plan_exec)
+                        if not res.get("valid"):
+                            invalid_variants = merged_invalid_all.setdefault(tid, {}).setdefault(sid, [])
+                            invalid_variants.append({
+                                "plan": _stringify_plan(plan),
+                                "task_score": GlobalMetricsConfig.score_penalty,
+                                "cost_price": GlobalMetricsConfig.cost_penalty,
+                                "exec_time": None,
+                                "qop": None,
+                                "task_query": _task_query_for(tid),
+                            })
+                        else:
+                            valid_variants = merged_valid_all.setdefault(tid, {}).setdefault(sid, [])
+                            valid_variants.append({
+                                "plan": _stringify_plan(plan),
+                                "task_score": res["task_score"],
+                                "cost_price": res["cost_price"],
+                                "exec_time": res["exec_time"],
+                                "qop": res["qop"],
+                                "task_query": _task_query_for(tid),
+                            })
+
+                        if len(merged_valid_all.get(tid, {}).get(sid, [])) > 0:
+                            valid_list = merged_valid_all[tid][sid]
+                            best = max(valid_list, key=lambda x: x["qop"])
+                            merged_valid_best.setdefault(tid, {})[sid] = best
+                            if tid in merged_invalid_best and sid in merged_invalid_best[tid]:
+                                del merged_invalid_best[tid][sid]
+                                if not merged_invalid_best[tid]:
+                                    del merged_invalid_best[tid]
+                        elif len(merged_invalid_all.get(tid, {}).get(sid, [])) > 0 and sid not in merged_invalid_best.get(tid, {}):
+                            worst = merged_invalid_all[tid][sid][0]
+                            merged_invalid_best.setdefault(tid, {})[sid] = worst
+
+                        processed_keys.append(key)
+                        processed_set.add(key)
+
+                        if cp is not None:
+                            cp.state["merged_valid_best"] = merged_valid_best
+                            cp.state["merged_invalid_best"] = merged_invalid_best
+                            cp.state["merged_valid_all"] = merged_valid_all
+                            cp.state["merged_invalid_all"] = merged_invalid_all
+                            cp.state["processed_keys"] = processed_keys
+                            cp.step()
 
     with open(os.path.join(args.out_dir, "valid_plans_best.json"), "w", encoding="utf-8") as f:
         json.dump(merged_valid_best, f, indent=2)
@@ -194,6 +289,10 @@ def main():
         json.dump(merged_valid_all, f, indent=2)
     with open(os.path.join(args.out_dir, "invalid_plans_all.json"), "w", encoding="utf-8") as f:
         json.dump(merged_invalid_all, f, indent=2)
+
+    if cp is not None:
+        cp.tick()
+        cp.save()
 
 
 if __name__ == "__main__":
