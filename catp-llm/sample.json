@@ -1,0 +1,18 @@
+{
+    "1": {
+        "26": {
+                "plan": "['image_colorization', ['input_of_query'], 'image_deblurring', ['image_colorization'], 'image_super_resolution', ['image_deblurring'], 'image_denoising', ['image_super_resolution']]"
+        },
+        "55": {
+            "plan": "['image_colorization', ['input_of_query'], 'image_super_resolution', ['image_colorization'], 'image_deblurring', ['image_super_resolution']]"
+        }
+    },
+    "2": {
+        "17": {
+            "plan": "['image_colorization', ['input_of_query'], 'image_deblurring', ['image_colorization'], 'image_denoising', ['image_deblurring'], 'image_super_resolution', ['image_denoising']]"
+        },
+        "67": {
+            "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_super_resolution', ['image_denoising']]"
+        }
+    }
+}
