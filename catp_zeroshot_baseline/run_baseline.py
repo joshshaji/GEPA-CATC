@@ -12,7 +12,7 @@ import numpy as np
 
 dataset_path = "/Users/mdamarap/GEPA-CATC/catp-llm/dataset"
 task_descriptions_path = os.path.join(dataset_path, "task_descriptions.txt")
-prompt_path = "/Users/mdamarap/GEPA-CATC/catp_zeroshot_baseline/prompt.txt"
+prompt_path = "/Users/mdamarap/GEPA-CATC/catp_zeroshot_baseline/gepa_prompt.txt"
 
 # Choose provider dynamically
 provider_name = "anthropic"
@@ -128,7 +128,8 @@ def output_json(
     results: Dict[str, Dict] = {}
     for task in task_list:
         task_results: Dict[str, Dict] = {}
-        for i in range(2):
+        for i in range(100):
+            print("Task: ", task, "Image: ", i)
             img_path = os.path.join(dataset_path, str(task), "inputs", "images", f"{i}.jpg")
             with Image.open(img_path) as img:
                 image_size = img.size  # (width, height)
@@ -156,7 +157,6 @@ def output_json(
 if __name__ == "__main__":
     default_test_seq_tasks = [0, 6, 8, 12, 13, 20, 21, 31, 36, 40, 46, 51, 61, 62, 69, 74, 78, 81]
     default_test_nonseq_tasks = [200, 202, 203, 204, 205, 207, 209, 212, 215, 218, 219, 221]
-
     if provider_name == "anthropic":
         provider = AnthropicProvider(api_key=os.environ["ANTHROPIC_API_KEY"])
     elif provider_name == "openai":
@@ -166,5 +166,5 @@ if __name__ == "__main__":
     else:
         raise ValueError(f"Unknown provider: {provider_name}")
 
-    output_json(default_test_seq_tasks, "/Users/mdamarap/GEPA-CATC/catp_zeroshot_baseline/baseline_seq.json", provider)
-    output_json(default_test_nonseq_tasks, "/Users/mdamarap/GEPA-CATC/catp_zeroshot_baseline/baseline_nonseq.json", provider)
+    #output_json(default_test_seq_tasks, "/Users/mdamarap/GEPA-CATC/catp_zeroshot_baseline/baseline_seq_gepa.json", provider)
+    output_json(default_test_nonseq_tasks, "/Users/mdamarap/GEPA-CATC/catp_zeroshot_baseline/baseline_nonseq_gepa.json", provider)
