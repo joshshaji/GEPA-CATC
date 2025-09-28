@@ -15,7 +15,7 @@ task_descriptions_path = os.path.join(dataset_path, "task_descriptions.txt")
 prompt_path = "/Users/mdamarap/GEPA-CATC/catp_zeroshot_baseline/prompt.txt"
 
 # Choose provider dynamically
-provider_name = "together"
+provider_name = "anthropic"
 
 # ----------------------------
 # LLM Provider Abstraction
@@ -154,11 +154,8 @@ def output_json(
 # ----------------------------
 
 if __name__ == "__main__":
-    #default_test_seq_tasks = [0, 6, 8, 12, 13, 20, 21, 31, 36, 40, 46, 51, 61, 62, 69, 74, 78, 81]
-    #default_test_nonseq_tasks = [200, 202, 203, 204, 205, 207, 209, 212, 215, 218, 219, 221]
-
-    default_test_seq_tasks = [0]
-    default_test_nonseq_tasks = [200]
+    default_test_seq_tasks = [0, 6, 8, 12, 13, 20, 21, 31, 36, 40, 46, 51, 61, 62, 69, 74, 78, 81]
+    default_test_nonseq_tasks = [200, 202, 203, 204, 205, 207, 209, 212, 215, 218, 219, 221]
 
     if provider_name == "anthropic":
         provider = AnthropicProvider(api_key=os.environ["ANTHROPIC_API_KEY"])
