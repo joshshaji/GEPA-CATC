@@ -71,7 +71,7 @@ class GlobalMetricsConfig:
     MIN_SCORE = 0
     MAX_SCORE = 1
     MIN_COST = 0
-    MAX_COST = 0.5669374317944147
+    MAX_COST = 0.3209703642675919 # On RTX 4090 X 2
     ALPHA = 0.5
 
     score_penalty = -2  # penalty assigned to the scores of invalid plans
