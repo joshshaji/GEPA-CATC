@@ -31,6 +31,6 @@ def count_matching_plans(file1, file2):
 
 if __name__ == "__main__":
     # Replace with your actual file paths
-    file1 = "/Users/mdamarap/GEPA-CATC/catp_zeroshot_baseline/baseline_seq.json"
-    file2 = "/Users/mdamarap/GEPA-CATC/catp_zeroshot_baseline/baseline_seq_gepa.json"
+    file1 = "/Users/mdamarap/GEPA-CATC/catp_zeroshot_baseline/baseline_nonseq.json"
+    file2 = "/Users/mdamarap/GEPA-CATC/catp_zeroshot_baseline/baseline_nonseq_gepa.json"
     count_matching_plans(file1, file2)
