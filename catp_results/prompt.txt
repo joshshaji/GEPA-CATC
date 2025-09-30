@@ -27,5 +27,6 @@ solve the task. Your goal is to generate the tool plans that can optimize the ta
   Example:
   Sequential Plan: "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'object_detection', ['image_deblurring'], 'machine_translation', ['object_detection']]"
   Parallel Plan: "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising'], 'object_detection', ['image_denoising'], 'image_captioning', ['image_colorization']]"
-
+  Use single quotes for the tools in the list.
+  
 Return the plan and nothing else.

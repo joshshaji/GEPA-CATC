@@ -1,304 +1,304 @@
 {
   "200": {
     "0": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "1": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "2": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "3": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "4": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "5": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "6": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "7": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "8": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "9": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "10": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "11": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "12": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "13": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "14": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "15": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "16": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "17": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "18": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "19": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "20": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "21": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "22": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "23": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "24": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "25": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "26": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "27": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "28": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "29": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "30": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "31": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "32": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "33": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "34": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "35": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "36": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "37": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "38": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "39": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "40": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "41": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "42": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "43": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "44": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "45": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "46": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "47": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "48": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "49": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "50": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "51": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "52": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "53": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "54": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "55": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "56": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "57": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "58": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "59": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "60": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "61": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "62": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "63": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "64": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "65": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "66": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "67": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "68": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "69": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "70": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "71": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "72": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "73": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "74": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "75": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "76": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "77": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "78": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "79": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "80": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "81": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "82": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "83": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "84": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
     },
     "85": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "86": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "87": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "88": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "89": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "90": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "91": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "92": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "93": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "94": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "95": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "96": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "97": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "98": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "99": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     }
   },
   "202": {
@@ -1822,7 +1822,7 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "3": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "4": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
@@ -1831,16 +1831,16 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "6": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "7": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "8": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "9": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "10": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
@@ -1849,25 +1849,25 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "12": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "13": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "14": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "15": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "16": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "17": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "18": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "19": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
@@ -1876,16 +1876,16 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "21": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "22": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "23": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "24": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "25": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
@@ -1894,19 +1894,19 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "27": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "28": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "29": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "30": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "31": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "32": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
@@ -1915,28 +1915,28 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "34": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "35": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "36": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "37": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "38": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "39": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "40": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "41": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "42": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
@@ -1945,46 +1945,46 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "44": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "45": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "46": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "47": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "48": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "49": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "50": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "51": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "52": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "53": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "54": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "55": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "56": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "57": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "58": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
@@ -2002,10 +2002,10 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "63": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "64": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "65": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
@@ -2014,13 +2014,13 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "67": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "68": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "69": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "70": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
@@ -2029,19 +2029,19 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "72": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "73": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "74": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "75": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "76": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "77": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
@@ -2056,19 +2056,19 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "81": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "82": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "83": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "84": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "85": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "86": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
@@ -2077,7 +2077,7 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "88": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "89": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
@@ -2086,31 +2086,31 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "91": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "92": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "93": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "94": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "95": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "96": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
     },
     "97": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "98": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     },
     "99": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization']]"
     }
   },
   "212": {
@@ -2417,40 +2417,40 @@
   },
   "215": {
     "0": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "1": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "2": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "3": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "4": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "5": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "6": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "7": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "8": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "9": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "10": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "11": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "12": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
@@ -2474,10 +2474,10 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "19": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "20": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "21": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
@@ -2486,25 +2486,25 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "23": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "24": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "25": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "26": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "27": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "28": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "29": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "30": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
@@ -2513,7 +2513,7 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "32": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "33": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
@@ -2522,7 +2522,7 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "35": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "36": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
@@ -2531,10 +2531,10 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "38": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "39": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "40": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
@@ -2543,16 +2543,16 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "42": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "43": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "44": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "45": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "46": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
@@ -2561,16 +2561,16 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "48": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "49": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "50": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "51": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "52": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
@@ -2582,22 +2582,22 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "55": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "56": {
-      "plan": "['image_colorization', ['input_of_query'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "57": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "58": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "59": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "60": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "61": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
@@ -2606,16 +2606,16 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "63": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "64": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "65": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "66": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "67": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
@@ -2624,19 +2624,19 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "69": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "70": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "71": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "72": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "73": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "74": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
@@ -2648,34 +2648,34 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "77": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "78": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "79": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "80": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "81": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "82": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "83": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "84": {
-      "plan": "['image_colorization', ['input_of_query'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "85": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "86": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "87": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
@@ -2684,16 +2684,16 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "89": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "90": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "91": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "92": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "93": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
@@ -2705,13 +2705,13 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "96": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "97": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
     },
     "98": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'image_captioning', ['image_super_resolution'], 'machine_translation', ['image_captioning']]"
     },
     "99": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]"
@@ -3021,10 +3021,10 @@
   },
   "219": {
     "0": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "1": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "2": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
@@ -3036,16 +3036,16 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "5": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "6": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "7": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "8": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "9": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
@@ -3063,7 +3063,7 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "14": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "15": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
@@ -3072,7 +3072,7 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "17": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "18": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
@@ -3081,7 +3081,7 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "20": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "21": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
@@ -3132,13 +3132,13 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "37": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "38": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "39": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "40": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
@@ -3147,16 +3147,16 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "42": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "43": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "44": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "45": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "46": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
@@ -3165,22 +3165,22 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "48": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "49": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "50": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "51": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "52": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "53": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "54": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
@@ -3192,19 +3192,19 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "57": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "58": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "59": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "60": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "61": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "62": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
@@ -3228,19 +3228,19 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "69": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "70": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "71": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "72": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "73": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "74": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
@@ -3261,10 +3261,10 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "80": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "81": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "82": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
@@ -3273,13 +3273,13 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "84": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "85": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "86": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "87": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
@@ -3291,13 +3291,13 @@
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "90": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "91": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "92": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
     },
     "93": {
       "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]"
@@ -3323,304 +3323,304 @@
   },
   "221": {
     "0": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "1": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "2": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "3": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "4": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "5": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "6": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "7": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "8": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "9": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "10": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "11": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "12": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "13": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "14": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "15": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "16": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "17": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "18": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "19": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "20": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "21": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "22": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "23": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "24": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "25": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "26": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "27": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "28": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "29": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "30": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "31": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "32": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "33": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "34": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "35": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "36": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "37": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "38": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "39": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "40": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "41": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "42": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "43": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "44": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "45": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "46": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "47": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "48": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "49": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "50": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "51": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "52": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "53": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "54": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "55": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "56": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "57": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "58": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "59": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "60": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "61": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "62": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "63": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "64": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "65": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "66": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "67": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "68": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "69": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "70": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "71": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "72": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "73": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "74": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "75": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "76": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "77": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "78": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "79": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "80": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "81": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "82": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "83": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "84": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "85": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "86": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "87": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "88": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "89": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "90": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "91": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "92": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "93": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "94": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "95": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "96": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "97": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "98": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     },
     "99": {
-      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'object_detection', ['image_super_resolution'], 'image_captioning', ['object_detection']]"
+      "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]"
     }
   }
 }
