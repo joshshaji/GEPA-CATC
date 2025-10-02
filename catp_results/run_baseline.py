@@ -12,10 +12,10 @@ import numpy as np
 
 dataset_path = "/Users/mdamarap/GEPA-CATC/catp-llm/dataset"
 task_descriptions_path = os.path.join(dataset_path, "task_descriptions.txt")
-prompt_path = "/Users/mdamarap/GEPA-CATC/catp_results/gepa_prompt.txt"
+prompt_path = "/Users/mdamarap/GEPA-CATC/catp_results/prompt.txt"
 
 # Choose provider dynamically
-provider_name = "together"
+provider_name = "openai"
 
 # ----------------------------
 # LLM Provider Abstraction
@@ -169,5 +169,5 @@ if __name__ == "__main__":
     else:
         raise ValueError(f"Unknown provider: {provider_name}")
 
-    output_json(default_test_seq_tasks, "/Users/mdamarap/GEPA-CATC/catp_results/llama37B_seq_gepa_1.json", provider)
-    output_json(default_test_nonseq_tasks, "/Users/mdamarap/GEPA-CATC/catp_results/llama37B_nonseq_gepa_1.json", provider)
+    output_json(default_test_seq_tasks, "/Users/mdamarap/GEPA-CATC/catp_results/gpt4_seq.json", provider)
+    output_json(default_test_nonseq_tasks, "/Users/mdamarap/GEPA-CATC/catp_results/gpt4_nonseq.json", provider)
