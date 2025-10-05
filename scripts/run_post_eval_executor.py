@@ -7,6 +7,8 @@ import sys
 from datetime import datetime
 from typing import Any, Dict, List
 
+import random
+import numpy as np
 import torch
 
 try:
@@ -27,6 +29,23 @@ except Exception:
     from src.plan import Plan  # type: ignore
     from src.data_loader import TaskDataset  # type: ignore
     from src.metrics.evaluator import calculate_task_score, calculate_qop  # type: ignore
+
+
+def _set_deterministic(seed: int = 0) -> None:
+    os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
+    torch.backends.cuda.matmul.allow_tf32 = False
+    torch.backends.cudnn.allow_tf32 = False
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+    try:
+        torch.use_deterministic_algorithms(True, warn_only=True)
+    except Exception:
+        pass
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
 
 
 def _resolve_prev_deps(plan: List[Any]) -> List[Any]:
@@ -106,6 +125,7 @@ def _run_plan(task_id: int, sample_id: int, plan_list: List[Any]) -> Dict[str, A
 
 
 def main(argv: List[str] | None = None) -> int:
+    _set_deterministic(0)
     parser = argparse.ArgumentParser(description="Execute gold and predicted plans from plans_post_eval.json and save results.")
     parser.add_argument("--input", default="plans_post_eval.json", help="Path to plans_post_eval.json from run_state_plan_extractor.py")
     parser.add_argument("--output_dir", default="results_post_eval", help="Directory to save the results JSON")

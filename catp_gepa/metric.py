@@ -33,6 +33,49 @@ def _parse_plan(obj: Any) -> Any:
     return obj
 
 
+def _parse_json_obj(text: Any) -> Any:
+    if isinstance(text, dict) or isinstance(text, list):
+        return text
+    if isinstance(text, str):
+        try:
+            return json.loads(text)
+        except Exception:
+            try:
+                import ast
+                return ast.literal_eval(text)
+            except Exception:
+                return None
+    return None
+
+
+def _extract_tool_costs(tool_catalog_text: Any) -> Dict[str, float]:
+    raw = tool_catalog_text
+    if isinstance(raw, str):
+        start = raw.find("[")
+        end = raw.rfind("]")
+        if start != -1 and end != -1 and end > start:
+            raw = raw[start : end + 1]
+    parsed = _parse_json_obj(raw)
+    costs: Dict[str, float] = {}
+    if isinstance(parsed, list):
+        for item in parsed:
+            if not isinstance(item, dict):
+                continue
+            name = str(item.get("name", "")).strip()
+            try:
+                cost = float(item.get("tool_cost", 0.0))
+            except Exception:
+                cost = 0.0
+            if name:
+                costs[name] = cost
+    return costs
+
+
+def _parse_input_attributes(input_attrs_text: Any) -> Dict[str, Any]:
+    parsed = _parse_json_obj(input_attrs_text)
+    return parsed if isinstance(parsed, dict) else {}
+
+
 def _to_pairs(plan_obj: Any) -> List[Tuple[str, List[str]]]:
     plan_obj = _parse_plan(plan_obj)
     if isinstance(plan_obj, dict) and "plan" in plan_obj:
@@ -418,6 +461,46 @@ def plan_to_dag(plan_obj: Any, *, include_input_edges: bool = False) -> Dict[str
     return {"nodes": nodes, "edges": edges}
 
 
+def _degree_counts(nodes: Set[str], edges: Set[Tuple[str, str]]) -> Tuple[Dict[str, int], Dict[str, int]]:
+    in_deg: Dict[str, int] = {n: 0 for n in nodes}
+    out_deg: Dict[str, int] = {n: 0 for n in nodes}
+    for a, b in edges:
+        if a not in out_deg:
+            out_deg[a] = 0
+        if b not in in_deg:
+            in_deg[b] = 0
+        out_deg[a] += 1
+        in_deg[b] += 1
+    return in_deg, out_deg
+
+
+def _is_sequential_path(nodes: Set[str], edges: Set[Tuple[str, str]]) -> bool:
+    n = len(nodes)
+    if n <= 1:
+        return True
+    if len(edges) != n - 1:
+        return False
+    in_deg, out_deg = _degree_counts(nodes, edges)
+    if any(v > 1 for v in in_deg.values()):
+        return False
+    if any(v > 1 for v in out_deg.values()):
+        return False
+    undirected: Dict[str, Set[str]] = {x: set() for x in nodes}
+    for a, b in edges:
+        undirected.setdefault(a, set()).add(b)
+        undirected.setdefault(b, set()).add(a)
+    start = next(iter(nodes))
+    seen: Set[str] = set([start])
+    stack = [start]
+    while stack:
+        cur = stack.pop()
+        for nei in undirected.get(cur, set()):
+            if nei not in seen:
+                seen.add(nei)
+                stack.append(nei)
+    return len(seen) == n
+
+
 def dag_loss(
     dag_a: Dict[str, Set[Any]],
     dag_b: Dict[str, Set[Any]],
@@ -505,26 +588,70 @@ def metric_dag_loss(
     feedback_lines.append(f"Input attributes for this task: {input_attrs}")
     feedback_lines.append("Your job is to produce a cost-aware, valid tool plan in this exact JSON format: [tool, [deps], tool, [deps], ...]. The dependency list for each tool must reference either 'input_of_query', 'output_of_previous_tool' (only from the second tool onward), or a specific earlier tool by name.")
 
-    # Metric summary
+    # Cost-aware analysis
+    tool_costs = _extract_tool_costs(tool_catalog)
+    input_info = _parse_input_attributes(input_attrs)
+
+    pred_total_cost = sum(tool_costs.get(t, 0.0) for t in pred_nodes)
+    pred_only_cost = sum(tool_costs.get(t, 0.0) for t in extra_nodes)
+
+    # Simple cost-adjusted score: reward structure match, softly penalize cost from non-essential added tools
+    # scale by 1 / (1 + extra_cost) to keep range in (0,1]
+    extra_cost = max(0.0, pred_only_cost)
+    cost_penalty_factor = 1.0 / (1.0 + extra_cost)
+    cost_adjusted_score = max(0.0, min(1.0, score * cost_penalty_factor))
+
+    # Structure awareness: detect sequential vs non-sequential gold structure
+    gold_is_seq = _is_sequential_path(gold_nodes, gold_edges)
+    pred_is_seq = _is_sequential_path(pred_nodes, pred_edges)
+
+    # Encourage matching structural regime. For non-sequential datasets, reward branching alignment
+    structure_match_bonus = 0.0
+    if not gold_is_seq:
+        if not pred_is_seq:
+            structure_match_bonus = 0.05
+        else:
+            structure_match_bonus = -0.05
+
+    # Metric summary with cost-aware component
     feedback_lines.append(f"Plan under review: {pred_plan_json}")
-    feedback_lines.append(f"DAG similarity to gold (higher is better) = {score:.3f} | Node F1 = {node_f1:.3f} | Edge F1 = {edge_f1:.3f}")
+    feedback_lines.append(
+        f"DAG similarity = {score:.3f} | Node F1 = {node_f1:.3f} | Edge F1 = {edge_f1:.3f} | Cost-adjusted score = {cost_adjusted_score:.3f}"
+    )
+    feedback_lines.append(
+        f"Gold structure: {'non-sequential (branched)' if not gold_is_seq else 'sequential path'} | Predicted structure: {'non-sequential (branched)' if not pred_is_seq else 'sequential path'}"
+    )
+    if not gold_is_seq and pred_is_seq:
+        feedback_lines.append(
+            "This task expects a non-sequential plan with branches or fan-in/fan-out. Introduce appropriate dependencies so parallel or converging steps are represented instead of a single chain."
+        )
+    if not gold_is_seq and not pred_is_seq:
+        feedback_lines.append(
+            "Good: The plan reflects a non-sequential structure. Ensure branches connect to the correct providers and avoid unnecessary serial chaining."
+        )
+    feedback_lines.append(f"Estimated plan cost = {pred_total_cost:.4f}")
+    feedback_lines.append(f"Potential savings by removing non-essential tools = {pred_only_cost:.4f}")
+    if isinstance(input_info.get("image_size"), (list, tuple)) and len(input_info.get("image_size")) == 2:
+        w, h = input_info.get("image_size")
+        feedback_lines.append(f"Image size: {w}x{h} — tools sensitive to size may be expensive.")
 
     # Tool analysis
     feedback_lines.append(f"Predicted tools (nodes): {sorted(list(pred_nodes))}")
-    feedback_lines.append(f"Gold tools (nodes): {sorted(list(gold_nodes))}")
     if missing_nodes or extra_nodes:
         feedback_lines.append(
-            f"Tool set differences — missing: {len(missing_nodes)}, extra: {len(extra_nodes)}."
+            f"Tool set assessment — needed: {len(missing_nodes)}, removable: {len(extra_nodes)}."
         )
         if missing_nodes:
             feedback_lines.append(
-                "Add the missing tools so the tool set matches the gold. For each added tool, choose one dependency that provides the correct input type: either 'input_of_query' (if it consumes raw input) or an earlier tool that produces the required type. Missing tools: "
+                "Add the missing tools so downstream tools receive the correct inputs. For each added tool, choose one dependency that provides the required type: either 'input_of_query' (if it consumes raw input) or an earlier tool that produces that type. Missing tools: "
                 + ", ".join(missing_nodes)
             )
         if extra_nodes:
+            sorted_extras = sorted(extra_nodes, key=lambda t: tool_costs.get(t, 0.0), reverse=True)
+            extras_with_cost = ", ".join([f"{t} (cost {tool_costs.get(t, 0.0):.4f})" for t in sorted_extras])
             feedback_lines.append(
-                "Remove tools that are not required for the task (they add cost and may break dependencies). Extra tools: "
-                + ", ".join(extra_nodes)
+                "Remove tools that are not required for the task (they add cost and may break dependencies). Candidate removals ordered by cost: "
+                + extras_with_cost
             )
     else:
         feedback_lines.append("Tool sets match. Keep the same set of tools.")
@@ -534,12 +661,9 @@ def metric_dag_loss(
         return ", ".join([f"{a} -> {b}" for a, b in edges]) if edges else "(none)"
 
     feedback_lines.append(f"Predicted edges (dep -> tool): {_edges_to_str(sorted(list(pred_edges)))}")
-    feedback_lines.append(f"Gold edges (dep -> tool): {_edges_to_str(sorted(list(gold_edges)))}")
 
     if missing_edges or extra_edges:
-        feedback_lines.append(
-            f"Edge differences — missing: {len(missing_edges)}, extra: {len(extra_edges)}."
-        )
+        feedback_lines.append(f"Dependency issues — add: {len(missing_edges)}, remove: {len(extra_edges)}.")
         if missing_edges:
             feedback_lines.append(
                 "Add these missing edges by wiring each dependent tool to the correct provider in its dependency list. Missing edges: "
@@ -553,5 +677,20 @@ def metric_dag_loss(
     else:
         feedback_lines.append("Dependency edges match. Maintain the same wiring.")
 
+    # Cost-focused recommendation when predicted uses tools absent in gold
+    if extra_nodes:
+        maybe_omit = [t for t in extra_nodes if tool_costs.get(t, 0.0) > 0]
+        if maybe_omit:
+            top_omit = sorted(maybe_omit, key=lambda t: tool_costs.get(t, 0.0), reverse=True)
+            feedback_lines.append(
+                "Consider omitting these expensive tools unless they materially improve accuracy: "
+                + ", ".join([f"{t} (cost {tool_costs.get(t, 0.0):.4f})" for t in top_omit])
+            )
+
+    # Apply structure-aware adjustment softly post cost penalty
+    final_score = max(0.0, min(1.0, cost_adjusted_score + structure_match_bonus))
+
+    feedback_lines.append(f"Structure adjustment = {structure_match_bonus:+.3f} | Final score = {final_score:.3f}")
+
     feedback = "\n".join(feedback_lines)
-    return dspy.Prediction(score=float(score), feedback=feedback)
+    return dspy.Prediction(score=float(final_score), feedback=feedback)

@@ -5,6 +5,8 @@ import pickle
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
+import random
+import numpy as np
 import torch
 
 try:
@@ -28,6 +30,23 @@ except Exception:
 
 
 _TASK_DESCRIPTIONS: List[str] = []
+
+
+def _set_deterministic(seed: int = 0) -> None:
+    os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
+    torch.backends.cuda.matmul.allow_tf32 = False
+    torch.backends.cudnn.allow_tf32 = False
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+    try:
+        torch.use_deterministic_algorithms(True, warn_only=True)
+    except Exception:
+        pass
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
 
 
 def _load_task_descriptions(path: Path) -> List[str]:
@@ -159,6 +178,7 @@ def process_pkl_execute(path: str) -> Tuple[Dict[int, Dict[int, Any]], Dict[int,
 
 
 def main():
+    _set_deterministic(0)
     parser = argparse.ArgumentParser()
     parser.add_argument("--pkls", nargs="+", required=True)
     parser.add_argument("--out_dir", type=str, required=True)
