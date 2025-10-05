@@ -12,10 +12,10 @@ import numpy as np
 
 dataset_path = "/Users/mdamarap/GEPA-CATC/catp-llm/dataset"
 task_descriptions_path = os.path.join(dataset_path, "task_descriptions.txt")
-prompt_path = "/Users/mdamarap/GEPA-CATC/catp_results/prompt.txt"
+prompt_path = "/Users/mdamarap/GEPA-CATC/catp_results/gepa_prompt_2.txt"
 
 # Choose provider dynamically
-provider_name = "openai"
+provider_name = "together"
 
 # ----------------------------
 # LLM Provider Abstraction
@@ -107,11 +107,11 @@ def get_tool_prices(image_size: Tuple[int, int]):
 
     return custom_tool_prices
     
-def load_prompt(task: str, custom_tool_prices: Dict[str, float], template_file: str = prompt_path) -> str:
+def load_prompt(task: str, input_size: Tuple[int, int], custom_tool_prices: Dict[str, float], template_file: str = prompt_path) -> str:
     """Load prompt template and substitute task and image size."""
     with open(template_file, "r") as f:
         template = f.read()
-    return template.replace("{task}", task).replace("{tool_prices}", json.dumps(custom_tool_prices, indent=2))
+    return template.replace("{task_query}", task).replace("{input_size}", str(input_size)).replace("{tool_prices}", json.dumps(custom_tool_prices, indent=2))
 
 
 def read_task_by_index(index: int) -> str:
@@ -138,7 +138,7 @@ def output_json(
 
             custom_tool_prices = get_tool_prices(image_size)
 
-            prompt = load_prompt(task_str, custom_tool_prices)
+            prompt = load_prompt(task_str, image_size, custom_tool_prices)
             result = provider.infer(prompt)
 
             task_results[str(i)] = {"plan": result}
@@ -169,5 +169,5 @@ if __name__ == "__main__":
     else:
         raise ValueError(f"Unknown provider: {provider_name}")
 
-    output_json(default_test_seq_tasks, "/Users/mdamarap/GEPA-CATC/catp_results/gpt4_seq.json", provider)
-    output_json(default_test_nonseq_tasks, "/Users/mdamarap/GEPA-CATC/catp_results/gpt4_nonseq.json", provider)
+    output_json(default_test_seq_tasks, "/Users/mdamarap/GEPA-CATC/catp_results/llama37B_seq_gepa_2.json", provider)
+    #output_json(default_test_nonseq_tasks, "/Users/mdamarap/GEPA-CATC/catp_results/gpt4_nonseq.json", provider)
