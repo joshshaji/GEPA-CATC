@@ -12,7 +12,7 @@ import numpy as np
 
 dataset_path = "/Users/mdamarap/GEPA-CATC/catp-llm/dataset"
 task_descriptions_path = os.path.join(dataset_path, "task_descriptions.txt")
-prompt_path = "/Users/mdamarap/GEPA-CATC/catp_results/gepa_prompt_2.txt"
+prompt_path = "/Users/mdamarap/GEPA-CATC/catp_experiments/prompts/gepa_prompt_nonseq.txt"
 
 # Choose provider dynamically
 provider_name = "together"
@@ -61,7 +61,7 @@ class OpenAIProvider(BaseLLMProvider):
 
 
 class TogetherProvider(BaseLLMProvider):
-    def __init__(self, api_key: str, model: str = "meta-llama/Llama-3-70b-chat-hf"):
+    def __init__(self, api_key: str, model: str = "meta-llama/Llama-3.3-70B-Instruct-Turbo"):
         import together
         self.client = together.Client(api_key=api_key)
         self.model = model
@@ -135,7 +135,7 @@ def output_json(
                 image_size = img.size  # (width, height)
 
             task_str = read_task_by_index(int(task))
-
+            print(task_str)
             custom_tool_prices = get_tool_prices(image_size)
 
             prompt = load_prompt(task_str, image_size, custom_tool_prices)
@@ -157,6 +157,7 @@ def output_json(
 if __name__ == "__main__":
     default_test_seq_tasks = [0, 6, 8, 12, 13, 20, 21, 31, 36, 40, 46, 51, 61, 62, 69, 74, 78, 81]
     default_test_nonseq_tasks = [200, 202, 203, 204, 205, 207, 209, 212, 215, 218, 219, 221]
+    
     if provider_name == "anthropic":
         print("Using Anthropic Provider")
         provider = AnthropicProvider(api_key=os.environ["ANTHROPIC_API_KEY"])
@@ -169,5 +170,5 @@ if __name__ == "__main__":
     else:
         raise ValueError(f"Unknown provider: {provider_name}")
 
-    output_json(default_test_seq_tasks, "/Users/mdamarap/GEPA-CATC/catp_results/llama37B_seq_gepa_2.json", provider)
-    #output_json(default_test_nonseq_tasks, "/Users/mdamarap/GEPA-CATC/catp_results/gpt4_nonseq.json", provider)
+    #output_json(default_test_seq_tasks, "/Users/mdamarap/GEPA-CATC/catp_results/claude_sonnet_4_seq_gepa.json", provider)
+    output_json(default_test_nonseq_tasks, "/Users/mdamarap/GEPA-CATC/catp_experiments/output_jsons/llama3_70B_nonseq_gepa.json", provider)
