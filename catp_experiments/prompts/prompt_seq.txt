@@ -4,7 +4,7 @@ The goal: You need to act as a policy model that, given a task and a set of tool
 solve the task. Your goal is to generate the tool plans that can optimize the task performance while minimizing the execution costs.
 
 ## Task
-{task}
+{task_query}
 
 ## Tools Available
 - image_colorization
@@ -18,6 +18,9 @@ solve the task. Your goal is to generate the tool plans that can optimize the ta
 
 ## Tool Costs
 {tool_prices}
+
+## Input Image Size
+{input_size}
 
 ## Requirements
 - You must balance accuracy and efficiency: use enough tools to solve the task well, but avoid unnecessary or expensive tools. 

@@ -40,6 +40,46 @@ Total successful tasks: 1200
 Total failed tasks: 0
 
 Results saved to /workspace/GEPA-CATC/catp_results/results_qwen2.5_7b_nonseq_gepa.json
-Average QoP of the Input JSON: 0.12425533706363688
-Total successful tasks: 1195
-Total failed tasks: 5
+Average QoP of the Input JSON: 0.148
+Total successful tasks: 1194
+Total failed tasks: 6
+
+Results saved to /workspace/GEPA-CATC/catp_results/results_llama3_70B_nonseq_gepa.json
+Average QoP of the Input JSON: 0.17519751130116826
+Total successful tasks: 1200
+Total failed tasks: 0
+
+Results saved to /workspace/GEPA-CATC/catp_results/results_qwen2.5_7b_nonseq.json
+Average QoP of the Input JSON: 0.03042
+Total successful tasks: 1109
+Total failed tasks: 6
+
+Results saved to /workspace/GEPA-CATC/catp_results/results_llama3_70B_nonseq.json
+Average QoP of the Input JSON: 0.007974077257559692
+Total successful tasks: 1200
+Total failed tasks: 0
+
+Results saved to /workspace/GEPA-CATC/catp_results/results_llama3_70B_seq_gepa.json
+Average QoP of the Input JSON: 0.1945046164194677
+Total successful tasks: 1183
+Total failed tasks: 17
+
+Results saved to /workspace/GEPA-CATC/catp_results/results_llama3_70B_seq.json
+Average QoP of the Input JSON: 0.17240551718901292
+Total successful tasks: 1786
+Total failed tasks: 14
+
+Results saved to /workspace/GEPA-CATC/catp_results/results_qwen2.5_7B_seq.json
+Average QoP of the Input JSON: 0.17360832077383812
+Total successful tasks: 1783
+Total failed tasks: 17
+
+Results saved to /workspace/GEPA-CATC/catp_results/results_qwen2.5_7B_seq_gepa.json
+Average QoP of the Input JSON: 0.22710141196944256
+Total successful tasks: 1786
+Total failed tasks: 14
+
+Results saved to /workspace/GEPA-CATC/catp_results/results_claude_sonnet_4_seq.json
+Average QoP of the Input JSON: 0.17776376415339828
+Total successful tasks: 1776
+Total failed tasks: 24
