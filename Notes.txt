@@ -1,24 +1,3 @@
-
-Results saved to /workspace/GEPA-CATC/catp_results/results_claude_sonnet_4_seq.json
-Average QoP of the Input JSON: 0.1824039027795697
-Total successful tasks: 1777
-Total failed tasks: 23 (edited) 
-
-Results saved to /workspace/GEPA-CATC/catp_results/results_claude_sonnet_4_seq_gepa.json
-Average QoP of the Input JSON: 0.2059882179614262
-Total successful tasks: 1786
-Total failed tasks: 14
-
-Results saved to /workspace/GEPA-CATC/catp_results/results_llama37B_seq_gepa.json
-Average QoP of the Input JSON: 0.1843082053557909
-Total successful tasks: 1786
-Total failed tasks: 14 (edited) 
-
-Results saved to /workspace/GEPA-CATC/catp_results/results_llama37B_seq.json
-Average QoP of the Input JSON: 0.14446334299840338
-Total successful tasks: 1782
-Total failed tasks: 18
-
 Results saved to /workspace/GEPA-CATC/catp_results/results_claude_sonnet_4_nonseq.json
 Average QoP of the Input JSON: 0.11218066730175152
 Total successful tasks: 1151
@@ -83,3 +62,18 @@ Results saved to /workspace/GEPA-CATC/catp_results/results_claude_sonnet_4_seq.j
 Average QoP of the Input JSON: 0.17776376415339828
 Total successful tasks: 1776
 Total failed tasks: 24
+
+Results saved to /workspace/GEPA-CATC/catp_results/results_llama3_70B_nonseq.json
+Average QoP of the Input JSON: 0.06175836318051193
+Total successful tasks: 1200
+Total failed tasks: 0
+
+Claude Sonnet-4 non-sequential with GEPA prompt
+Average QoP of the Input JSON: 0.1945046164194677
+Total successful tasks: 1200
+Total failed tasks: 0
+
+Claude Sonnet-4 sequential with GEPA prompt
+Average QoP of the Input JSON: 0.2400972399032942
+Total successful tasks: 1786
+Total failed tasks: 14

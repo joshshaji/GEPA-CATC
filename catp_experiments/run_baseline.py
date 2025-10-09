@@ -12,7 +12,7 @@ import numpy as np
 
 dataset_path = "/Users/mdamarap/GEPA-CATC/catp-llm/dataset"
 task_descriptions_path = os.path.join(dataset_path, "task_descriptions.txt")
-prompt_path = "/Users/mdamarap/GEPA-CATC/catp_experiments/prompts/gepa_prompt_seq.txt"
+prompt_path = "/Users/mdamarap/GEPA-CATC/catp_experiments/prompts/gepa_prompt_nonseq.txt"
 
 # Choose provider dynamically
 provider_name = "together"
@@ -170,5 +170,5 @@ if __name__ == "__main__":
     else:
         raise ValueError(f"Unknown provider: {provider_name}")
 
-    output_json(default_test_seq_tasks, "/Users/mdamarap/GEPA-CATC/catp_experiments/output_jsons/claude_sonnet_4_seq_gepa_2.json", provider)
-    #output_json(default_test_nonseq_tasks, "/Users/mdamarap/GEPA-CATC/catp_experiments/output_jsons/qwen2.5_7B_nonseq_gepa_3.json", provider)
+    #output_json(default_test_seq_tasks, "/Users/mdamarap/GEPA-CATC/catp_experiments/output_jsons/qwen2.5_7B_nonseq_gepa_1.json", provider)
+    output_json(default_test_nonseq_tasks, "/Users/mdamarap/GEPA-CATC/catp_experiments/output_jsons/qwen2.5_7B_nonseq_gepa_1.json", provider)
