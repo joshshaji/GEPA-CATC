@@ -1,0 +1,74 @@
+{
+  "results_claude_sonnet_4_nonseq.json": {
+    "plan": "['image_super_resolution', ['input_of_query'], 'image_denoising', ['image_super_resolution'], 'image_deblurring', ['image_denoising'], 'image_classification', ['image_deblurring'], 'machine_translation', ['image_classification'], 'object_detection', ['image_deblurring']]",
+    "cost_price": 0.29407887085997947,
+    "task_score": 0.8051405847072601,
+    "qop": -0.05553877876112073
+  },
+  "results_claude_sonnet_4_nonseq_gepa.json": {
+    "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'object_detection', ['image_deblurring'], 'image_captioning', ['image_deblurring'], 'machine_translation', ['image_captioning']]",
+    "cost_price": 0.1582461996399159,
+    "task_score": 0.7047752134005228,
+    "qop": 0.10587544038077751
+  },
+  "results_claude_sonnet_4_seq.json": {
+    "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_colorization', ['image_super_resolution']]",
+    "cost_price": 0.3261781151344196,
+    "task_score": 0.42510223388671875,
+    "qop": -0.2955613935040008
+  },
+  "results_claude_sonnet_4_seq_gepa.json": {
+    "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_super_resolution', ['image_denoising'], 'image_colorization', ['image_super_resolution']]",
+    "cost_price": 0.36942724833970003,
+    "task_score": 0.5677093505859375,
+    "qop": -0.2916303062919819
+  },
+  "results_llama3_70B_nonseq.json": {
+    "plan": "['image_super_resolution', ['input_of_query'], 'image_deblurring', ['image_super_resolution'], 'image_denoising', ['image_deblurring'], 'image_colorization', ['image_denoising'], 'object_detection', ['image_colorization'], 'image_classification', ['image_colorization'], 'image_captioning', ['image_colorization'], 'machine_translation', ['image_captioning']]",
+    "cost_price": 0.38035265720530975,
+    "task_score": 0.24085816740989685,
+    "qop": -0.472075239978049
+  },
+  "results_llama3_70B_nonseq_gepa.json": {
+    "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'object_detection', ['image_deblurring'], 'image_captioning', ['object_detection'], 'machine_translation', ['image_captioning']]",
+    "cost_price": 0.3037845112515742,
+    "task_score": 0.5043431798617045,
+    "qop": -0.22105669696218638
+  },
+  "results_llama3_70B_seq.json": {
+    "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]",
+    "cost_price": 0.3589507963006791,
+    "task_score": 0.8659837245941162,
+    "qop": -0.12617315145702024
+  },
+  "results_llama3_70B_seq_gepa.json": {
+    "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_super_resolution', ['image_denoising'], 'image_colorization', ['image_super_resolution']]",
+    "cost_price": 0.7780448703486593,
+    "task_score": 0.5523073196411132,
+    "qop": -0.9358661354088963
+  },
+  "results_qwen_2.5_7B_nonseq.json": {
+    "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_colorization', ['image_super_resolution'], 'image_deblurring', ['image_colorization'], 'image_captioning', ['image_deblurring'], 'machine_translation', ['image_captioning'], 'object_detection', ['image_deblurring']]",
+    "cost_price": 0.3117465247390574,
+    "task_score": 0.8367709219455719,
+    "qop": -0.06724586117500492
+  },
+  "results_qwen_2.5_7B_nonseq_gepa.json": {
+    "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_super_resolution', ['image_denoising'], 'image_colorization', ['image_super_resolution'], 'image_captioning', ['image_super_resolution'], 'object_detection', ['image_deblurring'], 'machine_translation', ['image_captioning']]",
+    "cost_price": 0.2719457873129358,
+    "task_score": 0.36305051167805985,
+    "qop": -0.2421054241047039
+  },
+  "results_qwen_2.5_7B_seq.json": {
+    "plan": "['image_super_resolution', ['input_of_query'], 'image_deblurring', ['image_super_resolution'], 'image_denoising', ['image_deblurring'], 'image_captioning', ['image_denoising'], 'machine_translation', ['image_captioning']]",
+    "cost_price": 0.3436600068195853,
+    "task_score": 0.6245587468147278,
+    "qop": -0.2230660121452367
+  },
+  "results_qwen_2.5_7B_seq_gepa.json": {
+    "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]",
+    "cost_price": 0.364073712518301,
+    "task_score": 0.8659837245941162,
+    "qop": -0.13415350850542196
+  }
+}
