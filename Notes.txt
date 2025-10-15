@@ -77,3 +77,14 @@ Claude Sonnet-4 sequential with GEPA prompt
 Average QoP of the Input JSON: 0.2400972399032942
 Total successful tasks: 1786
 Total failed tasks: 14
+
+
+Results saved to /workspace/GEPA-CATC/catp_experiments/results/results_grpo_qwen7B_seq_gepa_checkpoint.json
+Average QoP of the Input JSON: 0.24112142295846972
+Total successful tasks: 1775
+Total failed tasks: 25
+
+Results saved to /workspace/GEPA-CATC/catp_experiments/results/results_grpo_qwen7B_seq_gepa_checkpoint-360.json
+Average QoP of the Input JSON: 0.24131126313285076
+Total successful tasks: 1776
+Total failed tasks: 24

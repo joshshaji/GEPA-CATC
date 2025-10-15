@@ -25,8 +25,11 @@ setuptools
 torch
 torchvision
 tqdm
-transformers
+transformers==4.37.2
 wandb
 bert_score
 evaluate
-timm
+timm==0.9.8
+huggingface-hub==0.22.2
+safetensors==0.4.3
+accelerate==0.28.0
