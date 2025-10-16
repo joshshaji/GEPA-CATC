@@ -2,17 +2,17 @@ Quality of Plan
 
 Sequential
 
-Model                         Base 	 			GEPA                GRPO-BASE               GRPO-GEPA     
+Model                         Base 	 			GEPA               GRPO-BASE               GRPO-GEPA                GEPA + ImageMetrics   
 
 Claude Sonnet 4.5             0.177             0.240                                         
 Llama 3 70B                   0.172             0.194
-Qwen 2.5 7B                   0.173             0.227                                          0.241
+Qwen 2.5 7B                   0.173             0.227                0.163                    0.247
 
 
 Non Sequential
 
-Model                         Base 	 			GEPA                GRPO-BASE               GRPO-GEPA
+Model                         Base 	 			GEPA                GRPO-BASE               GRPO-GEPA                GEPA + ImageMetrics
 
-Claude Sonnet 4.5             0.124             0.194
+Claude Sonnet 4.5             0.124             0.194                                          
 Llama 3 70B                   0.061             0.175
-Qwen 2.5 7B                   0.034             0.148
+Qwen 2.5 7B                   0.034             0.148                  0.189                   0.161

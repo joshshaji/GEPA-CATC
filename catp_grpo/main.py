@@ -3,48 +3,16 @@ import ast
 import json
 import logging
 import random
-import re
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple, Set
 
 import torch
-from datasets import Dataset, load_dataset
+from datasets import Dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from trl import GRPOConfig, GRPOTrainer
 
 
 logger = logging.getLogger(__name__)
-
-# ===== Task-independent utilities =====
-
-
-# ---------------------------------------------------------------------------
-# Prompt-level helpers
-# ---------------------------------------------------------------------------
-
-def resolve_model_reference(model_name: str) -> str:
-    """Map convenience aliases (e.g. Turbo APIs) to local-checkpoint-friendly names."""
-    alias_map = {
-        "Qwen/Qwen2.5-7B-Instruct-Turbo": "Qwen/Qwen2.5-7B-Instruct",
-    }
-    resolved = alias_map.get(model_name, model_name)
-    if resolved != model_name:
-        logger.info("Model %s is API-only; falling back to %s for local loading", model_name, resolved)
-    return resolved
-
-def build_regex_reward_function(pattern: str):
-    """Baseline reward: returns +1 when the response matches a regex pattern."""
-    compiled = re.compile(pattern, flags=re.S)
-
-    def reward_fn(completions: Sequence[Sequence[dict]], **kwargs) -> List[float]:
-        rewards: List[float] = []
-        for completion in completions:
-            text = completion[0].get("content", "") if completion else ""
-            rewards.append(1.0 if compiled.match(text) else 0.0)
-        return rewards
-
-    return reward_fn
-
 
 def compute_tool_prices(image_size: Tuple[int, int]) -> Dict[str, float]:
     """Blend discrete tool prices to the current image size via area similarity."""
@@ -99,11 +67,6 @@ def format_prompt_with_chat_template(prompt: str, tokenizer) -> str:
     except Exception as exc:  # pragma: no cover - defensive path
         logger.warning("Failed to apply chat template: %s", exc)
         return prompt
-
-
-# ---------------------------------------------------------------------------
-# Plan parsing utilities
-# ---------------------------------------------------------------------------
 
 def try_parse_plan(plan_text: str) -> Optional[List]:
     """Safely parse the string plan into alternating tool/dependency entries."""
@@ -238,11 +201,6 @@ def deduplicate_plan_pool(plans: Iterable[Dict]) -> List[Dict]:
     return list(unique.values())
 
 
-# ===== Task-specific components below (Customize as needed) =====
-
-# ---------------------------------------------------------------------------
-# GRPO dataset preparation
-# ---------------------------------------------------------------------------
 
 def split_tasks(task_ids: List[str], train_ratio: float, seed: int) -> Tuple[List[str], List[str]]:
     """Task-level split so images from the same task stay in the same partition."""
@@ -328,57 +286,6 @@ def prepare_plan_datasets(
     train_dataset = Dataset.from_list(train_records)
     return train_dataset, test_samples, metadata_map, prompt_to_sample
 
-
-def build_dataset_prompt_entries(
-    dataset_path: Path,
-    prompt_template_path: Path,
-    sample_filter: Optional[Set[str]] = None,
-) -> List[Dict[str, str]]:
-    """Render prompts from a GRPO dataset JSON for inference."""
-    data = json.loads(dataset_path.read_text(encoding="utf-8"))
-    template = load_prompt_template(prompt_template_path)
-    filter_set = set(sample_filter) if sample_filter else None
-
-    entries: List[Dict[str, str]] = []
-    available_ids: Set[str] = set()
-
-    task_items = sorted(data.items(), key=lambda item: int(item[0]))
-    for task_id, payload in task_items:
-        task_query = payload["task_query"]
-        for image_id, image_payload in payload["images"].items():
-            image_size = tuple(image_payload["image_size"])
-            sample_id = f"{task_id}:{image_id}"
-            available_ids.add(sample_id)
-            if filter_set and sample_id not in filter_set:
-                continue
-            prompt = render_prompt(
-                template=template,
-                task_query=task_query,
-                image_size=image_size,
-                tool_prices=compute_tool_prices(image_size),
-                sample_id=sample_id,
-            )
-            entries.append(
-                {
-                    "prompt": prompt,
-                    "sample_id": sample_id,
-                    "task_id": task_id,
-                    "image_id": image_id,
-                    "task_query": task_query,
-                }
-            )
-
-    if filter_set:
-        missing = filter_set - available_ids
-        if missing:
-            raise ValueError(f"Sample IDs not found in dataset: {', '.join(sorted(missing))}")
-
-    return entries
-
-
-# ---------------------------------------------------------------------------
-# Reward shaping for plan matching
-# ---------------------------------------------------------------------------
 
 def score_plan_output(plan_text: str, metadata: Dict) -> Dict[str, object]:
     """Assign a dense reward to a generated plan based on match quality."""
@@ -487,10 +394,6 @@ def build_plan_reward_function(
     return reward_fn
 
 
-# ---------------------------------------------------------------------------
-# Model loading utilities
-# ---------------------------------------------------------------------------
-
 def build_quantization_config(load_in_4bit: bool, load_in_8bit: bool) -> Optional[BitsAndBytesConfig]:
     """Return bitsandbytes config for optional 4-bit/8-bit loading."""
     if load_in_4bit:
@@ -515,49 +418,41 @@ def resolve_dtype(dtype_choice: str) -> Optional[torch.dtype]:
     return mapping.get(dtype_choice)
 
 
-# ---------------------------------------------------------------------------
-# Training and inference workflows
-# ---------------------------------------------------------------------------
-
 def run_training(args: argparse.Namespace) -> None:
     """Primary entrypoint: build dataset, reward, and launch GRPO fine-tuning."""
     train_dataset: Dataset
     test_samples: List[Dict] = []
     metadata_map: Dict[str, Dict] = {}
     prompt_to_sample: Dict[str, str] = {}
+    eval_dataset: Optional[Dataset] = None
 
-    if args.grpo_dataset_json:
-        dataset_path = Path(args.grpo_dataset_json)
-        prompt_path = Path(args.prompt_template)
-        train_dataset, test_samples, metadata_map, prompt_to_sample = prepare_plan_datasets(
-            dataset_path,
-            prompt_path,
-            args.train_ratio,
-            args.split_seed,
-        )
-        reward_fn = build_plan_reward_function(metadata_map, prompt_to_sample)
-        logger.info(
-            "Loaded custom dataset %s with %d training samples and %d test samples",
-            dataset_path,
-            len(train_dataset),
-            len(test_samples),
-        )
-    else:
-        # Fallback path uses a public dataset; safe to ignore when training on custom JSON.
-        train_dataset = load_dataset(args.dataset, split=args.dataset_split)
-        reward_fn = build_regex_reward_function(args.reward_pattern)
-        logger.info(
-            "Loaded HF dataset %s (%s) with %d samples",
-            args.dataset,
-            args.dataset_split,
-            len(train_dataset),
-        )
+    dataset_path = Path(args.grpo_dataset_json)
+    prompt_path = Path(args.prompt_template)
 
-    model_name = resolve_model_reference(args.model_name)
-    tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=not args.use_slow_tokenizer)
+    train_dataset, test_samples, metadata_map, prompt_to_sample = prepare_plan_datasets(dataset_path, prompt_path, args.train_ratio, args.split_seed)
+    reward_fn = build_plan_reward_function(metadata_map, prompt_to_sample)
+    
+    logger.info(
+        "Loaded custom dataset %s with %d training samples and %d test samples",
+        dataset_path,
+        len(train_dataset),
+        len(test_samples),
+    )
+
+    model_name = "Qwen/Qwen2.5-7B-Instruct"
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "left"
+
+    eval_batch_size = args.eval_batch_size or args.train_batch_size
+    evaluation_kwargs: Dict[str, object] = {}
+    if test_samples:
+        evaluation_kwargs.update(
+            per_device_eval_batch_size=eval_batch_size,
+            evaluation_strategy="steps",
+            eval_steps=max(1, args.eval_steps),
+        )
 
     grpo_config = GRPOConfig(
         output_dir=args.output_dir,
@@ -573,6 +468,7 @@ def run_training(args: argparse.Namespace) -> None:
         fp16=args.fp16,
         save_strategy=args.save_strategy,
         save_steps=args.save_steps,
+        **evaluation_kwargs,
     )
 
     quant_config = build_quantization_config(args.load_in_4bit, args.load_in_8bit)
@@ -608,6 +504,9 @@ def run_training(args: argparse.Namespace) -> None:
             if metadata:
                 metadata["prompt"] = formatted_prompt
 
+    if not chat_template_available:
+        logger.warning("Tokenizer missing chat template; training will use raw prompts.")
+
     for sample in test_samples:
         record = sample["record"]
         sample_id = record["sample_id"]
@@ -617,19 +516,27 @@ def run_training(args: argparse.Namespace) -> None:
         if metadata:
             metadata["prompt"] = formatted_prompt
         prompt_to_sample.setdefault(formatted_prompt, sample_id)
-    else:
-        logger.warning("Tokenizer missing chat template; training will use raw prompts.")
+
+    if test_samples:
+        eval_records = [sample["record"] for sample in test_samples]
+        eval_dataset = Dataset.from_list(eval_records)
+        logger.info(
+            "Configured validation with %d samples; running every %d training step(s).",
+            len(eval_dataset),
+            max(1, args.eval_steps),
+        )
 
     trainer = GRPOTrainer(
         model=model,
         args=grpo_config,
         train_dataset=train_dataset,
+        eval_dataset=eval_dataset,
         reward_funcs=reward_fn,
         processing_class=tokenizer,
         peft_config=build_lora_config(args),
     )
 
-    logger.info("Starting GRPO training with %s", args.model_name)
+    logger.info("Starting GRPO training with %s", model_name)
     trainer.train()
     logger.info("Training complete; checkpoints saved to %s", args.output_dir)
 
@@ -661,52 +568,6 @@ def build_lora_config(args: argparse.Namespace):
     )
 
 
-def _resolve_adapter_checkpoint(base_dir: Path) -> Path:
-    """Return the adapter directory containing adapter_config.json, preferring latest checkpoint."""
-    base_dir = base_dir.expanduser()
-    direct_config = base_dir / "adapter_config.json"
-    if direct_config.exists():
-        return base_dir
-
-    checkpoints = [
-        path
-        for path in base_dir.glob("checkpoint-*")
-        if path.is_dir() and (path / "adapter_config.json").exists()
-    ]
-    if not checkpoints:
-        raise FileNotFoundError(f"No adapter checkpoint with adapter_config.json found under {base_dir}")
-
-    latest = max(checkpoints, key=lambda path: path.stat().st_mtime)
-    logger.info("Using latest adapter checkpoint at %s", latest)
-    return latest
-
-
-def _load_lora_model(base_model: str, adapter_dir: str, dtype: Optional[torch.dtype], device_map: str, quant_config: Optional[BitsAndBytesConfig]):
-    """Load base model weights and attach the saved LoRA adapters."""
-    from peft import PeftModel
-
-    model_name = resolve_model_reference(base_model)
-    model = AutoModelForCausalLM.from_pretrained(
-        model_name,
-        torch_dtype=dtype,
-        device_map=device_map,
-        quantization_config=quant_config,
-    )
-    model = PeftModel.from_pretrained(model, adapter_dir)
-    model.eval()
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    if tokenizer.pad_token is None:
-        tokenizer.pad_token = tokenizer.eos_token
-    tokenizer.padding_side = "left"
-    return model, tokenizer
-
-
-def extract_generation(text_ids, input_length, tokenizer) -> str:
-    """Strip the prompt tokens and decode only the generated continuation."""
-    generated_ids = text_ids[0][input_length:]
-    return tokenizer.decode(generated_ids, skip_special_tokens=True).strip()
-
-
 def normalize_plan_string(plan_text: str) -> str:
     """Return a canonical string representation with single-quoted tools."""
     parsed = try_parse_plan(plan_text.strip())
@@ -715,140 +576,6 @@ def normalize_plan_string(plan_text: str) -> str:
     return repr(parsed)
 
 
-def _load_prompt_inputs(prompts: Iterable[str]) -> List[str]:
-    clean_prompts = [prompt.strip() for prompt in prompts if prompt.strip()]
-    if not clean_prompts:
-        raise ValueError("At least one non-empty prompt is required for inference.")
-    return clean_prompts
-
-
-def run_inference(args: argparse.Namespace) -> None:
-    # Lightweight inference entrypoint; usually no edits required for training tweaks.
-    prompt_items: List[Dict[str, object]] = []
-    dataset_mode = False
-
-    if args.prompts:
-        for prompt in _load_prompt_inputs(args.prompts):
-            prompt_items.append({"prompt": prompt, "sample_id": None, "source": "cli"})
-
-    if args.prompts_file:
-        prompts_path = Path(args.prompts_file)
-        file_prompts = _load_prompt_inputs(prompts_path.read_text(encoding="utf-8").splitlines())
-        prompt_items.extend({"prompt": prompt, "sample_id": None, "source": "file"} for prompt in file_prompts)
-
-    if args.grpo_dataset_json:
-        dataset_mode = True
-        dataset_path = Path(args.grpo_dataset_json)
-        prompt_template_path = Path(args.prompt_template)
-        _, test_samples, metadata_map, _ = prepare_plan_datasets(
-            dataset_path=dataset_path,
-            prompt_template=prompt_template_path,
-            train_ratio=args.train_ratio,
-            seed=args.split_seed,
-        )
-        sample_filter = set(args.sample_ids) if args.sample_ids else None
-        available_ids: Set[str] = set()
-        for sample in test_samples:
-            record = sample["record"]
-            sample_id = record["sample_id"]
-            available_ids.add(sample_id)
-            if sample_filter and sample_id not in sample_filter:
-                continue
-            prompt_items.append(
-                {
-                    "prompt": record["prompt"],
-                    "sample_id": sample_id,
-                    "source": "dataset",
-                    "metadata": metadata_map[sample_id],
-                }
-            )
-        if sample_filter:
-            missing = sample_filter - available_ids
-            if missing:
-                raise ValueError(f"Sample IDs not found in dataset split: {', '.join(sorted(missing))}")
-
-    if not prompt_items:
-        raise ValueError(
-            "Provide prompts via --prompts/--prompts-file or specify --grpo-dataset-json for inference."
-        )
-
-    quant_config = build_quantization_config(args.load_in_4bit, args.load_in_8bit)
-    dtype = resolve_dtype(args.torch_dtype)
-    adapter_dir = _resolve_adapter_checkpoint(Path(args.adapter_path))
-    model, tokenizer = _load_lora_model(args.base_model_name, str(adapter_dir), dtype, args.device_map, quant_config)
-
-    formatted_items: List[Dict[str, object]] = []
-    chat_template_available = getattr(tokenizer, "chat_template", None) and hasattr(tokenizer, "apply_chat_template")
-    if chat_template_available:
-        logger.info("Applying chat template formatting to inference prompts.")
-    for item in prompt_items:
-        formatted_prompt = format_prompt_with_chat_template(item["prompt"], tokenizer)
-        metadata = item.get("metadata")
-        if metadata:
-            metadata["prompt"] = formatted_prompt
-        formatted_items.append({**item, "formatted_prompt": formatted_prompt})
-
-    generation_kwargs = {"max_new_tokens": args.max_new_tokens}
-    if args.greedy:
-        generation_kwargs["do_sample"] = False
-    else:
-        generation_kwargs.update(
-            {
-                "do_sample": True,
-                "temperature": args.temperature,
-                "top_p": args.top_p,
-            }
-        )
-
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    for item in formatted_items:
-        formatted_prompt = item["formatted_prompt"] or item["prompt"]
-        inputs = tokenizer(formatted_prompt, return_tensors="pt").to(device)
-        with torch.no_grad():
-            outputs = model.generate(**inputs, **generation_kwargs)
-        text = extract_generation(outputs, inputs["input_ids"].shape[1], tokenizer)
-        normalized_text = normalize_plan_string(text)
-        item["generated_plan"] = normalized_text
-        parsed = try_parse_plan(normalized_text)
-        print("=" * 80)
-        sample_id = item.get("sample_id")
-        if sample_id:
-            print(f"SAMPLE_ID: {sample_id}")
-        if parsed is None:
-            logger.warning(
-                "Generated response could not be parsed as a plan for sample %s",
-                sample_id or item.get("source") or "unknown",
-            )
-            print(text)
-        else:
-            print(normalized_text)
-        print("-" * 80)
-
-    if args.output_json:
-        if not dataset_mode:
-            logger.warning("Requested JSON output but no dataset supplied; skipping save.")
-        else:
-            output_payload: Dict[str, Dict] = {}
-            for item in formatted_items:
-                metadata = item.get("metadata")
-                if not metadata:
-                    continue
-                task_id = metadata["task_id"]
-                image_id = metadata["image_id"]
-                task_entry = output_payload.setdefault(
-                    task_id,
-                    {"task_query": metadata["task_query"], "images": {}},
-                )
-                task_entry["images"][image_id] = {
-                    "sample_id": metadata["sample_id"],
-                    "predicted_plan": item.get("generated_plan"),
-                    "gold_plan": metadata["gold_plan"]["plan"],
-                    "valid_plans": [plan["plan"] for plan in metadata["plan_pool"]],
-                }
-            output_path = Path(args.output_json)
-            output_path.parent.mkdir(parents=True, exist_ok=True)
-            output_path.write_text(json.dumps(output_payload, indent=2), encoding="utf-8")
-            logger.info("Wrote inference results to %s", output_path)
 
 
 # ---------------------------------------------------------------------------
@@ -856,8 +583,8 @@ def run_inference(args: argparse.Namespace) -> None:
 # ---------------------------------------------------------------------------
 
 def parse_args() -> argparse.Namespace:
-    """Build the CLI for training/inference workflows."""
-    parser = argparse.ArgumentParser(description="GRPO training and inference harness for plan generation.")
+    """Build the CLI for GRPO training workflows."""
+    parser = argparse.ArgumentParser(description="GRPO training harness for plan generation.")
     parser.add_argument(
         "--log-level",
         default="INFO",
@@ -868,22 +595,20 @@ def parse_args() -> argparse.Namespace:
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     train_parser = subparsers.add_parser("train", help="Train a GRPO policy with optional custom dataset.")
-    train_parser.add_argument("--model-name", default="Qwen/Qwen2.5-7B-Instruct", help="Base model to fine-tune.")
-    train_parser.add_argument("--dataset", default=None, help="Optional HF dataset name (ignored if --grpo-dataset-json is set).")
-    train_parser.add_argument("--dataset-split", default="train[:2000]", help="Split used for HF dataset loading.")
-    train_parser.add_argument("--reward-pattern", default=r"^<think>.*?</think><answer>.*?</answer>$", help="Regex reward for HF dataset fallback.")
     train_parser.add_argument("--grpo-dataset-json", help="Path to grpo_dataset_seq.json for custom training.")
     train_parser.add_argument("--prompt-template", default="catp_experiments/prompts/prompt_seq.txt", help="Prompt template used for custom dataset.")
     train_parser.add_argument("--train-ratio", type=float, default=0.8, help="Train split ratio when using custom dataset.")
     train_parser.add_argument("--split-seed", type=int, default=42, help="Random seed for task split.")
     train_parser.add_argument("--output-dir", default="grpo-qwen2.5-7B", help="Directory to save checkpoints.")
     train_parser.add_argument("--train-batch-size", type=int, default=1, help="Per-device train batch size.")
+    train_parser.add_argument("--eval-batch-size", type=int, help="Per-device eval batch size (defaults to train batch size).")
     train_parser.add_argument("--gradient-accumulation-steps", type=int, default=8, help="Gradient accumulation steps.")
     train_parser.add_argument("--learning-rate", type=float, default=5e-6, help="Learning rate.")
     train_parser.add_argument("--num-train-epochs", type=int, default=1, help="Number of training epochs.")
-    train_parser.add_argument("--max-prompt-length", type=int, default=1024, help="Maximum prompt token length.")
+    train_parser.add_argument("--max-prompt-length", type=int, default=8000, help="Maximum prompt token length.")
     train_parser.add_argument("--max-completion-length", type=int, default=256, help="Maximum completion token length.")
-    train_parser.add_argument("--num-generations", type=int, default=4, help="Number of completions sampled per prompt (GRPO K).")
+    train_parser.add_argument("--num-generations", type=int, default=8, help="Number of completions sampled per prompt (GRPO K).")
+    train_parser.add_argument("--eval-steps", type=int, default=1, help="Run evaluation every N training steps.")
     train_parser.add_argument("--torch-dtype", default="bf16", choices=["bf16", "fp16", "fp32"], help="Torch dtype for base model.")
     train_parser.add_argument("--device-map", default="auto", help="Device map for model loading.")
     train_parser.add_argument("--load-in-4bit", action="store_true", help="Enable 4-bit quantization.")
@@ -899,55 +624,24 @@ def parse_args() -> argparse.Namespace:
     train_parser.add_argument(
         "--save-steps",
         type=int,
-        default=500,
+        default=100,
         help="Number of update steps between checkpoints when --save-strategy=steps.",
     )
     train_parser.add_argument("--lora-r", type=int, default=64, help="LoRA rank.")
     train_parser.add_argument("--lora-alpha", type=int, default=128, help="LoRA alpha.")
     train_parser.add_argument("--lora-dropout", type=float, default=0.05, help="LoRA dropout.")
     train_parser.add_argument("--lora-target-modules", help="Comma-separated LoRA target modules.")
-    train_parser.add_argument("--use-slow-tokenizer", action="store_true", help="Use slow tokenizer variant.")
-    train_parser.add_argument("--test-output", help="Optional path to save test predictions after training.")
-    train_parser.add_argument("--test-max-new-tokens", type=int, default=256, help="Generation length for test inference.")
-    train_parser.add_argument("--test-temperature", type=float, default=0.7, help="Sampling temperature for test inference.")
-    train_parser.add_argument("--test-top-p", type=float, default=0.9, help="Top-p for test inference.")
-    train_parser.add_argument("--test-greedy", action="store_true", help="Use greedy decoding for test inference.")
-
-    infer_parser = subparsers.add_parser("infer", help="Generate responses from a trained LoRA adapter.")
-    infer_parser.add_argument("--adapter-path", default="grpo-qwen2.5-7B", help="Directory containing LoRA adapter.")
-    infer_parser.add_argument("--base-model-name", default="Qwen/Qwen2.5-7B-Instruct", help="Base model name.")
-    infer_parser.add_argument("--prompts", nargs="*", help="Prompts supplied on the command line.")
-    infer_parser.add_argument("--prompts-file", help="Optional file with one prompt per line.")
-    infer_parser.add_argument("--prompt-template", default="catp_experiments/prompts/prompt_seq.txt", help="Prompt template for rendering dataset prompts.")
-    infer_parser.add_argument("--grpo-dataset-json", help="Path to GRPO dataset JSON to render prompts from.")
-    infer_parser.add_argument("--sample-ids", nargs="*", help="Optional sample IDs (task:image) to select from the dataset.")
-    infer_parser.add_argument("--train-ratio", type=float, default=0.8, help="Train split ratio when using dataset prompts.")
-    infer_parser.add_argument("--split-seed", type=int, default=42, help="Random seed for dataset split when using dataset prompts.")
-    infer_parser.add_argument("--output-json", help="Optional path to save structured inference results for dataset samples.")
-    infer_parser.add_argument("--max-new-tokens", type=int, default=256, help="Maximum tokens to generate.")
-    infer_parser.add_argument("--greedy", action="store_true", help="Disable sampling.")
-    infer_parser.add_argument("--temperature", type=float, default=0.7, help="Sampling temperature.")
-    infer_parser.add_argument("--top-p", type=float, default=0.9, help="Top-p nucleus sampling.")
-    infer_parser.add_argument("--torch-dtype", default="bf16", choices=["bf16", "fp16", "fp32"], help="Torch dtype for inference.")
-    infer_parser.add_argument("--device-map", default="auto", help="Device map for inference.")
-    infer_parser.add_argument("--load-in-4bit", action="store_true", help="Enable 4-bit quantization for inference.")
-    infer_parser.add_argument("--load-in-8bit", action="store_true", help="Enable 8-bit quantization for inference.")
-    infer_parser.add_argument("--use-slow-tokenizer", action="store_true", help="Use slow tokenizer variant.")
 
     args = parser.parse_args()
     logging.basicConfig(level=getattr(logging, args.log_level))
     return args
 
-
 def main() -> None:
     args = parse_args()
     if args.command == "train":
         run_training(args)
-    elif args.command == "infer":
-        run_inference(args)
     else:
         raise ValueError(f"Unknown command {args.command}")
-
 
 if __name__ == "__main__":
     main()
