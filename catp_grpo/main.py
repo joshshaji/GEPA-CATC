@@ -5,7 +5,7 @@ import logging
 import random
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple, Set
-
+import numpy as np
 import torch
 from datasets import Dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
@@ -330,7 +330,7 @@ def score_plan_output(plan_text: str, metadata: Dict) -> Dict[str, object]:
         gold_tools = gold_record["tools"]
         length_penalty = abs(len(extract_tools(parsed)) - len(gold_tools)) * 0.05
         reward = dag_score + 0.2 * similarity - length_penalty - 0.2
-        reward = max(-1.0, min(reward, 0.8))
+        reward = -1
         match_type = "partial" if reward > 0 else "invalid"
         reference = best
 
@@ -345,53 +345,69 @@ def score_plan_output(plan_text: str, metadata: Dict) -> Dict[str, object]:
     }
 
 
-def build_plan_reward_function(
-    metadata_map: Dict[str, Dict],
-    prompt_to_sample: Dict[str, str],
-) -> callable:
-    """Wrap `score_plan_output` into a TRL-compatible reward function."""
-    def reward_fn(completions: Sequence[Sequence[dict]], **kwargs) -> List[float]:
-        metadatas = kwargs.get("metadatas") or []
-        prompts = kwargs.get("prompts") or []
+def build_plan_reward_function(metadata_map: Dict[str, Dict], prompt_to_sample: Dict[str, str]):
+    """
+    Build a reward function for GRPO that compares predicted plans against gold/valid ones.
+    Returns a callable that takes (prompts, completions, outputs) and returns a list of rewards.
+    """
 
-        sample_ids: List[Optional[str]] = []
-        for meta in metadatas:
-            if isinstance(meta, dict) and "sample_id" in meta:
-                sample_ids.append(meta["sample_id"])
-
-        if len(sample_ids) < len(completions):
-            for prompt in prompts:
-                sample_id = prompt_to_sample.get(prompt)
-                if sample_id is not None:
-                    sample_ids.append(sample_id)
-
-        while len(sample_ids) < len(completions):
-            sample_ids.append(None)
-
+    def reward_fn(prompts: List[str], completions: List[str], **_) -> List[float]:
         rewards: List[float] = []
-        for completion, sample_id in zip(completions, sample_ids):
-            if isinstance(completion, str):
-                text = completion
-            elif isinstance(completion, Sequence) and completion:
-                first = completion[0]
-                if isinstance(first, dict):
-                    text = first.get("content", "")
-                else:
-                    text = str(first)
-            else:
-                text = ""
-
-            metadata = metadata_map.get(sample_id) if sample_id else None
-            if metadata is None:
-                logger.warning("Missing metadata for sample %s; assigning -1 reward", sample_id)
+        for prompt, completion in zip(prompts, completions):
+            sample_id = prompt_to_sample.get(prompt)
+            metadata = metadata_map.get(sample_id)
+            if not metadata:
                 rewards.append(-1.0)
                 continue
-            normalized_text = normalize_plan_string(text)
-            score = score_plan_output(normalized_text, metadata)
-            rewards.append(score["reward"])
+
+            gold_plan = metadata["gold_record"]
+            plan_pool = metadata["plan_pool"]
+            gold_dag = gold_plan["dag"]
+
+            # Try parsing the model output
+            pred_parsed = try_parse_plan(completion)
+            if pred_parsed is None:
+                rewards.append(-1.0)
+                continue
+
+            pred_dag = plan_to_dag_struct(pred_parsed)
+            dag_sim = dag_score_between(pred_dag, gold_dag, node_weight=0.3, edge_weight=0.7)
+            pred_tools = extract_tools(pred_parsed)
+            gold_tools = gold_plan["tools"]
+
+            # === Cost / length penalties ===
+            pred_extra = set(pred_tools) - set(gold_tools)
+            cost_penalty = sum(metadata["tool_prices"].get(t, 0.1) for t in pred_extra)
+            length_penalty = 0.05 * abs(len(pred_tools) - len(gold_tools))
+
+            # === Match categories ===
+            gold_canonical = gold_plan["canonical"]
+            pred_canonical = canonicalize_plan(pred_parsed)
+
+            # Exact gold
+            if pred_canonical == gold_canonical:
+                R = max(0.9, dag_sim)
+                rewards.append(min(1.0, R))
+                continue
+
+            # Check if it's one of the known valid plans in pool
+            matched_pool = next((p for p in plan_pool if p["canonical"] == pred_canonical), None)
+            if matched_pool:
+                qop_values = [p["qop"] for p in plan_pool]
+                qop_min, qop_max = min(qop_values), max(qop_values)
+                pool_bonus = 0.2 * normalize_qop(matched_pool["qop"], qop_min, qop_max)
+                R = max(0.3, dag_sim) + pool_bonus - 0.5 * cost_penalty - length_penalty - 0.1
+                rewards.append(float(np.clip(R, -1.0, 1.0)))
+                continue
+
+            # Otherwise: novel/partial plan
+            R = dag_sim - 0.7 * cost_penalty - length_penalty - 0.2
+            rewards.append(float(np.clip(R, -1.0, 1.0)))
+
         return rewards
 
     return reward_fn
+
 
 
 def build_quantization_config(load_in_4bit: bool, load_in_8bit: bool) -> Optional[BitsAndBytesConfig]:
@@ -445,32 +461,6 @@ def run_training(args: argparse.Namespace) -> None:
         tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "left"
 
-    eval_batch_size = args.eval_batch_size or args.train_batch_size
-    evaluation_kwargs: Dict[str, object] = {}
-    if test_samples:
-        evaluation_kwargs.update(
-            per_device_eval_batch_size=eval_batch_size,
-            evaluation_strategy="steps",
-            eval_steps=max(1, args.eval_steps),
-        )
-
-    grpo_config = GRPOConfig(
-        output_dir=args.output_dir,
-        per_device_train_batch_size=args.train_batch_size,
-        gradient_accumulation_steps=args.gradient_accumulation_steps,
-        learning_rate=args.learning_rate,
-        num_train_epochs=args.num_train_epochs,
-        max_prompt_length=args.max_prompt_length,
-        max_completion_length=args.max_completion_length,
-        num_generations=args.num_generations,
-        report_to=[],
-        bf16=args.bf16,
-        fp16=args.fp16,
-        save_strategy=args.save_strategy,
-        save_steps=args.save_steps,
-        **evaluation_kwargs,
-    )
-
     quant_config = build_quantization_config(args.load_in_4bit, args.load_in_8bit)
     dtype = resolve_dtype(args.torch_dtype)
 
@@ -507,24 +497,39 @@ def run_training(args: argparse.Namespace) -> None:
     if not chat_template_available:
         logger.warning("Tokenizer missing chat template; training will use raw prompts.")
 
-    for sample in test_samples:
-        record = sample["record"]
-        sample_id = record["sample_id"]
-        formatted_prompt = format_prompt_with_chat_template(record["prompt"], tokenizer)
-        record["prompt"] = formatted_prompt
-        metadata = metadata_map.get(sample_id)
-        if metadata:
-            metadata["prompt"] = formatted_prompt
-        prompt_to_sample.setdefault(formatted_prompt, sample_id)
-
+    eval_dataset = None
+    evaluation_kwargs: Dict[str, object] = {}
+    eval_steps = max(1, getattr(args, "eval_steps", 50))
+    eval_batch_size = args.eval_batch_size or args.train_batch_size
     if test_samples:
         eval_records = [sample["record"] for sample in test_samples]
         eval_dataset = Dataset.from_list(eval_records)
         logger.info(
-            "Configured validation with %d samples; running every %d training step(s).",
+            "Configured validation with %d samples; evaluating every %d step(s).",
             len(eval_dataset),
-            max(1, args.eval_steps),
+            eval_steps,
         )
+        evaluation_kwargs.update(
+            per_device_eval_batch_size=eval_batch_size,
+            evaluation_strategy="steps",
+            eval_steps=eval_steps,
+        )
+
+    grpo_config = GRPOConfig(
+        output_dir=args.output_dir,
+        per_device_train_batch_size=args.train_batch_size,
+        gradient_accumulation_steps=args.gradient_accumulation_steps,
+        learning_rate=args.learning_rate,
+        num_train_epochs=args.num_train_epochs,
+        max_prompt_length=args.max_prompt_length,
+        max_completion_length=args.max_completion_length,
+        num_generations=args.num_generations,
+        report_to=[],
+        bf16=args.bf16,
+        fp16=args.fp16,
+        save_strategy=args.save_strategy,
+        save_steps=args.save_steps,
+    )
 
     trainer = GRPOTrainer(
         model=model,
@@ -534,10 +539,21 @@ def run_training(args: argparse.Namespace) -> None:
         reward_funcs=reward_fn,
         processing_class=tokenizer,
         peft_config=build_lora_config(args),
+        generation_kwargs=dict(
+            temperature=2.0,   # Controls diversity (1.0 is default)
+            top_p=0.95,        # Nucleus sampling
+            do_sample=True,    # Ensures stochastic sampling
+            max_new_tokens=args.max_completion_length,  # Keeps completions bounded
+        ),
     )
 
     logger.info("Starting GRPO training with %s", model_name)
     trainer.train()
+
+    if eval_dataset is not None:
+        metrics = trainer.evaluate(eval_dataset)
+        logger.info("Final evaluation metrics: %s", metrics)
+
     logger.info("Training complete; checkpoints saved to %s", args.output_dir)
 
 
@@ -602,13 +618,13 @@ def parse_args() -> argparse.Namespace:
     train_parser.add_argument("--output-dir", default="grpo-qwen2.5-7B", help="Directory to save checkpoints.")
     train_parser.add_argument("--train-batch-size", type=int, default=1, help="Per-device train batch size.")
     train_parser.add_argument("--eval-batch-size", type=int, help="Per-device eval batch size (defaults to train batch size).")
+    train_parser.add_argument("--eval-steps", type=int, default=50, help="Run evaluation every N training steps.")
     train_parser.add_argument("--gradient-accumulation-steps", type=int, default=8, help="Gradient accumulation steps.")
     train_parser.add_argument("--learning-rate", type=float, default=5e-6, help="Learning rate.")
     train_parser.add_argument("--num-train-epochs", type=int, default=1, help="Number of training epochs.")
     train_parser.add_argument("--max-prompt-length", type=int, default=8000, help="Maximum prompt token length.")
     train_parser.add_argument("--max-completion-length", type=int, default=256, help="Maximum completion token length.")
-    train_parser.add_argument("--num-generations", type=int, default=8, help="Number of completions sampled per prompt (GRPO K).")
-    train_parser.add_argument("--eval-steps", type=int, default=1, help="Run evaluation every N training steps.")
+    train_parser.add_argument("--num-generations", type=int, default=4, help="Number of completions sampled per prompt (GRPO K).")
     train_parser.add_argument("--torch-dtype", default="bf16", choices=["bf16", "fp16", "fp32"], help="Torch dtype for base model.")
     train_parser.add_argument("--device-map", default="auto", help="Device map for model loading.")
     train_parser.add_argument("--load-in-4bit", action="store_true", help="Enable 4-bit quantization.")
@@ -624,7 +640,7 @@ def parse_args() -> argparse.Namespace:
     train_parser.add_argument(
         "--save-steps",
         type=int,
-        default=100,
+        default=50,
         help="Number of update steps between checkpoints when --save-strategy=steps.",
     )
     train_parser.add_argument("--lora-r", type=int, default=64, help="LoRA rank.")
