@@ -33,3 +33,7 @@ timm==0.9.8
 huggingface-hub==0.22.2
 safetensors==0.4.3
 accelerate==0.28.0
+hf_transfer
+trl>=0.8 
+bitsandbytes 
+sentencepiece

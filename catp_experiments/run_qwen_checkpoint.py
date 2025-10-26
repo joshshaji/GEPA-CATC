@@ -22,12 +22,12 @@ task_descriptions_path = dataset_root / "task_descriptions.txt"
 
 MODES: Dict[str, Dict[str, str]] = {
     "seq": {
-        "prompt_path": "catp_experiments/prompts/gepa_prompt_seq.txt",
-        "output_json": "catp_experiments/output_jsons/qwen7B_seq_gepa_checkpoint.json",
+        "prompt_path": "/workspace/GEPA-CATC/catp_experiments/prompts/gepa_prompt_seq.txt",
+        "output_json": "/workspace/GEPA-CATC/catp_experiments/output_jsons/sft-gepa/sft_qwen7B_seq_gepa_checkpoint.json",
     },
     "nonseq": {
-        "prompt_path": "catp_experiments/prompts/gepa_prompt_nonseq.txt",
-        "output_json": "catp_experiments/output_jsons/grpo_qwen7B_nonseq_gepa_checkpoint-546.json",
+        "prompt_path": "/workspace/GEPA-CATC/catp_experiments/prompts/prompt_nonseq.txt",
+        "output_json": "/workspace/GEPA-CATC/catp_experiments/output_jsons/sft-base/sft_qwen7B_nonseq_checkpoint.json",
     },
 }
 
@@ -238,7 +238,7 @@ if __name__ == "__main__":
     default_test_seq_tasks = [0, 6, 8, 12, 13, 20, 21, 31, 36, 40, 46, 51, 61, 62, 69, 74, 78, 81]
     default_test_nonseq_tasks = [200, 202, 203, 204, 205, 207, 209, 212, 215, 218, 219, 221]
 
-    checkpoint_path = Path("/workspace/GEPA-CATC/catp_grpo/outputs/qwen7B_nonseq_gepa/checkpoint-546")
+    checkpoint_path = Path("/workspace/GEPA-CATC/catp_sft/runs/sft-qwen-nonseq/checkpoint-153")
 
     if evaluation_mode == "seq":
         selected_tasks = default_test_seq_tasks
