@@ -1,11 +1,28 @@
 """
 Step 1 of the SFT pipeline: dataset ingestion and prompt/response formatting.
+<<<<<<< HEAD
+=======
+
+This module is intentionally focused on data preparation only. It provides
+helpers that:
+  * load the GRPO-style JSON with task → images → plans
+  * render prompts using the same cost-aware template as training/inference
+  * normalize the gold plan so it becomes a clean text target
+  * split tasks into train/eval partitions and surface HuggingFace datasets
+
+Later steps (model loading, optimization, CLI wiring) will be layered on top,
+but for now we keep the public surface limited to data utilities so they can
+be unit-tested in isolation.
+>>>>>>> dd3e92a (Added argument parsers and cleaned up the code)
 """
 
 from __future__ import annotations
 
 import argparse
+<<<<<<< HEAD
 import inspect
+=======
+>>>>>>> dd3e92a (Added argument parsers and cleaned up the code)
 import json
 import logging
 import random
@@ -13,7 +30,10 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
 
+<<<<<<< HEAD
 import numpy as np
+=======
+>>>>>>> dd3e92a (Added argument parsers and cleaned up the code)
 import torch
 from datasets import Dataset, DatasetDict
 from transformers import (
@@ -24,6 +44,7 @@ from transformers import (
     TrainingArguments,
     set_seed,
 )
+<<<<<<< HEAD
 try:
     from trl import SFTConfig, SFTTrainer
 except ImportError:  # pragma: no cover - older TRL versions
@@ -33,6 +54,9 @@ except ImportError:  # pragma: no cover - older TRL versions
 
 
 SFT_TRAINER_SUPPORTS_DATASET_FIELD = "dataset_text_field" in inspect.signature(SFTTrainer.__init__).parameters
+=======
+from trl import SFTTrainer
+>>>>>>> dd3e92a (Added argument parsers and cleaned up the code)
 
 
 # ---------------------------------------------------------------------------
@@ -391,8 +415,11 @@ def prepare_datasets_with_text_column(dataset_dict: DatasetDict, tokenizer, *, n
             record["text"] = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=False)
         else:
             record["text"] = record["prompt"].rstrip() + "\n\n### Response:\n" + record["response"]
+<<<<<<< HEAD
         record.pop("prompt", None)
         record.pop("response", None)
+=======
+>>>>>>> dd3e92a (Added argument parsers and cleaned up the code)
         return record
 
     formatted = DatasetDict()
@@ -458,6 +485,7 @@ def build_training_components(
     return datasets_with_text, tokenizer, model
 
 
+<<<<<<< HEAD
 def compute_token_accuracy(eval_pred) -> Dict[str, float]:
     """Compute masked token-level accuracy for evaluation logging."""
     predictions = eval_pred.predictions
@@ -483,6 +511,8 @@ def compute_token_accuracy(eval_pred) -> Dict[str, float]:
     return {"eval_accuracy": float(accuracy)}
 
 
+=======
+>>>>>>> dd3e92a (Added argument parsers and cleaned up the code)
 def run_sft_training(
     datasets: DatasetDict,
     tokenizer,
@@ -516,6 +546,7 @@ def run_sft_training(
     train_dataset = datasets["train"]
     eval_dataset = datasets.get("eval")
 
+<<<<<<< HEAD
     logging.info("Train dataset size: %d", len(train_dataset))
     logging.info("Eval dataset size: %d", len(eval_dataset) if eval_dataset is not None else 0)
 
@@ -523,6 +554,12 @@ def run_sft_training(
     evaluation_strategy = "steps" if eval_dataset is not None else "no"
 
     training_kwargs = dict(
+=======
+    data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False)
+    evaluation_strategy = "steps" if eval_dataset is not None else "no"
+
+    training_args = TrainingArguments(
+>>>>>>> dd3e92a (Added argument parsers and cleaned up the code)
         output_dir=output_dir,
         num_train_epochs=num_train_epochs,
         per_device_train_batch_size=train_batch_size,
@@ -541,12 +578,17 @@ def run_sft_training(
         bf16=bf16,
         fp16=fp16,
         gradient_checkpointing=gradient_checkpointing,
+<<<<<<< HEAD
+=======
+        evaluation_strategy=evaluation_strategy,
+>>>>>>> dd3e92a (Added argument parsers and cleaned up the code)
         logging_strategy="steps",
         report_to=report_to or [],
         run_name=run_name,
         ddp_find_unused_parameters=False,
     )
 
+<<<<<<< HEAD
     eval_field_name = (
         "evaluation_strategy" if "evaluation_strategy" in TrainingArguments.__dataclass_fields__ else "eval_strategy"
     )
@@ -582,6 +624,19 @@ def run_sft_training(
             packing=packing,
             compute_metrics=compute_token_accuracy,
         )
+=======
+    trainer = SFTTrainer(
+        model=model,
+        tokenizer=tokenizer,
+        args=training_args,
+        train_dataset=train_dataset,
+        eval_dataset=eval_dataset,
+        data_collator=data_collator,
+        dataset_text_field="text",
+        max_seq_length=max_seq_length,
+        packing=packing,
+    )
+>>>>>>> dd3e92a (Added argument parsers and cleaned up the code)
 
     trainer.train()
     if eval_dataset is not None:
@@ -597,8 +652,13 @@ def run_sft_training(
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="SFT training harness for CATP plans")
+<<<<<<< HEAD
     parser.add_argument("--dataset-json")
     parser.add_argument("--prompt-template")
+=======
+    parser.add_argument("--dataset-json", default="catp_grpo/grpo_dataset_seq.json")
+    parser.add_argument("--prompt-template", default="catp_experiments/prompts/gepa_prompt_seq.txt")
+>>>>>>> dd3e92a (Added argument parsers and cleaned up the code)
     parser.add_argument("--train-ratio", type=float, default=0.9)
     parser.add_argument("--split-seed", type=int, default=42)
     parser.add_argument("--max-train-samples", type=int)
@@ -608,7 +668,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", default="sft-qwen2.5-7b")
     parser.add_argument("--num-train-epochs", type=float, default=1.0)
     parser.add_argument("--train-batch-size", type=int, default=1)
+<<<<<<< HEAD
     parser.add_argument("--eval-batch-size", type=int, default=1)
+=======
+    parser.add_argument("--eval-batch-size", type=int)
+>>>>>>> dd3e92a (Added argument parsers and cleaned up the code)
     parser.add_argument("--gradient-accumulation-steps", type=int, default=8)
     parser.add_argument("--learning-rate", type=float, default=2e-5)
     parser.add_argument("--warmup-ratio", type=float, default=0.03)

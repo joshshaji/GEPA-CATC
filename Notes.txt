@@ -109,3 +109,18 @@ Results saved to /workspace/GEPA-CATC/catp_experiments/results/result_grpo_qwen7
 Average QoP of the Input JSON: 0.1893333
 Total successful tasks: 1200
 Total failed tasks: 0
+
+Results saved to /workspace/GEPA-CATC/catp_experiments/results/result_sft_qwen7B_seq_checkpoint.json
+Average QoP of the Input JSON: 0.1988809595917698
+Total successful tasks: 1783
+Total failed tasks: 17
+
+Results saved to /workspace/GEPA-CATC/catp_experiments/results/result_sft_qwen7B_seq_gepa_checkpoint.json
+Average QoP of the Input JSON: 0.20579428360806273
+Total successful tasks: 1782
+Total failed tasks: 18
+
+Results saved to /workspace/GEPA-CATC/catp_experiments/results/result_sft_qwen7B_nonseq_checkpoint.json
+Average QoP of the Input JSON: 0.17537821041794108
+Total successful tasks: 1185
+Total failed tasks: 15

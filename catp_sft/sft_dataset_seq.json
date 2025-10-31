@@ -1,0 +1,4761 @@
+{
+  "1": {
+    "task_query": "Given noisy blurry grayscale image, how to return the regular image step by step?",
+    "images": {
+      "26": {
+        "image_size": [
+          500,
+          332
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_deblurring', ['image_denoising']]",
+          "qop": 0.40049731731414795,
+          "task_score": 0.8826141953468323,
+          "cost_price": 0.0462731843444294
+        }
+      },
+      "55": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_deblurring', ['image_denoising']]",
+          "qop": 0.4307892918586731,
+          "task_score": 0.9432819485664368,
+          "cost_price": 0.046320685498415906
+        }
+      },
+      "56": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.4131401479244232,
+          "task_score": 0.9080782532691956,
+          "cost_price": 0.046374321708958985
+        }
+      },
+      "59": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.3552229106426239,
+          "task_score": 0.7920971512794495,
+          "cost_price": 0.04629118253299905
+        }
+      },
+      "67": {
+        "image_size": [
+          362,
+          480
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring']]",
+          "qop": 0.33292698860168457,
+          "task_score": 0.7373700737953186,
+          "cost_price": 0.04054514216652412
+        }
+      },
+      "71": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.35938355326652527,
+          "task_score": 0.8004848957061768,
+          "cost_price": 0.046328864956895886
+        }
+      },
+      "82": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.41112473607063293,
+          "task_score": 0.9035909175872803,
+          "cost_price": 0.04611552314991366
+        }
+      },
+      "85": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.3903164267539978,
+          "task_score": 0.8623141646385193,
+          "cost_price": 0.046308203824526536
+        }
+      },
+      "88": {
+        "image_size": [
+          500,
+          346
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_deblurring', ['image_denoising']]",
+          "qop": 0.39090046286582947,
+          "task_score": 0.8532752990722656,
+          "cost_price": 0.04052149460480958
+        }
+      },
+      "95": {
+        "image_size": [
+          387,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.4278791546821594,
+          "task_score": 0.9373913407325745,
+          "cost_price": 0.04628081018758115
+        }
+      }
+    }
+  },
+  "2": {
+    "task_query": "Given low-resolutioned noisy grayscale image, how to return the regular image step by step?",
+    "images": {
+      "17": {
+        "image_size": [
+          340,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising'], 'image_deblurring', ['image_colorization'], 'image_super_resolution', ['image_deblurring']]",
+          "qop": 0.34585273265838623,
+          "task_score": 0.881103515625,
+          "cost_price": 0.10737686123063356
+        }
+      },
+      "18": {
+        "image_size": [
+          579,
+          383
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring']]",
+          "qop": 0.3002637028694153,
+          "task_score": 0.855765163898468,
+          "cost_price": 0.1447038274370954
+        }
+      },
+      "67": {
+        "image_size": [
+          362,
+          480
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising'], 'image_super_resolution', ['image_colorization']]",
+          "qop": 0.32988205552101135,
+          "task_score": 0.848257839679718,
+          "cost_price": 0.10686414184006385
+        }
+      },
+      "78": {
+        "image_size": [
+          500,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising'], 'image_super_resolution', ['image_colorization']]",
+          "qop": 0.3231361508369446,
+          "task_score": 0.8893548846244812,
+          "cost_price": 0.13781261085822874
+        }
+      }
+    }
+  },
+  "3": {
+    "task_query": "Given noisy grayscale image, how to return the regular image step by step?",
+    "images": {
+      "6": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.46323201060295105,
+          "task_score": 0.977679431438446,
+          "cost_price": 0.02903593032805154
+        }
+      },
+      "19": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.32336193323135376,
+          "task_score": 0.6878479719161987,
+          "cost_price": 0.023314806098113268
+        }
+      },
+      "25": {
+        "image_size": [
+          458,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.3530750870704651,
+          "task_score": 0.7574523687362671,
+          "cost_price": 0.02908512193468467
+        }
+      },
+      "34": {
+        "image_size": [
+          768,
+          537
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.3223494589328766,
+          "task_score": 0.7163469791412354,
+          "cost_price": 0.040619969481720225
+        }
+      },
+      "38": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.4144555628299713,
+          "task_score": 0.8801098465919495,
+          "cost_price": 0.029026468416701773
+        }
+      },
+      "46": {
+        "image_size": [
+          800,
+          811
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.23896393179893494,
+          "task_score": 0.5905246138572693,
+          "cost_price": 0.06383530574121773
+        }
+      },
+      "47": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.38702285289764404,
+          "task_score": 0.8252871036529541,
+          "cost_price": 0.029050681255469425
+        }
+      },
+      "59": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.36998429894447327,
+          "task_score": 0.7911892533302307,
+          "cost_price": 0.02903890383921067
+        }
+      },
+      "60": {
+        "image_size": [
+          500,
+          334
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.3643411099910736,
+          "task_score": 0.7696999311447144,
+          "cost_price": 0.02325446978557095
+        }
+      },
+      "67": {
+        "image_size": [
+          362,
+          480
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.39360225200653076,
+          "task_score": 0.8383579254150391,
+          "cost_price": 0.029000789817513906
+        }
+      },
+      "82": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.4095507264137268,
+          "task_score": 0.8601095676422119,
+          "cost_price": 0.02324902569721394
+        }
+      },
+      "88": {
+        "image_size": [
+          500,
+          346
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.40129756927490234,
+          "task_score": 0.8435998558998108,
+          "cost_price": 0.023247096668379773
+        }
+      },
+      "95": {
+        "image_size": [
+          387,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.36865636706352234,
+          "task_score": 0.788526177406311,
+          "cost_price": 0.029034806407126395
+        }
+      }
+    }
+  },
+  "4": {
+    "task_query": "Given low-resolutioned grayscale image, how to return the regular image step by step?",
+    "images": {
+      "31": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_super_resolution', ['image_colorization'], 'image_denoising', ['image_super_resolution']]",
+          "qop": 0.3259388208389282,
+          "task_score": 0.8721253275871277,
+          "cost_price": 0.12486664681257026
+        }
+      },
+      "38": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring']]",
+          "qop": 0.3471757471561432,
+          "task_score": 0.92214035987854,
+          "cost_price": 0.1291420398543095
+        }
+      },
+      "47": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring']]",
+          "qop": 0.3209531307220459,
+          "task_score": 0.8488590717315674,
+          "cost_price": 0.11732927826546503
+        }
+      },
+      "95": {
+        "image_size": [
+          387,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query']]",
+          "qop": 0.4166935682296753,
+          "task_score": 0.979601263999939,
+          "cost_price": 0.0828942530240037
+        }
+      }
+    }
+  },
+  "5": {
+    "task_query": "Given grayscale image, how to return the regular image step by step?",
+    "images": {
+      "11": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.33307313919067383,
+          "task_score": 0.7479126453399658,
+          "cost_price": 0.04635639983906979
+        }
+      },
+      "14": {
+        "image_size": [
+          468,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.3673059046268463,
+          "task_score": 0.8264813423156738,
+          "cost_price": 0.052084273180314944
+        }
+      },
+      "15": {
+        "image_size": [
+          500,
+          452
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.3716961741447449,
+          "task_score": 0.7946415543556213,
+          "cost_price": 0.02905510802586441
+        }
+      },
+      "17": {
+        "image_size": [
+          340,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.36831000447273254,
+          "task_score": 0.7777074575424194,
+          "cost_price": 0.02329400873819768
+        }
+      },
+      "34": {
+        "image_size": [
+          768,
+          537
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.33855921030044556,
+          "task_score": 0.7487770318984985,
+          "cost_price": 0.04062593306071832
+        }
+      },
+      "46": {
+        "image_size": [
+          800,
+          811
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_colorization', ['image_deblurring']]",
+          "qop": 0.28719937801361084,
+          "task_score": 0.6870449781417847,
+          "cost_price": 0.06386334304835457
+        }
+      },
+      "59": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.36842668056488037,
+          "task_score": 0.7880733013153076,
+          "cost_price": 0.029038495668862054
+        }
+      },
+      "65": {
+        "image_size": [
+          500,
+          337
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.3248148560523987,
+          "task_score": 0.690634548664093,
+          "cost_price": 0.023247159764662097
+        }
+      },
+      "67": {
+        "image_size": [
+          362,
+          480
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.38790565729141235,
+          "task_score": 0.8168284893035889,
+          "cost_price": 0.023254156566763946
+        }
+      },
+      "74": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.4157807230949402,
+          "task_score": 0.8827548027038574,
+          "cost_price": 0.029023442813662717
+        }
+      },
+      "82": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.40726587176322937,
+          "task_score": 0.8657469153404236,
+          "cost_price": 0.02903578217620132
+        }
+      },
+      "90": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]",
+          "qop": 0.42731010913848877,
+          "task_score": 0.9058101773262024,
+          "cost_price": 0.02902151103530761
+        }
+      },
+      "95": {
+        "image_size": [
+          387,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_colorization', ['image_deblurring']]",
+          "qop": 0.4313783347606659,
+          "task_score": 0.914025068283081,
+          "cost_price": 0.02906596298174239
+        }
+      }
+    }
+  },
+  "7": {
+    "task_query": "Given noisy blurry image, how to return the regular image step by step?",
+    "images": {
+      "23": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring']]",
+          "qop": 0.3852817416191101,
+          "task_score": 0.8514673709869385,
+          "cost_price": 0.04586742825285959
+        }
+      },
+      "24": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring']]",
+          "qop": 0.34479033946990967,
+          "task_score": 0.7704669833183289,
+          "cost_price": 0.04585748398214945
+        }
+      },
+      "25": {
+        "image_size": [
+          458,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring']]",
+          "qop": 0.3671685457229614,
+          "task_score": 0.8253059387207031,
+          "cost_price": 0.0515736490836537
+        }
+      },
+      "42": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring']]",
+          "qop": 0.3235110342502594,
+          "task_score": 0.727924108505249,
+          "cost_price": 0.04586640188968855
+        }
+      },
+      "54": {
+        "image_size": [
+          420,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring']]",
+          "qop": 0.4221557676792145,
+          "task_score": 0.9255637526512146,
+          "cost_price": 0.0460649162122177
+        }
+      },
+      "59": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring']]",
+          "qop": 0.33838069438934326,
+          "task_score": 0.7576581835746765,
+          "cost_price": 0.045863424316029716
+        }
+      },
+      "67": {
+        "image_size": [
+          362,
+          480
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring']]",
+          "qop": 0.37124183773994446,
+          "task_score": 0.8233901262283325,
+          "cost_price": 0.04586890563531988
+        }
+      },
+      "68": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring']]",
+          "qop": 0.3349614143371582,
+          "task_score": 0.7508589029312134,
+          "cost_price": 0.04588569388431024
+        }
+      },
+      "79": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring']]",
+          "qop": 0.3120688199996948,
+          "task_score": 0.6949927806854248,
+          "cost_price": 0.04017044235859776
+        }
+      },
+      "90": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring']]",
+          "qop": 0.34044018387794495,
+          "task_score": 0.7617784738540649,
+          "cost_price": 0.04586416441113988
+        }
+      },
+      "95": {
+        "image_size": [
+          387,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_super_resolution', ['image_denoising'], 'image_colorization', ['image_super_resolution']]",
+          "qop": 0.37392526865005493,
+          "task_score": 0.9950618147850037,
+          "cost_price": 0.1401533370065664
+        }
+      }
+    }
+  },
+  "9": {
+    "task_query": "Given low-resolutioned noisy image, how to return the regular image step by step?",
+    "images": {
+      "6": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_deblurring', ['image_super_resolution'], 'image_colorization', ['image_deblurring']]",
+          "qop": 0.30316242575645447,
+          "task_score": 0.9140065908432007,
+          "cost_price": 0.174436303148463
+        }
+      },
+      "28": {
+        "image_size": [
+          500,
+          332
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_colorization', ['image_super_resolution'], 'image_deblurring', ['image_colorization']]",
+          "qop": 0.33938533067703247,
+          "task_score": 0.9581604599952698,
+          "cost_price": 0.15839653327418884
+        }
+      },
+      "39": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_colorization', ['image_super_resolution'], 'image_deblurring', ['image_colorization']]",
+          "qop": 0.3146621882915497,
+          "task_score": 0.9471561908721924,
+          "cost_price": 0.18019075941394028
+        }
+      }
+    }
+  },
+  "10": {
+    "task_query": "Given noisy image, how to return the regular image step by step?",
+    "images": {
+      "14": {
+        "image_size": [
+          468,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring']]",
+          "qop": 0.35014888644218445,
+          "task_score": 0.7709465622901917,
+          "cost_price": 0.04005343456621334
+        }
+      },
+      "17": {
+        "image_size": [
+          340,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising']]",
+          "qop": 0.34951266646385193,
+          "task_score": 0.7596452832221985,
+          "cost_price": 0.03436772971099972
+        }
+      },
+      "31": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query']]",
+          "qop": 0.32324227690696716,
+          "task_score": 0.676728367805481,
+          "cost_price": 0.017146335160798092
+        }
+      },
+      "35": {
+        "image_size": [
+          500,
+          378
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising']]",
+          "qop": 0.39019620418548584,
+          "task_score": 0.8409268260002136,
+          "cost_price": 0.03431923553851046
+        }
+      },
+      "83": {
+        "image_size": [
+          500,
+          460
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query']]",
+          "qop": 0.3013099431991577,
+          "task_score": 0.6328602433204651,
+          "cost_price": 0.01714439645613763
+        }
+      }
+    }
+  },
+  "11": {
+    "task_query": "Given low-resolutioned image, how to return the regular image step by step?",
+    "images": {
+      "44": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_colorization', ['image_super_resolution']]",
+          "qop": 0.36847537755966187,
+          "task_score": 0.9266435503959656,
+          "cost_price": 0.10754393893841227
+        }
+      },
+      "85": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_colorization', ['image_super_resolution']]",
+          "qop": 0.3158642053604126,
+          "task_score": 0.8498531579971313,
+          "cost_price": 0.1236630806618952
+        }
+      }
+    }
+  },
+  "14": {
+    "task_query": "Given low-resolutioned noisy blurry grayscale image, how to return the class label in English step by step?",
+    "images": {
+      "12": {
+        "image_size": [
+          500,
+          332
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.39920975144772974,
+          "task_score": 1.0,
+          "cost_price": 0.11428352932828963
+        }
+      },
+      "28": {
+        "image_size": [
+          500,
+          332
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.3946460839115945,
+          "task_score": 1.0,
+          "cost_price": 0.11945815723328976
+        }
+      },
+      "31": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_deblurring', ['image_colorization'], 'image_denoising', ['image_deblurring'], 'image_super_resolution', ['image_denoising'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.39417524514942487,
+          "task_score": 1.0,
+          "cost_price": 0.11999202947051721
+        }
+      },
+      "32": {
+        "image_size": [
+          170,
+          226
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_colorization', ['image_super_resolution'], 'image_classification', ['image_colorization']]",
+          "qop": 0.4548555973083615,
+          "task_score": 1.0,
+          "cost_price": 0.05118810344378076
+        }
+      },
+      "34": {
+        "image_size": [
+          768,
+          537
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.313453374379844,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.21152046209380232
+        }
+      },
+      "44": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_deblurring', ['image_colorization'], 'image_denoising', ['image_deblurring'], 'image_super_resolution', ['image_denoising'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.39386905054351196,
+          "task_score": 1.0,
+          "cost_price": 0.12033921583752831
+        }
+      },
+      "59": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.4058319623881918,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.10677470321730831
+        }
+      },
+      "67": {
+        "image_size": [
+          362,
+          480
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.39977343283523387,
+          "task_score": 1.000000238418579,
+          "cost_price": 0.11364452034034275
+        }
+      },
+      "70": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.41039419005863875,
+          "task_score": 1.0000001192092896,
+          "cost_price": 0.10160184310823604
+        }
+      },
+      "79": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.42454379803400477,
+          "task_score": 1.0,
+          "cost_price": 0.08555789071112396
+        }
+      },
+      "86": {
+        "image_size": [
+          500,
+          376
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.4058587070661955,
+          "task_score": 1.0,
+          "cost_price": 0.10674444568339363
+        }
+      }
+    }
+  },
+  "15": {
+    "task_query": "Given low-resolutioned noisy blurry grayscale image, how to return the object names in English step by step?",
+    "images": {
+      "27": {
+        "image_size": [
+          500,
+          302
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_deblurring', ['image_colorization'], 'image_denoising', ['image_deblurring'], 'object_detection', ['image_denoising']]",
+          "qop": 0.36467679788729773,
+          "task_score": 0.8322656154632568,
+          "cost_price": 0.058344676143065925
+        }
+      },
+      "32": {
+        "image_size": [
+          640,
+          366
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_deblurring', ['image_colorization'], 'image_denoising', ['image_deblurring'], 'object_detection', ['image_denoising']]",
+          "qop": 0.3237410957966292,
+          "task_score": 0.7503998279571533,
+          "cost_price": 0.05834786044649806
+        }
+      },
+      "44": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_super_resolution', ['image_denoising'], 'image_colorization', ['image_super_resolution'], 'object_detection', ['image_colorization']]",
+          "qop": 0.37000983129041753,
+          "task_score": 1.0,
+          "cost_price": 0.14739258481346676
+        }
+      }
+    }
+  },
+  "17": {
+    "task_query": "Given noisy blurry grayscale image, how to return the caption in English step by step?",
+    "images": {
+      "39": {
+        "image_size": [
+          640,
+          384
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_deblurring', ['image_colorization'], 'image_denoising', ['image_deblurring'], 'image_captioning', ['image_denoising']]",
+          "qop": 0.3416991678817737,
+          "task_score": 0.8943130373954773,
+          "cost_price": 0.11957543927089163
+        }
+      }
+    }
+  },
+  "18": {
+    "task_query": "Given noisy blurry grayscale image, how to return the class label in English step by step?",
+    "images": {
+      "0": {
+        "image_size": [
+          408,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_deblurring', ['image_denoising'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.45348510548920606,
+          "task_score": 1.0,
+          "cost_price": 0.05274206966827526
+        }
+      },
+      "8": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_deblurring', ['image_denoising'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.4534912146923818,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.05273510880425353
+        }
+      },
+      "11": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_classification', ['image_colorization']]",
+          "qop": 0.4534826584271387,
+          "task_score": 1.0000001192092896,
+          "cost_price": 0.05274491191465156
+        }
+      },
+      "21": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_deblurring', ['image_denoising'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.4534812578271734,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.05274639864343343
+        }
+      },
+      "28": {
+        "image_size": [
+          500,
+          332
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_colorization', ['image_deblurring'], 'image_classification', ['image_colorization']]",
+          "qop": 0.4534677831824972,
+          "task_score": 1.0,
+          "cost_price": 0.05276171099643185
+        }
+      },
+      "33": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_colorization', ['image_denoising'], 'image_classification', ['image_colorization']]",
+          "qop": 0.4534761274004765,
+          "task_score": 1.0000001192092896,
+          "cost_price": 0.052752317281617264
+        }
+      },
+      "34": {
+        "image_size": [
+          768,
+          537
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_deblurring', ['image_denoising'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.4282982873566055,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.0813007020584059
+        }
+      },
+      "46": {
+        "image_size": [
+          800,
+          811
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_deblurring', ['image_denoising'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.2502246697143079,
+          "task_score": 0.7042877078056335,
+          "cost_price": 0.1155636010688303
+        }
+      },
+      "59": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_colorization', ['image_denoising'], 'image_classification', ['image_colorization']]",
+          "qop": 0.4534613665373157,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.0527689190849032
+        }
+      },
+      "66": {
+        "image_size": [
+          500,
+          362
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_colorization', ['image_super_resolution'], 'image_classification', ['image_colorization']]",
+          "qop": 0.3900747917129348,
+          "task_score": 1.0,
+          "cost_price": 0.12464143055146974
+        }
+      },
+      "90": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_deblurring', ['image_denoising'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.45347964475435704,
+          "task_score": 1.0,
+          "cost_price": 0.05274826145825732
+        }
+      }
+    }
+  },
+  "22": {
+    "task_query": "Given low-resolutioned blurry grayscale image, how to return the caption in English step by step?",
+    "images": {
+      "36": {
+        "image_size": [
+          640,
+          363
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_colorization', ['image_deblurring'], 'image_captioning', ['image_colorization']]",
+          "qop": 0.31181837017860703,
+          "task_score": 0.8556413054466248,
+          "cost_price": 0.1315320722963706
+        }
+      },
+      "39": {
+        "image_size": [
+          640,
+          384
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising'], 'image_captioning', ['image_colorization']]",
+          "qop": 0.3350436093880759,
+          "task_score": 0.8725606203079224,
+          "cost_price": 0.1147897502711013
+        }
+      },
+      "44": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_colorization', ['image_deblurring'], 'image_captioning', ['image_colorization']]",
+          "qop": 0.32238641423661873,
+          "task_score": 0.8771765232086182,
+          "cost_price": 0.13175835383280987
+        }
+      }
+    }
+  },
+  "24": {
+    "task_query": "Given low-resolutioned blurry grayscale image, how to return the object names in English step by step?",
+    "images": {
+      "52": {
+        "image_size": [
+          333,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_colorization', ['image_deblurring'], 'object_detection', ['image_colorization']]",
+          "qop": 0.46368251848635106,
+          "task_score": 1.0,
+          "cost_price": 0.04117947939717854
+        }
+      },
+      "63": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_colorization', ['image_deblurring'], 'object_detection', ['image_colorization']]",
+          "qop": 0.35924853823507036,
+          "task_score": 0.8012173771858215,
+          "cost_price": 0.04689723484500978
+        }
+      },
+      "76": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_colorization', ['image_super_resolution'], 'object_detection', ['image_colorization']]",
+          "qop": 0.3955919027909425,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.11838568318838513
+        }
+      }
+    }
+  },
+  "27": {
+    "task_query": "Given blurry grayscale image, how to return the object names in German step by step?",
+    "images": {
+      "15": {
+        "image_size": [
+          320,
+          240
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_colorization', ['image_super_resolution'], 'object_detection', ['image_colorization'], 'machine_translation', ['object_detection']]",
+          "qop": 0.30883503201148166,
+          "task_score": 0.7613060474395752,
+          "cost_price": 0.0814326155514791
+        }
+      },
+      "27": {
+        "image_size": [
+          500,
+          302
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring'], 'machine_translation', ['object_detection']]",
+          "qop": 0.33551950384129736,
+          "task_score": 0.8495661020278931,
+          "cost_price": 0.1012136923738426
+        }
+      },
+      "41": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'object_detection', ['image_colorization'], 'machine_translation', ['object_detection']]",
+          "qop": 0.3049243321085924,
+          "task_score": 0.7586365342140198,
+          "cost_price": 0.08435341289816686
+        }
+      },
+      "44": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'object_detection', ['image_colorization'], 'machine_translation', ['object_detection']]",
+          "qop": 0.34171539405401363,
+          "task_score": 0.7749433517456055,
+          "cost_price": 0.051881897805611525
+        }
+      },
+      "51": {
+        "image_size": [
+          640,
+          349
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'object_detection', ['image_colorization'], 'machine_translation', ['object_detection']]",
+          "qop": 0.4126694351245891,
+          "task_score": 0.9354366064071655,
+          "cost_price": 0.06241852778378842
+        }
+      },
+      "55": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_deblurring', ['image_colorization'], 'object_detection', ['image_deblurring'], 'machine_translation', ['object_detection']]",
+          "qop": 0.31443823362301593,
+          "task_score": 0.7589792609214783,
+          "cost_price": 0.07376014371563624
+        }
+      },
+      "92": {
+        "image_size": [
+          600,
+          400
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'object_detection', ['image_colorization'], 'machine_translation', ['object_detection']]",
+          "qop": 0.34672401083287924,
+          "task_score": 0.8608843088150024,
+          "cost_price": 0.09492589862558454
+        }
+      }
+    }
+  },
+  "28": {
+    "task_query": "Given blurry grayscale image, how to return the caption in English step by step?",
+    "images": {
+      "36": {
+        "image_size": [
+          640,
+          363
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_deblurring', ['image_colorization'], 'image_captioning', ['image_deblurring']]",
+          "qop": 0.3066187683247939,
+          "task_score": 0.8239128589630127,
+          "cost_price": 0.11943972617483366
+        }
+      },
+      "64": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_captioning', ['image_deblurring']]",
+          "qop": 0.35297677155919605,
+          "task_score": 0.8562338352203369,
+          "cost_price": 0.08519952285359109
+        }
+      },
+      "76": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_captioning', ['image_denoising']]",
+          "qop": 0.3176564976128925,
+          "task_score": 0.8058496117591858,
+          "cost_price": 0.09668359140435513
+        }
+      }
+    }
+  },
+  "29": {
+    "task_query": "Given blurry grayscale image, how to return the class label in English step by step?",
+    "images": {
+      "2": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising'], 'image_classification', ['image_colorization']]",
+          "qop": 0.4635008951251355,
+          "task_score": 1.0,
+          "cost_price": 0.041385417561101395
+        }
+      },
+      "33": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.4787808928670735,
+          "task_score": 1.0000001192092896,
+          "cost_price": 0.024059879790032282
+        }
+      },
+      "34": {
+        "image_size": [
+          768,
+          537
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.4635976778375908,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.04127561049200986
+        }
+      },
+      "45": {
+        "image_size": [
+          415,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.4787617871326238,
+          "task_score": 1.0,
+          "cost_price": 0.024081475717866688
+        }
+      },
+      "46": {
+        "image_size": [
+          800,
+          811
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.44852272969702967,
+          "task_score": 1.0,
+          "cost_price": 0.05836878284270578
+        }
+      },
+      "52": {
+        "image_size": [
+          500,
+          335
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.3122097900228449,
+          "task_score": 0.6709572672843933,
+          "cost_price": 0.026383956884762298
+        }
+      },
+      "59": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.47876495139138325,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.024077820260189002
+        }
+      },
+      "80": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.4787548258640483,
+          "task_score": 1.0000001192092896,
+          "cost_price": 0.024089436509531627
+        }
+      },
+      "81": {
+        "image_size": [
+          500,
+          396
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.47878007006053797,
+          "task_score": 1.0,
+          "cost_price": 0.02406074516547202
+        }
+      },
+      "84": {
+        "image_size": [
+          500,
+          334
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.47878681721186717,
+          "task_score": 1.0,
+          "cost_price": 0.024053094740179002
+        }
+      }
+    }
+  },
+  "30": {
+    "task_query": "Given blurry grayscale image, how to return the object names in English step by step?",
+    "images": {
+      "14": {
+        "image_size": [
+          640,
+          315
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.47384335158882573,
+          "task_score": 1.0,
+          "cost_price": 0.02965836614916121
+        }
+      },
+      "52": {
+        "image_size": [
+          333,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.473844782130901,
+          "task_score": 1.0,
+          "cost_price": 0.029656744093460752
+        }
+      },
+      "63": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.33365921597918585,
+          "task_score": 0.7297875881195068,
+          "cost_price": 0.03541610296035821
+        }
+      },
+      "72": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.394723395328948,
+          "task_score": 0.8517779111862183,
+          "cost_price": 0.03533784539319513
+        }
+      },
+      "76": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_deblurring', ['image_super_resolution'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.36562350696503565,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.15236609391746123
+        }
+      }
+    }
+  },
+  "32": {
+    "task_query": "Given low-resolutioned noisy grayscale image, how to return the class label in German step by step?",
+    "images": {
+      "12": {
+        "image_size": [
+          500,
+          332
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.3430678737813292,
+          "task_score": 0.8064205646514893,
+          "cost_price": 0.06819396528420273
+        }
+      },
+      "13": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.36221945163628794,
+          "task_score": 0.795681357383728,
+          "cost_price": 0.04039001396850804
+        }
+      },
+      "21": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.3382427878220724,
+          "task_score": 0.7764139175415039,
+          "cost_price": 0.05665311751876297
+        }
+      },
+      "23": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.38177796090503263,
+          "task_score": 0.9206455945968628,
+          "cost_price": 0.08906001565117194
+        }
+      },
+      "46": {
+        "image_size": [
+          800,
+          811
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.33736582799409454,
+          "task_score": 0.8535403609275818,
+          "cost_price": 0.10137334796082456
+        }
+      },
+      "88": {
+        "image_size": [
+          500,
+          346
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.3153429278904353,
+          "task_score": 0.7591675519943237,
+          "cost_price": 0.0728410828838453
+        }
+      },
+      "93": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.41894587759779256,
+          "task_score": 0.9090924859046936,
+          "cost_price": 0.04036635941010766
+        }
+      }
+    }
+  },
+  "33": {
+    "task_query": "Given low-resolutioned noisy grayscale image, how to return the object names in German step by step?",
+    "images": {
+      "12": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.3264812749826258,
+          "task_score": 0.7534279823303223,
+          "cost_price": 0.056957614209168644
+        }
+      },
+      "14": {
+        "image_size": [
+          640,
+          315
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.4451518430365483,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.06219091270292826
+        }
+      },
+      "32": {
+        "image_size": [
+          640,
+          366
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.3244358321972604,
+          "task_score": 0.7805207967758179,
+          "cost_price": 0.07463682101021549
+        }
+      },
+      "44": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.35246484634292613,
+          "task_score": 0.8036845922470093,
+          "cost_price": 0.055987849134317744
+        }
+      },
+      "51": {
+        "image_size": [
+          640,
+          349
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.4271382851383541,
+          "task_score": 0.9354366064071655,
+          "cost_price": 0.046012662448143386
+        }
+      }
+    }
+  },
+  "34": {
+    "task_query": "Given low-resolutioned noisy grayscale image, how to return the class label in English step by step?",
+    "images": {
+      "8": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.41495387190137545,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.09643163310448177
+        }
+      },
+      "9": {
+        "image_size": [
+          470,
+          312
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.4290995083285111,
+          "task_score": 1.0,
+          "cost_price": 0.08039228532239036
+        }
+      },
+      "28": {
+        "image_size": [
+          500,
+          332
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.42909036520845695,
+          "task_score": 1.0,
+          "cost_price": 0.08040265247639457
+        }
+      },
+      "34": {
+        "image_size": [
+          768,
+          537
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.3228190428401766,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.20090096604592456
+        }
+      },
+      "35": {
+        "image_size": [
+          500,
+          378
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_denoising', ['image_super_resolution'], 'image_classification', ['image_denoising']]",
+          "qop": 0.3752156837761837,
+          "task_score": 1.0,
+          "cost_price": 0.14148979953630508
+        }
+      },
+      "39": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.39517960748683145,
+          "task_score": 1.0,
+          "cost_price": 0.11885320826219653
+        }
+      },
+      "43": {
+        "image_size": [
+          500,
+          343
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.4195096839512289,
+          "task_score": 1.0,
+          "cost_price": 0.09126594613002208
+        }
+      },
+      "46": {
+        "image_size": [
+          800,
+          811
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.22110822097905675,
+          "task_score": 1.0,
+          "cost_price": 0.316228377893418
+        }
+      },
+      "47": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_colorization', ['image_super_resolution'], 'image_classification', ['image_colorization']]",
+          "qop": 0.37486801580225837,
+          "task_score": 1.0,
+          "cost_price": 0.14188401151281388
+        }
+      },
+      "59": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.4149271503852363,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.09646189816784467
+        }
+      },
+      "66": {
+        "image_size": [
+          500,
+          362
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.41493853592623575,
+          "task_score": 1.0,
+          "cost_price": 0.09644905597330555
+        }
+      },
+      "88": {
+        "image_size": [
+          500,
+          346
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.414955343843229,
+          "task_score": 1.0,
+          "cost_price": 0.0964299978987176
+        }
+      },
+      "95": {
+        "image_size": [
+          387,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_super_resolution', ['image_deblurring'], 'image_colorization', ['image_super_resolution'], 'image_classification', ['image_colorization']]",
+          "qop": 0.3749115577741171,
+          "task_score": 1.0,
+          "cost_price": 0.14183464036541213
+        }
+      }
+    }
+  },
+  "35": {
+    "task_query": "Given low-resolutioned noisy grayscale image, how to return the object names in English step by step?",
+    "images": {
+      "14": {
+        "image_size": [
+          640,
+          315
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'object_detection', ['image_super_resolution']]",
+          "qop": 0.39629528567966854,
+          "task_score": 1.0,
+          "cost_price": 0.11758816880348437
+        }
+      },
+      "15": {
+        "image_size": [
+          320,
+          240
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_denoising', ['image_super_resolution'], 'object_detection', ['image_denoising']]",
+          "qop": 0.32667244686516067,
+          "task_score": 0.7594449520111084,
+          "cost_price": 0.060152094554947154
+        }
+      },
+      "32": {
+        "image_size": [
+          640,
+          366
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'object_detection', ['image_super_resolution']]",
+          "qop": 0.3042003487569024,
+          "task_score": 0.8339590430259705,
+          "cost_price": 0.12787746912446443
+        }
+      },
+      "44": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_denoising', ['image_super_resolution'], 'object_detection', ['image_denoising']]",
+          "qop": 0.3035456685756791,
+          "task_score": 0.8565623164176941,
+          "cost_price": 0.1414344362924941
+        }
+      }
+    }
+  },
+  "37": {
+    "task_query": "Given noisy grayscale image, how to return the class label in German step by step?",
+    "images": {
+      "3": {
+        "image_size": [
+          495,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_deblurring', ['image_colorization'], 'image_denoising', ['image_deblurring'], 'image_super_resolution', ['image_denoising'], 'image_classification', ['image_super_resolution'], 'machine_translation', ['image_classification']]",
+          "qop": 0.32341293769600565,
+          "task_score": 1.0000001192092896,
+          "cost_price": 0.20022769876570215
+        }
+      },
+      "19": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_deblurring', ['image_colorization'], 'image_classification', ['image_deblurring'], 'machine_translation', ['image_classification']]",
+          "qop": 0.4542107914536188,
+          "task_score": 1.0,
+          "cost_price": 0.051919232594368404
+        }
+      },
+      "20": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.4500015846143706,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.05669191263293393
+        }
+      },
+      "46": {
+        "image_size": [
+          800,
+          811
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.30275004848953957,
+          "task_score": 0.8535403609275818,
+          "cost_price": 0.14062331022457286
+        }
+      },
+      "78": {
+        "image_size": [
+          500,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.38849636157814255,
+          "task_score": 0.8990742564201355,
+          "cost_price": 0.06921259093813176
+        }
+      },
+      "86": {
+        "image_size": [
+          500,
+          376
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_deblurring', ['image_colorization'], 'image_classification', ['image_deblurring'], 'machine_translation', ['image_classification']]",
+          "qop": 0.39516550976906384,
+          "task_score": 0.8819939494132996,
+          "cost_price": 0.05196714605418144
+        }
+      }
+    }
+  },
+  "38": {
+    "task_query": "Given noisy grayscale image, how to return the object names in German step by step?",
+    "images": {
+      "12": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.36806330437058976,
+          "task_score": 0.8349083662033081,
+          "cost_price": 0.05600307588371792
+        }
+      },
+      "32": {
+        "image_size": [
+          640,
+          366
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.37187272448431263,
+          "task_score": 0.8534930944442749,
+          "cost_price": 0.0622200482714487
+        }
+      },
+      "63": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.3033119668493637,
+          "task_score": 0.7164880037307739,
+          "cost_price": 0.06228605371045023
+        }
+      },
+      "72": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.32639519478322043,
+          "task_score": 0.791129469871521,
+          "cost_price": 0.0784296029049634
+        }
+      }
+    }
+  },
+  "39": {
+    "task_query": "Given noisy grayscale image, how to return the caption in English step by step?",
+    "images": {
+      "54": {
+        "image_size": [
+          320,
+          240
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_captioning', ['image_denoising']]",
+          "qop": 0.3234446613287441,
+          "task_score": 0.877764105796814,
+          "cost_price": 0.13089155661910176
+        }
+      },
+      "61": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_captioning', ['image_denoising']]",
+          "qop": 0.35352209171011906,
+          "task_score": 0.9178063869476318,
+          "cost_price": 0.11948898238715233
+        }
+      },
+      "64": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_captioning', ['image_denoising']]",
+          "qop": 0.3077311160265715,
+          "task_score": 0.8562338352203369,
+          "cost_price": 0.1365024343486329
+        }
+      }
+    }
+  },
+  "41": {
+    "task_query": "Given noisy grayscale image, how to return the object names in English step by step?",
+    "images": {
+      "14": {
+        "image_size": [
+          640,
+          315
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising']]",
+          "qop": 0.46877409947098286,
+          "task_score": 1.0,
+          "cost_price": 0.03540626370277765
+        }
+      },
+      "15": {
+        "image_size": [
+          320,
+          240
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising']]",
+          "qop": 0.31311700666833453,
+          "task_score": 0.6684878468513489,
+          "cost_price": 0.023955279856281327
+        }
+      },
+      "61": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising']]",
+          "qop": 0.37799435853819624,
+          "task_score": 0.819475531578064,
+          "cost_price": 0.03599305156638605
+        }
+      },
+      "72": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising']]",
+          "qop": 0.34585868422313837,
+          "task_score": 0.754161536693573,
+          "cost_price": 0.03540193637666045
+        }
+      }
+    }
+  },
+  "42": {
+    "task_query": "Given low-resolutioned grayscale image, how to return the caption in German step by step?",
+    "images": {
+      "44": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_captioning', ['image_colorization'], 'machine_translation', ['image_captioning']]",
+          "qop": 0.31854477689902794,
+          "task_score": 0.8348749279975891,
+          "cost_price": 0.11213193209518063
+        }
+      }
+    }
+  },
+  "43": {
+    "task_query": "Given low-resolutioned grayscale image, how to return the class label in German step by step?",
+    "images": {
+      "4": {
+        "image_size": [
+          500,
+          427
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.4268563560998988,
+          "task_score": 0.9453709125518799,
+          "cost_price": 0.05196446471050743
+        }
+      },
+      "16": {
+        "image_size": [
+          393,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.33248606458013064,
+          "task_score": 0.8996621966362,
+          "cost_price": 0.1330545841224666
+        }
+      },
+      "22": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.31620348389910613,
+          "task_score": 0.7240157723426819,
+          "cost_price": 0.051936460378198095
+        }
+      },
+      "23": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.3715957933672821,
+          "task_score": 0.9206455945968628,
+          "cost_price": 0.10060531947907744
+        }
+      },
+      "31": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_deblurring', ['image_colorization'], 'image_classification', ['image_deblurring'], 'machine_translation', ['image_classification']]",
+          "qop": 0.3145923174869217,
+          "task_score": 0.7495014071464539,
+          "cost_price": 0.06821208181733351
+        }
+      },
+      "39": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_deblurring', ['image_denoising'], 'image_classification', ['image_deblurring'], 'machine_translation', ['image_classification']]",
+          "qop": 0.42461529052564134,
+          "task_score": 1.0,
+          "cost_price": 0.08547682717192194
+        }
+      },
+      "78": {
+        "image_size": [
+          500,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.3986913241643686,
+          "task_score": 0.8990742564201355,
+          "cost_price": 0.05765277912638152
+        }
+      },
+      "83": {
+        "image_size": [
+          500,
+          460
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.3272864501907994,
+          "task_score": 0.7461667656898499,
+          "cost_price": 0.05192799076598343
+        }
+      },
+      "92": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_denoising', ['image_colorization'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.3789140070480778,
+          "task_score": 0.8781218528747559,
+          "cost_price": 0.06819908001783097
+        }
+      }
+    }
+  },
+  "44": {
+    "task_query": "Given low-resolutioned grayscale image, how to return the object names in German step by step?",
+    "images": {
+      "12": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'object_detection', ['image_colorization'], 'machine_translation', ['object_detection']]",
+          "qop": 0.40130765987018663,
+          "task_score": 0.891451895236969,
+          "cost_price": 0.05036477996145063
+        }
+      },
+      "14": {
+        "image_size": [
+          640,
+          315
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'object_detection', ['image_colorization'], 'machine_translation', ['object_detection']]",
+          "qop": 0.4501149402751189,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.056563381498565934
+        }
+      },
+      "15": {
+        "image_size": [
+          320,
+          240
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'object_detection', ['image_colorization'], 'machine_translation', ['object_detection']]",
+          "qop": 0.34182498119463073,
+          "task_score": 0.7623646855354309,
+          "cost_price": 0.04462632298489765
+        }
+      },
+      "36": {
+        "image_size": [
+          640,
+          363
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'object_detection', ['image_colorization'], 'machine_translation', ['object_detection']]",
+          "qop": 0.3193266579085336,
+          "task_score": 0.738476574420929,
+          "cost_price": 0.05659354186622311
+        }
+      },
+      "72": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'object_detection', ['image_colorization'], 'machine_translation', ['object_detection']]",
+          "qop": 0.34380555483570285,
+          "task_score": 0.8050400614738464,
+          "cost_price": 0.06657486835318585
+        }
+      }
+    }
+  },
+  "47": {
+    "task_query": "Given low-resolutioned grayscale image, how to return the object names in English step by step?",
+    "images": {
+      "12": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]",
+          "qop": 0.32573503457996567,
+          "task_score": 0.8705204129219055,
+          "cost_price": 0.12418783932609735
+        }
+      },
+      "27": {
+        "image_size": [
+          500,
+          302
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]",
+          "qop": 0.3622894338460984,
+          "task_score": 0.876765787601471,
+          "cost_price": 0.08628046152606614
+        }
+      },
+      "51": {
+        "image_size": [
+          640,
+          349
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_super_resolution', ['image_colorization'], 'object_detection', ['image_super_resolution']]",
+          "qop": 0.39212648124398075,
+          "task_score": 1.0,
+          "cost_price": 0.12231507136432836
+        }
+      }
+    }
+  },
+  "48": {
+    "task_query": "Given grayscale image, how to return the caption in German step by step?",
+    "images": {
+      "44": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_deblurring', ['image_colorization'], 'image_captioning', ['image_deblurring'], 'machine_translation', ['image_captioning']]",
+          "qop": 0.303329138266031,
+          "task_score": 0.8348749279975891,
+          "cost_price": 0.12938456227458703
+        }
+      }
+    }
+  },
+  "49": {
+    "task_query": "Given grayscale image, how to return the object names in German step by step?",
+    "images": {
+      "12": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'object_detection', ['image_colorization'], 'machine_translation', ['object_detection']]",
+          "qop": 0.4012851511118309,
+          "task_score": 0.891451895236969,
+          "cost_price": 0.0503903020767608
+        }
+      },
+      "15": {
+        "image_size": [
+          320,
+          240
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'object_detection', ['image_colorization'], 'machine_translation', ['object_detection']]",
+          "qop": 0.3412864002654027,
+          "task_score": 0.7613336443901062,
+          "cost_price": 0.04465247054355288
+        }
+      },
+      "34": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'object_detection', ['image_colorization'], 'machine_translation', ['object_detection']]",
+          "qop": 0.3395969261473216,
+          "task_score": 0.7680475115776062,
+          "cost_price": 0.050374465399418984
+        }
+      },
+      "72": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'object_detection', ['image_colorization'], 'machine_translation', ['object_detection']]",
+          "qop": 0.3491296815693324,
+          "task_score": 0.8267651796340942,
+          "cost_price": 0.07285475757456313
+        }
+      },
+      "73": {
+        "image_size": [
+          600,
+          400
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'object_detection', ['image_colorization'], 'machine_translation', ['object_detection']]",
+          "qop": 0.34817136759418676,
+          "task_score": 0.7965972423553467,
+          "cost_price": 0.05683803281905852
+        }
+      }
+    }
+  },
+  "50": {
+    "task_query": "Given grayscale image, how to return the caption in English step by step?",
+    "images": {
+      "3": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_captioning', ['image_colorization']]",
+          "qop": 0.3021557374941552,
+          "task_score": 0.754935622215271,
+          "cost_price": 0.08539446719507687
+        }
+      },
+      "27": {
+        "image_size": [
+          500,
+          302
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_captioning', ['image_colorization']]",
+          "qop": 0.3008376159412225,
+          "task_score": 0.7420239448547363,
+          "cost_price": 0.0795689388881623
+        }
+      },
+      "36": {
+        "image_size": [
+          640,
+          363
+        ],
+        "gold_plan": {
+          "plan": "['image_colorization', ['input_of_query'], 'image_captioning', ['image_colorization']]",
+          "qop": 0.3270970185995948,
+          "task_score": 0.8244059681892395,
+          "cost_price": 0.09649951501626707
+        }
+      }
+    }
+  },
+  "52": {
+    "task_query": "Given low-resolutioned noisy blurry image, how to return the caption in German step by step?",
+    "images": {
+      "44": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_captioning', ['image_deblurring'], 'machine_translation', ['image_captioning']]",
+          "qop": 0.3135699066841201,
+          "task_score": 0.8348749279975891,
+          "cost_price": 0.11777281238148139
+        }
+      },
+      "61": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_captioning', ['image_deblurring'], 'machine_translation', ['image_captioning']]",
+          "qop": 0.31969172933164103,
+          "task_score": 0.847152590751648,
+          "cost_price": 0.11779209815233266
+        }
+      },
+      "64": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_captioning', ['image_denoising'], 'machine_translation', ['image_captioning']]",
+          "qop": 0.3145189774633572,
+          "task_score": 0.8368697762489319,
+          "cost_price": 0.11782763902557361
+        }
+      }
+    }
+  },
+  "54": {
+    "task_query": "Given low-resolutioned noisy blurry image, how to return the object names in German step by step?",
+    "images": {
+      "14": {
+        "image_size": [
+          640,
+          315
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring'], 'machine_translation', ['object_detection']]",
+          "qop": 0.4451238694618152,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.06222263123616287
+        }
+      },
+      "27": {
+        "image_size": [
+          500,
+          302
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring'], 'machine_translation', ['object_detection']]",
+          "qop": 0.35661200319751246,
+          "task_score": 0.8700769543647766,
+          "cost_price": 0.08892580749135395
+        }
+      },
+      "51": {
+        "image_size": [
+          640,
+          349
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]",
+          "qop": 0.35559360370778104,
+          "task_score": 0.9354366064071655,
+          "cost_price": 0.12713537834574068
+        }
+      },
+      "64": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring'], 'machine_translation', ['object_detection']]",
+          "qop": 0.31335748800460755,
+          "task_score": 0.7255272269248962,
+          "cost_price": 0.05602036376396157
+        }
+      },
+      "72": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring'], 'machine_translation', ['object_detection']]",
+          "qop": 0.37070587674859873,
+          "task_score": 0.9084272384643555,
+          "cost_price": 0.09468733011717922
+        }
+      }
+    }
+  },
+  "55": {
+    "task_query": "Given low-resolutioned noisy blurry image, how to return the class label in English step by step?",
+    "images": {
+      "2": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_classification', ['image_denoising']]",
+          "qop": 0.46366914037244344,
+          "task_score": 1.0,
+          "cost_price": 0.041194648504260564
+        }
+      },
+      "26": {
+        "image_size": [
+          500,
+          332
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4637015420287819,
+          "task_score": 1.0,
+          "cost_price": 0.0411579090805998
+        }
+      },
+      "29": {
+        "image_size": [
+          500,
+          337
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.46369595144444203,
+          "task_score": 1.0,
+          "cost_price": 0.041164248103655536
+        }
+      },
+      "34": {
+        "image_size": [
+          768,
+          537
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.43849407477200497,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.06973995499358916
+        }
+      },
+      "46": {
+        "image_size": [
+          800,
+          811
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.41334433912262425,
+          "task_score": 1.0,
+          "cost_price": 0.09825667565653427
+        }
+      },
+      "55": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.46369866015945715,
+          "task_score": 1.0,
+          "cost_price": 0.04116117675978728
+        }
+      },
+      "59": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.4637121349772546,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.04114583041838681
+        }
+      },
+      "62": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4637045739513068,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.04115443746775618
+        }
+      },
+      "65": {
+        "image_size": [
+          500,
+          337
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.4636915772378429,
+          "task_score": 1.0,
+          "cost_price": 0.04116920790656648
+        }
+      },
+      "76": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.4637076631192057,
+          "task_score": 1.0,
+          "cost_price": 0.0411509685300305
+        }
+      },
+      "82": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_classification', ['image_denoising']]",
+          "qop": 0.46370169414280177,
+          "task_score": 1.0,
+          "cost_price": 0.04115773660233625
+        }
+      },
+      "86": {
+        "image_size": [
+          500,
+          376
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_classification', ['image_denoising']]",
+          "qop": 0.46369895200398953,
+          "task_score": 1.0,
+          "cost_price": 0.04116084584460791
+        }
+      },
+      "91": {
+        "image_size": [
+          640,
+          480
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4536041399826981,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.05260706565610037
+        }
+      }
+    }
+  },
+  "56": {
+    "task_query": "Given low-resolutioned noisy blurry image, how to return the object names in English step by step?",
+    "images": {
+      "14": {
+        "image_size": [
+          640,
+          315
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'object_detection', ['image_denoising']]",
+          "qop": 0.4641513228238028,
+          "task_score": 1.0,
+          "cost_price": 0.04064791394300061
+        }
+      },
+      "27": {
+        "image_size": [
+          500,
+          302
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.3929993259005076,
+          "task_score": 0.8485231399536133,
+          "cost_price": 0.03544747273749421
+        }
+      },
+      "32": {
+        "image_size": [
+          640,
+          366
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'object_detection', ['image_denoising']]",
+          "qop": 0.3132165112000329,
+          "task_score": 0.7090763449668884,
+          "cost_price": 0.046853593050991835
+        }
+      },
+      "54": {
+        "image_size": [
+          320,
+          240
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'object_detection', ['image_denoising']]",
+          "qop": 0.3347395307634169,
+          "task_score": 0.7108744382858276,
+          "cost_price": 0.023468588587906167
+        }
+      },
+      "55": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_deblurring', ['image_super_resolution'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.3312662910556554,
+          "task_score": 1.0,
+          "cost_price": 0.19132291121210598
+        }
+      },
+      "72": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.4044439672350798,
+          "task_score": 0.8915242552757263,
+          "cost_price": 0.04684962349044736
+        }
+      },
+      "76": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'object_detection', ['image_denoising']]",
+          "qop": 0.46417682162471624,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.040618967701488935
+        }
+      }
+    }
+  },
+  "57": {
+    "task_query": "Given noisy blurry image, how to return the object names in German step by step?",
+    "images": {
+      "12": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.3361860803443317,
+          "task_score": 0.7534279823303223,
+          "cost_price": 0.045953579353508245
+        }
+      },
+      "14": {
+        "image_size": [
+          640,
+          315
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.4451502905186931,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.062192673063899584
+        }
+      },
+      "41": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.31077122958744596,
+          "task_score": 0.7598507404327393,
+          "cost_price": 0.07841214177222355
+        }
+      },
+      "55": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.33897539736129606,
+          "task_score": 0.7589792609214783,
+          "cost_price": 0.045938070529037034
+        }
+      },
+      "92": {
+        "image_size": [
+          600,
+          400
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.30561262596984257,
+          "task_score": 0.7209105491638184,
+          "cost_price": 0.06218470071385715
+        }
+      }
+    }
+  },
+  "58": {
+    "task_query": "Given noisy blurry image, how to return the caption in English step by step?",
+    "images": {
+      "31": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_super_resolution', ['image_deblurring'], 'image_captioning', ['image_super_resolution']]",
+          "qop": 0.30107376942932473,
+          "task_score": 0.8984573483467102,
+          "cost_price": 0.16798912240665342
+        }
+      },
+      "64": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_captioning', ['image_deblurring']]",
+          "qop": 0.33785137585566977,
+          "task_score": 0.8562338352203369,
+          "cost_price": 0.10234982884365398
+        }
+      },
+      "72": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_captioning', ['image_denoising']]",
+          "qop": 0.339964059206882,
+          "task_score": 0.8306103944778442,
+          "cost_price": 0.08542742260870667
+        }
+      }
+    }
+  },
+  "59": {
+    "task_query": "Given noisy blurry image, how to return the class label in English step by step?",
+    "images": {
+      "4": {
+        "image_size": [
+          500,
+          427
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4637032173386577,
+          "task_score": 1.0,
+          "cost_price": 0.041156009488842904
+        }
+      },
+      "8": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.46370885297289965,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.041149585592731346
+        }
+      },
+      "34": {
+        "image_size": [
+          768,
+          537
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4435689275785495,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.06398570695983512
+        }
+      },
+      "35": {
+        "image_size": [
+          500,
+          378
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_classification', ['image_denoising']]",
+          "qop": 0.46368698470243863,
+          "task_score": 1.0,
+          "cost_price": 0.04117441526702148
+        }
+      },
+      "43": {
+        "image_size": [
+          500,
+          343
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_classification', ['image_denoising']]",
+          "qop": 0.46370500280078975,
+          "task_score": 1.0,
+          "cost_price": 0.04115398499821149
+        }
+      },
+      "45": {
+        "image_size": [
+          415,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4636955425321697,
+          "task_score": 1.0,
+          "cost_price": 0.04116471175900251
+        }
+      },
+      "46": {
+        "image_size": [
+          800,
+          811
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_classification', ['image_denoising']]",
+          "qop": 0.40830133689119424,
+          "task_score": 1.0,
+          "cost_price": 0.10397480912377513
+        }
+      },
+      "52": {
+        "image_size": [
+          500,
+          335
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4637044384058579,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.04115459115933359
+        }
+      },
+      "59": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_classification', ['image_denoising']]",
+          "qop": 0.46370320442449336,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.041155956547680755
+        }
+      },
+      "75": {
+        "image_size": [
+          400,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.401313939174892,
+          "task_score": 1.0000001192092896,
+          "cost_price": 0.11189771134039672
+        }
+      },
+      "86": {
+        "image_size": [
+          500,
+          376
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4637021704972346,
+          "task_score": 1.0,
+          "cost_price": 0.041157196476018724
+        }
+      },
+      "96": {
+        "image_size": [
+          500,
+          347
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_super_resolution', ['image_deblurring'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.41032997419436584,
+          "task_score": 1.0000001192092896,
+          "cost_price": 0.1016746558625787
+        }
+      }
+    }
+  },
+  "60": {
+    "task_query": "Given noisy blurry image, how to return the object names in English step by step?",
+    "images": {
+      "12": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'object_detection', ['image_super_resolution']]",
+          "qop": 0.3407245853706018,
+          "task_score": 0.8705204129219055,
+          "cost_price": 0.10719156446810697
+        }
+      },
+      "44": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'object_detection', ['image_denoising']]",
+          "qop": 0.3869891079754749,
+          "task_score": 0.8565623164176941,
+          "cost_price": 0.0468200178256679
+        }
+      },
+      "55": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.3162120065128974,
+          "task_score": 0.7150229811668396,
+          "cost_price": 0.04682844686675265
+        }
+      },
+      "72": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.39393465965008106,
+          "task_score": 0.8915242552757263,
+          "cost_price": 0.05876586319480086
+        }
+      },
+      "76": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'object_detection', ['image_denoising']]",
+          "qop": 0.4587065868552663,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.046821529404497894
+        }
+      }
+    }
+  },
+  "63": {
+    "task_query": "Given low-resolutioned blurry image, how to return the object names in German step by step?",
+    "images": {
+      "40": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring'], 'machine_translation', ['object_detection']]",
+          "qop": 0.307291185874487,
+          "task_score": 0.7706834077835083,
+          "cost_price": 0.08849952046986628
+        }
+      },
+      "44": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring'], 'machine_translation', ['object_detection']]",
+          "qop": 0.3523920165561294,
+          "task_score": 0.8036845922470093,
+          "cost_price": 0.056070428998887076
+        }
+      },
+      "55": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.3094237102212878,
+          "task_score": 0.7589792609214783,
+          "cost_price": 0.07944598575373368
+        }
+      },
+      "72": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring'], 'machine_translation', ['object_detection']]",
+          "qop": 0.35829663719113786,
+          "task_score": 0.8836985230445862,
+          "cost_price": 0.09473822051597733
+        }
+      }
+    }
+  },
+  "64": {
+    "task_query": "Given low-resolutioned blurry image, how to return the class label in English step by step?",
+    "images": {
+      "0": {
+        "image_size": [
+          408,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.4787895394002937,
+          "task_score": 1.0,
+          "cost_price": 0.02405000811914825
+        }
+      },
+      "19": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.4788002849669929,
+          "task_score": 1.0,
+          "cost_price": 0.024037823991173
+        }
+      },
+      "21": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.4787971332692363,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.02404136382993263
+        }
+      },
+      "22": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.4787957228560395,
+          "task_score": 1.0,
+          "cost_price": 0.024042996854107934
+        }
+      },
+      "34": {
+        "image_size": [
+          768,
+          537
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.46366010004101144,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.04120483152462138
+        }
+      },
+      "46": {
+        "image_size": [
+          800,
+          811
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.45355595086810013,
+          "task_score": 1.0,
+          "cost_price": 0.05266173987394586
+        }
+      },
+      "52": {
+        "image_size": [
+          500,
+          335
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.47878664220754835,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.0240532593810729
+        }
+      },
+      "55": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.47878402685229376,
+          "task_score": 1.0,
+          "cost_price": 0.024056258658759655
+        }
+      },
+      "59": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.47879077862463837,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.024048535409604967
+        }
+      },
+      "72": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.47879840300363835,
+          "task_score": 1.0,
+          "cost_price": 0.024039957902114894
+        }
+      },
+      "81": {
+        "image_size": [
+          500,
+          396
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.4787943480832384,
+          "task_score": 1.0,
+          "cost_price": 0.024044555674430253
+        }
+      },
+      "84": {
+        "image_size": [
+          500,
+          334
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.4787894142858992,
+          "task_score": 1.0,
+          "cost_price": 0.0240501499832152
+        }
+      }
+    }
+  },
+  "65": {
+    "task_query": "Given low-resolutioned blurry image, how to return the object names in English step by step?",
+    "images": {
+      "14": {
+        "image_size": [
+          640,
+          315
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.47930666580081105,
+          "task_score": 1.0,
+          "cost_price": 0.023463651492303405
+        }
+      },
+      "31": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.3341436069444341,
+          "task_score": 0.7206187844276428,
+          "cost_price": 0.029668726203021092
+        }
+      },
+      "32": {
+        "image_size": [
+          640,
+          366
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.32836763200716895,
+          "task_score": 0.7090763449668884,
+          "cost_price": 0.029674118012582552
+        }
+      },
+      "44": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.40212409294170287,
+          "task_score": 0.8565623164176941,
+          "cost_price": 0.02965883881166722
+        }
+      },
+      "52": {
+        "image_size": [
+          333,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'object_detection', ['image_denoising']]",
+          "qop": 0.45870219594132344,
+          "task_score": 1.0,
+          "cost_price": 0.04682654194355012
+        }
+      },
+      "63": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_denoising', ['image_deblurring'], 'object_detection', ['image_denoising']]",
+          "qop": 0.359314097059924,
+          "task_score": 0.8012173771858215,
+          "cost_price": 0.04682289934142182
+        }
+      },
+      "72": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.42090593135591486,
+          "task_score": 0.894148588180542,
+          "cost_price": 0.02967164872576109
+        }
+      },
+      "76": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.4793052449128102,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.023465228809387333
+        }
+      }
+    }
+  },
+  "66": {
+    "task_query": "Given blurry image, how to return the caption in German step by step?",
+    "images": {
+      "61": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_captioning', ['image_denoising'], 'machine_translation', ['image_captioning']]",
+          "qop": 0.3196853951694151,
+          "task_score": 0.847152590751648,
+          "cost_price": 0.11779928029966255
+        }
+      },
+      "64": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_captioning', ['image_denoising'], 'machine_translation', ['image_captioning']]",
+          "qop": 0.31454714529322564,
+          "task_score": 0.8368697762489319,
+          "cost_price": 0.11779570023132398
+        }
+      }
+    }
+  },
+  "67": {
+    "task_query": "Given blurry image, how to return the class label in German step by step?",
+    "images": {
+      "9": {
+        "image_size": [
+          470,
+          312
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.4551130686577536,
+          "task_score": 1.0,
+          "cost_price": 0.050896163152610814
+        }
+      },
+      "12": {
+        "image_size": [
+          500,
+          332
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_classification', ['image_deblurring'], 'machine_translation', ['image_classification']]",
+          "qop": 0.3380440720653165,
+          "task_score": 0.8064205646514893,
+          "cost_price": 0.07389032776964388
+        }
+      },
+      "16": {
+        "image_size": [
+          393,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.34265321592094505,
+          "task_score": 0.8996621966362,
+          "cost_price": 0.12152630678281365
+        }
+      },
+      "35": {
+        "image_size": [
+          500,
+          378
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.3944544883524897,
+          "task_score": 0.8601486086845398,
+          "cost_price": 0.04038841399647121
+        }
+      },
+      "46": {
+        "image_size": [
+          800,
+          811
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.33740486598512115,
+          "task_score": 0.8535403609275818,
+          "cost_price": 0.10132908376407451
+        }
+      },
+      "61": {
+        "image_size": [
+          500,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring'], 'machine_translation', ['image_classification']]",
+          "qop": 0.3073208524032136,
+          "task_score": 0.7247040867805481,
+          "cost_price": 0.062398484173584
+        }
+      },
+      "68": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring'], 'machine_translation', ['image_classification']]",
+          "qop": 0.4033869701048894,
+          "task_score": 0.8780453205108643,
+          "cost_price": 0.04040641330834044
+        }
+      },
+      "90": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.4150413475775245,
+          "task_score": 0.9299402236938477,
+          "cost_price": 0.056612970775124005
+        }
+      },
+      "99": {
+        "image_size": [
+          500,
+          385
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring'], 'machine_translation', ['image_classification']]",
+          "qop": 0.42271308335514773,
+          "task_score": 0.9453405141830444,
+          "cost_price": 0.05664518355561506
+        }
+      }
+    }
+  },
+  "68": {
+    "task_query": "Given blurry image, how to return the object names in German step by step?",
+    "images": {
+      "14": {
+        "image_size": [
+          640,
+          315
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.4505981362429159,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.05601549773649346
+        }
+      },
+      "15": {
+        "image_size": [
+          320,
+          240
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.3172528667012117,
+          "task_score": 0.7341841459274292,
+          "cost_price": 0.05651142320227098
+        }
+      },
+      "41": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.3130761753279846,
+          "task_score": 0.7645263671875,
+          "cost_price": 0.07844940955946399
+        }
+      },
+      "44": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]",
+          "qop": 0.3826114961766415,
+          "task_score": 1.0000001192092896,
+          "cost_price": 0.13310394134381592
+        }
+      },
+      "63": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring'], 'machine_translation', ['object_detection']]",
+          "qop": 0.3169212716319965,
+          "task_score": 0.7436898946762085,
+          "cost_price": 0.06227657529906
+        }
+      }
+    }
+  },
+  "70": {
+    "task_query": "Given blurry image, how to return the class label in English step by step?",
+    "images": {
+      "5": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.47878770927491104,
+          "task_score": 1.0,
+          "cost_price": 0.02405208325231685
+        }
+      },
+      "7": {
+        "image_size": [
+          500,
+          358
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.47878620048698795,
+          "task_score": 1.0,
+          "cost_price": 0.024053794029017344
+        }
+      },
+      "10": {
+        "image_size": [
+          500,
+          377
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.478773568267556,
+          "task_score": 1.0,
+          "cost_price": 0.02406811738510252
+        }
+      },
+      "14": {
+        "image_size": [
+          468,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.47375847887973505,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.029754533596395363
+        }
+      },
+      "18": {
+        "image_size": [
+          579,
+          383
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.473751641163084,
+          "task_score": 1.0,
+          "cost_price": 0.02976235429563879
+        }
+      },
+      "30": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.47878948506514046,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.024050035936308473
+        }
+      },
+      "34": {
+        "image_size": [
+          768,
+          537
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.4636790403468666,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.04118335558790354
+        }
+      },
+      "43": {
+        "image_size": [
+          500,
+          343
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.4787758985937319,
+          "task_score": 1.0,
+          "cost_price": 0.02406547508682775
+        }
+      },
+      "46": {
+        "image_size": [
+          800,
+          811
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.45356310949289164,
+          "task_score": 1.0,
+          "cost_price": 0.05265362288923688
+        }
+      },
+      "59": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.47879367893011704,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.024045246826125972
+        }
+      },
+      "66": {
+        "image_size": [
+          500,
+          362
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.47878834255334607,
+          "task_score": 1.0,
+          "cost_price": 0.024051365193817714
+        }
+      },
+      "84": {
+        "image_size": [
+          500,
+          334
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.4787899298199083,
+          "task_score": 1.0,
+          "cost_price": 0.024049565432160955
+        }
+      }
+    }
+  },
+  "71": {
+    "task_query": "Given blurry image, how to return the object names in English step by step?",
+    "images": {
+      "14": {
+        "image_size": [
+          640,
+          315
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.45870018616807073,
+          "task_score": 1.0,
+          "cost_price": 0.04682882077492284
+        }
+      },
+      "15": {
+        "image_size": [
+          320,
+          240
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_deblurring', ['image_super_resolution'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.3156659481178994,
+          "task_score": 0.7687404155731201,
+          "cost_price": 0.07790203305977411
+        }
+      },
+      "32": {
+        "image_size": [
+          640,
+          366
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.3233364045494119,
+          "task_score": 0.7090763449668884,
+          "cost_price": 0.0353789003599312
+        }
+      },
+      "61": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.3936616117326027,
+          "task_score": 0.8286899328231812,
+          "cost_price": 0.023452335965196722
+        }
+      },
+      "64": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.3261154194631969,
+          "task_score": 0.6935939788818359,
+          "cost_price": 0.023450312337291293
+        }
+      },
+      "76": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring']]",
+          "qop": 0.473844629968746,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.02965688283419925
+        }
+      }
+    }
+  },
+  "75": {
+    "task_query": "Given low-resolutioned noisy image, how to return the caption in English step by step?",
+    "images": {
+      "14": {
+        "image_size": [
+          640,
+          315
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_captioning', ['image_denoising']]",
+          "qop": 0.322492102862624,
+          "task_score": 0.7951915264129639,
+          "cost_price": 0.08515815262741372
+        }
+      },
+      "36": {
+        "image_size": [
+          640,
+          363
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_captioning', ['image_denoising']]",
+          "qop": 0.30221597471135664,
+          "task_score": 0.7546038031578064,
+          "cost_price": 0.08513804508438017
+        }
+      },
+      "52": {
+        "image_size": [
+          333,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_captioning', ['image_denoising']]",
+          "qop": 0.3101688119540569,
+          "task_score": 0.7705360651016235,
+          "cost_price": 0.08515311850977288
+        }
+      },
+      "58": {
+        "image_size": [
+          640,
+          351
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_captioning', ['image_denoising']]",
+          "qop": 0.36625341791472243,
+          "task_score": 0.8827388286590576,
+          "cost_price": 0.0851721401881776
+        }
+      },
+      "61": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_captioning', ['image_denoising']]",
+          "qop": 0.35531741559663443,
+          "task_score": 0.8910244703292847,
+          "cost_price": 0.10226963873409407
+        }
+      },
+      "76": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_captioning', ['image_denoising']]",
+          "qop": 0.3263325496099666,
+          "task_score": 0.8028987050056458,
+          "cost_price": 0.08517305463336636
+        }
+      }
+    }
+  },
+  "76": {
+    "task_query": "Given low-resolutioned noisy image, how to return the class label in English step by step?",
+    "images": {
+      "0": {
+        "image_size": [
+          408,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4788405199072828,
+          "task_score": 1.0,
+          "cost_price": 0.02399220260374027
+        }
+      },
+      "16": {
+        "image_size": [
+          393,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.47883556542057965,
+          "task_score": 1.0,
+          "cost_price": 0.023997820371674937
+        }
+      },
+      "24": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4788370775866303,
+          "task_score": 1.0000001192092896,
+          "cost_price": 0.02399617334880898
+        }
+      },
+      "29": {
+        "image_size": [
+          500,
+          337
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4788414380547524,
+          "task_score": 1.0,
+          "cost_price": 0.023991161539403442
+        }
+      },
+      "34": {
+        "image_size": [
+          768,
+          537
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.46374298451751084,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.04111085090013698
+        }
+      },
+      "46": {
+        "image_size": [
+          800,
+          811
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4536825283646285,
+          "task_score": 1.0,
+          "cost_price": 0.05251821683233629
+        }
+      },
+      "56": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.47883312881803136,
+          "task_score": 1.0000001192092896,
+          "cost_price": 0.02400065075826546
+        }
+      },
+      "59": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4788390791524106,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.023993768655266024
+        }
+      },
+      "76": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.47884042160172813,
+          "task_score": 1.0,
+          "cost_price": 0.02399231406993766
+        }
+      },
+      "81": {
+        "image_size": [
+          500,
+          396
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4788430641630669,
+          "task_score": 1.0,
+          "cost_price": 0.023989317736060153
+        }
+      },
+      "84": {
+        "image_size": [
+          500,
+          334
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.48386350469754885,
+          "task_score": 1.0,
+          "cost_price": 0.018296766409868603
+        }
+      }
+    }
+  },
+  "77": {
+    "task_query": "Given low-resolutioned noisy image, how to return the object names in English step by step?",
+    "images": {
+      "52": {
+        "image_size": [
+          333,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_deblurring', ['image_super_resolution'], 'image_denoising', ['image_deblurring'], 'object_detection', ['image_denoising']]",
+          "qop": 0.3389688106584692,
+          "task_score": 1.0,
+          "cost_price": 0.18258921784817522
+        }
+      },
+      "76": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_deblurring', ['image_super_resolution'], 'image_denoising', ['image_deblurring'], 'object_detection', ['image_denoising']]",
+          "qop": 0.32483511172878665,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.1986150300019703
+        }
+      }
+    }
+  },
+  "79": {
+    "task_query": "Given noisy image, how to return the class label in German step by step?",
+    "images": {
+      "10": {
+        "image_size": [
+          500,
+          377
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.32952222309257273,
+          "task_score": 0.8446875214576721,
+          "cost_price": 0.1052480083254235
+        }
+      },
+      "16": {
+        "image_size": [
+          393,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.3283625251227767,
+          "task_score": 0.8996621966362,
+          "cost_price": 0.13773016186217693
+        }
+      },
+      "21": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.3382659554154467,
+          "task_score": 0.7764139175415039,
+          "cost_price": 0.05662684836698601
+        }
+      },
+      "46": {
+        "image_size": [
+          800,
+          811
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.33735722645616906,
+          "task_score": 0.8535403609275818,
+          "cost_price": 0.10138310102846651
+        }
+      },
+      "54": {
+        "image_size": [
+          420,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.3103338724459073,
+          "task_score": 0.7204636335372925,
+          "cost_price": 0.056578024812308614
+        }
+      },
+      "61": {
+        "image_size": [
+          500,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.3124420025623501,
+          "task_score": 0.7247040867805481,
+          "cost_price": 0.056591740735475196
+        }
+      },
+      "78": {
+        "image_size": [
+          500,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.4088983518738298,
+          "task_score": 0.8990742564201355,
+          "cost_price": 0.04607928697466876
+        }
+      },
+      "93": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]",
+          "qop": 0.4189631759999428,
+          "task_score": 0.9090924859046936,
+          "cost_price": 0.04034674518672927
+        }
+      }
+    }
+  },
+  "80": {
+    "task_query": "Given noisy image, how to return the object names in German step by step?",
+    "images": {
+      "12": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.3625670594464928,
+          "task_score": 0.8349083662033081,
+          "cost_price": 0.06223512984727917
+        }
+      },
+      "39": {
+        "image_size": [
+          640,
+          384
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.31972698514174513,
+          "task_score": 0.7592142820358276,
+          "cost_price": 0.06789660357576863
+        }
+      },
+      "44": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.352491899721283,
+          "task_score": 0.8036845922470093,
+          "cost_price": 0.05595717398862376
+        }
+      },
+      "72": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.32638363077963645,
+          "task_score": 0.791129469871521,
+          "cost_price": 0.07844271503794978
+        }
+      },
+      "92": {
+        "image_size": [
+          600,
+          400
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]",
+          "qop": 0.30560259407327217,
+          "task_score": 0.7209105491638184,
+          "cost_price": 0.06219607562921241
+        }
+      }
+    }
+  },
+  "82": {
+    "task_query": "Given noisy image, how to return the class label in English step by step?",
+    "images": {
+      "14": {
+        "image_size": [
+          468,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4788238673701648,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.024011016912784858
+        }
+      },
+      "18": {
+        "image_size": [
+          579,
+          383
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.47881207711853474,
+          "task_score": 1.0,
+          "cost_price": 0.024024453166952064
+        }
+      },
+      "22": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4787822296581476,
+          "task_score": 1.0,
+          "cost_price": 0.02405829645202702
+        }
+      },
+      "27": {
+        "image_size": [
+          500,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4788078796644516,
+          "task_score": 1.0,
+          "cost_price": 0.024029212554628032
+        }
+      },
+      "34": {
+        "image_size": [
+          768,
+          537
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4687408566105125,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.03544388936245034
+        }
+      },
+      "35": {
+        "image_size": [
+          500,
+          378
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.478837591516631,
+          "task_score": 1.0,
+          "cost_price": 0.023995523032291056
+        }
+      },
+      "46": {
+        "image_size": [
+          800,
+          811
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4536388361874133,
+          "task_score": 1.0,
+          "cost_price": 0.05256775829381614
+        }
+      },
+      "59": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.47858213206698186,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.024285114496706048
+        }
+      },
+      "63": {
+        "image_size": [
+          645,
+          380
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4736697600394136,
+          "task_score": 1.0,
+          "cost_price": 0.029855197243571076
+        }
+      },
+      "79": {
+        "image_size": [
+          500,
+          333
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.4788264404907644,
+          "task_score": 1.0,
+          "cost_price": 0.02400816690022449
+        }
+      },
+      "81": {
+        "image_size": [
+          500,
+          396
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]",
+          "qop": 0.47881611687997894,
+          "task_score": 1.0,
+          "cost_price": 0.02401987258299561
+        }
+      }
+    }
+  },
+  "83": {
+    "task_query": "Given noisy image, how to return the object names in English step by step?",
+    "images": {
+      "12": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising']]",
+          "qop": 0.3329804693883735,
+          "task_score": 0.7181776762008667,
+          "cost_price": 0.02960362301191371
+        }
+      },
+      "27": {
+        "image_size": [
+          500,
+          302
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising']]",
+          "qop": 0.4130004100282293,
+          "task_score": 0.8684072494506836,
+          "cost_price": 0.024041792172333112
+        }
+      },
+      "51": {
+        "image_size": [
+          640,
+          349
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising']]",
+          "qop": 0.473828622019775,
+          "task_score": 1.0,
+          "cost_price": 0.029675067637259314
+        }
+      },
+      "54": {
+        "image_size": [
+          320,
+          240
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising']]",
+          "qop": 0.3367789417806707,
+          "task_score": 0.6947345733642578,
+          "cost_price": 0.012005858130772401
+        }
+      },
+      "63": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising']]",
+          "qop": 0.35112568747445877,
+          "task_score": 0.7545220255851746,
+          "cost_price": 0.02963418842994265
+        }
+      },
+      "64": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising']]",
+          "qop": 0.3261423020810808,
+          "task_score": 0.6935939788818359,
+          "cost_price": 0.023419830812605267
+        }
+      },
+      "72": {
+        "image_size": [
+          640,
+          361
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising']]",
+          "qop": 0.38007105914861095,
+          "task_score": 0.8124470114707947,
+          "cost_price": 0.029653601806106572
+        }
+      },
+      "92": {
+        "image_size": [
+          600,
+          400
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising']]",
+          "qop": 0.3166923786587231,
+          "task_score": 0.6856877207756042,
+          "cost_price": 0.029652507778205252
+        }
+      }
+    }
+  },
+  "85": {
+    "task_query": "Given low-resolutioned image, how to return the object names in German step by step?",
+    "images": {
+      "15": {
+        "image_size": [
+          320,
+          240
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'object_detection', ['image_super_resolution'], 'machine_translation', ['object_detection']]",
+          "qop": 0.3095568671456316,
+          "task_score": 0.7606542706489563,
+          "cost_price": 0.08024462817743452
+        }
+      }
+    }
+  },
+  "86": {
+    "task_query": "Given low-resolutioned image, how to return the class label in English step by step?",
+    "images": {
+      "0": {
+        "image_size": [
+          408,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.4163833601541005,
+          "task_score": 1.0,
+          "cost_price": 0.09481080609902559
+        }
+      },
+      "20": {
+        "image_size": [
+          375,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.4254962704566816,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.08447787238068499
+        }
+      },
+      "25": {
+        "image_size": [
+          458,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.40730417849249967,
+          "task_score": 1.000000238418579,
+          "cost_price": 0.10510559713548832
+        }
+      },
+      "34": {
+        "image_size": [
+          768,
+          537
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.334358351542511,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.18781683396515572
+        }
+      },
+      "46": {
+        "image_size": [
+          800,
+          811
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.24283367049910748,
+          "task_score": 1.0,
+          "cost_price": 0.29159443678246444
+        }
+      },
+      "59": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.4255391533028122,
+          "task_score": 0.9999998807907104,
+          "cost_price": 0.08442921480727403
+        }
+      },
+      "62": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.4208834755515144,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.08970820457454469
+        }
+      },
+      "68": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.42548218452769504,
+          "task_score": 1.0,
+          "cost_price": 0.08449387785359733
+        }
+      },
+      "69": {
+        "image_size": [
+          500,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.3981663132022884,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.1154666239343986
+        }
+      },
+      "72": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.4254815778523629,
+          "task_score": 1.0,
+          "cost_price": 0.08449456574750683
+        }
+      },
+      "80": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.4255052531446971,
+          "task_score": 1.0000001192092896,
+          "cost_price": 0.08446778851284942
+        }
+      },
+      "93": {
+        "image_size": [
+          500,
+          375
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.42553344799961074,
+          "task_score": 0.9999999403953552,
+          "cost_price": 0.08443571769926762
+        }
+      },
+      "94": {
+        "image_size": [
+          500,
+          334
+        ],
+        "gold_plan": {
+          "plan": "['image_super_resolution', ['input_of_query'], 'image_classification', ['image_super_resolution']]",
+          "qop": 0.4346064794196775,
+          "task_score": 1.0,
+          "cost_price": 0.07414806922760649
+        }
+      },
+      "95": {
+        "image_size": [
+          387,
+          500
+        ],
+        "gold_plan": {
+          "plan": "['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising'], 'image_super_resolution', ['image_colorization'], 'image_deblurring', ['image_super_resolution'], 'image_classification', ['image_deblurring']]",
+          "qop": 0.3450297025986965,
+          "task_score": 1.0,
+          "cost_price": 0.1757169248262233
+        }
+      }
+    }
+  }
+}
