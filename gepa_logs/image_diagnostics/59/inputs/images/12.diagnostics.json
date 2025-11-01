@@ -1,0 +1,94 @@
+{
+  "source": {
+    "filename": "12.jpg",
+    "sha256": "557970c290a1c33cd0649e8c950cf2621d2c18f01d9534e801008cb82c71e2fa",
+    "format": "JPEG",
+    "mime": "image/jpeg",
+    "byte_size": 14868
+  },
+  "resolution": {
+    "width_px": 500,
+    "height_px": 332,
+    "aspect_ratio": "125:83",
+    "dpi": null
+  },
+  "color": {
+    "is_grayscale": false,
+    "icc_profile": null,
+    "icc_sha256": null,
+    "colorfulness": 35.534,
+    "bit_depth": 8
+  },
+  "quality": {
+    "blur_vol": 38.405,
+    "tenengrad": 1351.646,
+    "motion_blur": {
+      "angle_deg": 139.68,
+      "length_px": 8.07,
+      "confidence": 0.7228600978851318,
+      "method": "radon_spectrum"
+    },
+    "noise_sigma_luma": 1.388,
+    "banding_score": null,
+    "blockiness": 0.0335,
+    "ringing": 1.3116,
+    "brisque": null,
+    "percent_clipped_shadows": 0.222,
+    "percent_clipped_highlights": 0.0,
+    "entropy_bits": 5.994,
+    "blur_normalized_0_1": 0.154
+  },
+  "content": {
+    "faces": [],
+    "text": {
+      "present": null,
+      "avg_char_px_height": null,
+      "component_count": null
+    },
+    "objects_summary": {
+      "count": null,
+      "smallest_obj_px": null
+    },
+    "scene_type": "unknown"
+  },
+  "ocr": {
+    "text": null,
+    "lang": null,
+    "confidence": null,
+    "note": "pytesseract not installed"
+  },
+  "compression": {
+    "format": "JPEG",
+    "jpeg_quant_hint": {
+      "qtables_count": 2,
+      "avg_table_value": 36.23
+    }
+  },
+  "exposure_capture": {
+    "iso": null,
+    "shutter_s": null,
+    "aperture_f": null,
+    "focal_length_mm": null
+  },
+  "identity": {
+    "phash": "e73815c1f0de1f03",
+    "dhash": "cb416101c1e26843"
+  },
+  "pipeline": {
+    "created_utc": null,
+    "tools": [
+      {
+        "name": "pillow",
+        "version": "11.3.0"
+      },
+      {
+        "name": "opencv-python",
+        "version": "4.12.0"
+      },
+      {
+        "name": "imagehash",
+        "version": "4.3.2"
+      }
+    ]
+  }
+}

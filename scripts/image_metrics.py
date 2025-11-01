@@ -16,48 +16,26 @@ Notes:
 """
 import argparse, json, math, hashlib, io, os, sys
 from pathlib import Path
-from typing import Optional, Dict, Any, List
+from typing import Optional, Dict, Any, List, Set
 
 import numpy as np
 
-# --- Optional imports guarded ---
-try:
-    import cv2
-except Exception as e:
-    cv2 = None
+import cv2
+from PIL import Image, ImageOps, ImageCms, ExifTags
+import piexif
+import imagehash
+import pytesseract
+from langdetect import detect as lang_detect
+from skimage.transform import radon
+from tqdm import tqdm
 
-try:
-    from PIL import Image, ImageOps, ImageCms, ExifTags
-except Exception:
-    Image = None
-
-try:
-    import piexif
-except Exception:
-    piexif = None
-
-try:
-    import imagehash
-except Exception:
-    imagehash = None
-
-try:
-    import pytesseract
-except Exception:
-    pytesseract = None
-
-try:
-    from langdetect import detect as lang_detect
-except Exception:
-    lang_detect = None
-
-# scikit-image for radon transform (motion blur angle heuristic) and entropy
-try:
-    from skimage.transform import radon
-except Exception:
-    radon = None
-
-# --------------------------------
+repo_root = Path(__file__).parent.parent
+catpllmdir = repo_root / "catp_base"
+if str(catpllmdir) not in sys.path:
+    sys.path.insert(0, str(catpllmdir))
+from src.config import GlobalTaskConfig
+default_test_seq_tasks = GlobalTaskConfig.default_test_seq_tasks
+default_test_nonseq_tasks = GlobalTaskConfig.default_test_nonseq_tasks
 
 def fail(msg):
     print(f"[error] {msg}", file=sys.stderr)
@@ -422,14 +400,27 @@ def build_bundle(image_path: Path) -> Dict[str, Any]:
 
     return bundle
 
-def iter_image_files(path: Path):
+def iter_image_files(path: Path, allowed_task_ids: Optional[Set[int]] = None):
     exts = {".jpg", ".jpeg", ".png", ".bmp", ".tiff", ".tif", ".webp"}
     if path.is_file():
         if path.suffix.lower() in exts:
             yield path
         return
     for p in path.rglob("*"):
+        if "outputs" in p.parts:
+            continue
         if p.is_file() and p.suffix.lower() in exts:
+            if allowed_task_ids is not None:
+                parts = p.parts
+                try:
+                    img_idx = len(parts) - 1 - parts[::-1].index("images")
+                    if img_idx - 2 < 0 or parts[img_idx - 1] != "inputs":
+                        continue
+                    tid = int(parts[img_idx - 2])
+                except Exception:
+                    continue
+                if tid not in allowed_task_ids:
+                    continue
             yield p
 
 def compute_out_path(img_path: Path, args) -> Path:
@@ -451,6 +442,18 @@ def compute_out_path(img_path: Path, args) -> Path:
     # Default next to image
     return img_path.with_suffix(".diagnostics.json")
 
+def is_valid_existing_json(path: Path) -> bool:
+    try:
+        if (not path.exists()) or path.stat().st_size <= 2:
+            return False
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        if isinstance(data, dict):
+            return len(data) > 0
+        return bool(data)
+    except Exception:
+        return False
+
 def main():
     parser = argparse.ArgumentParser(description="Compute diagnostics bundle for image(s) (LLM planning input).")
     parser.add_argument("image", help="Path to input image OR directory of images")
@@ -458,6 +461,8 @@ def main():
     parser.add_argument("--out-dir", help="Directory to write outputs, preserving input folder structure under --in-root (or input dir).")
     parser.add_argument("--in-root", help="When using --out-dir, mirror paths relative to this directory. Defaults to the provided input directory; for single files, defaults to the image's parent.")
     parser.add_argument("--pretty", action="store_true", help="Pretty-print JSON")
+    parser.add_argument("--only-test", action="store_true", help="Process only test tasks from config (filters by task IDs)")
+    parser.add_argument("--test-type", choices=["seq", "nonseq", "both"], default="both", help="Which test set list to use when --only-test is set")
     args = parser.parse_args()
 
     in_path = Path(args.image)
@@ -470,20 +475,37 @@ def main():
 
     wrote = []
 
+    allowed_tasks: Optional[Set[int]] = None
+    if args.only_test:
+        if args.test_type == "seq":
+            allowed_tasks = set(int(x) for x in default_test_seq_tasks)
+        elif args.test_type == "nonseq":
+            allowed_tasks = set(int(x) for x in default_test_nonseq_tasks)
+        else:
+            allowed_tasks = set(int(x) for x in default_test_seq_tasks) | set(int(x) for x in default_test_nonseq_tasks)
+
     if in_path.is_file():
-        bundle = build_bundle(in_path)
-        out_path = compute_out_path(in_path, args)
-        out_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(out_path, "w", encoding="utf-8") as f:
-            json.dump(bundle, f, indent=2 if args.pretty else None)
-        wrote.append(out_path)
+        iterable = tqdm([in_path], total=1, desc="Images", unit="img") if (tqdm is not None) else [in_path]
+        for img in iterable:
+            out_path = compute_out_path(img, args)
+            if is_valid_existing_json(out_path):
+                continue
+            bundle = build_bundle(img)
+            out_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(out_path, "w", encoding="utf-8") as f:
+                json.dump(bundle, f, indent=2 if args.pretty else None)
+            wrote.append(out_path)
     else:
         if not args.out_dir:
             fail("When input is a directory, please provide --out-dir to control output location.")
-        for img in iter_image_files(in_path):
+        images = list(iter_image_files(in_path, allowed_tasks))
+        iterator = tqdm(images, desc="Images", unit="img") if (tqdm is not None) else images
+        for img in iterator:
             try:
-                bundle = build_bundle(img)
                 out_path = compute_out_path(img, args)
+                if is_valid_existing_json(out_path):
+                    continue
+                bundle = build_bundle(img)
                 out_path.parent.mkdir(parents=True, exist_ok=True)
                 with open(out_path, "w", encoding="utf-8") as f:
                     json.dump(bundle, f, indent=2 if args.pretty else None)

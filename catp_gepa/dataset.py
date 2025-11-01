@@ -5,7 +5,7 @@ import json
 import random
 from pathlib import Path
 import math
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple, Any
 
 import dspy
 try:
@@ -90,6 +90,119 @@ def load_catp_dataset(path: str | Path) -> CATPDataset:
         return CATPDataset.model_validate(raw)
     except ValidationError as e:
         raise RuntimeError(f"Failed to parse {path}: {e}")
+
+
+def load_image_metrics_map(path: str | Path | None = None) -> Dict[int, Dict[int, Dict[str, Any]]]:
+    default_dir = Path("/Users/joshinshaji/dev/GEPA-CATC/gepa_logs/image_diagnostics")
+    p = Path(path) if path else default_dir
+    if not p.exists():
+        return {}
+    if p.is_dir():
+        out: Dict[int, Dict[int, Dict[str, Any]]] = {}
+        for j in p.rglob("*.diagnostics.json"):
+            parts = j.parts
+            try:
+                img_idx = len(parts) - 1 - parts[::-1].index("images")
+                if img_idx - 2 < 0 or parts[img_idx - 1] != "inputs":
+                    continue
+                task_str = parts[img_idx - 2]
+                tid = int(task_str)
+                name = j.name
+                if not name.endswith(".diagnostics.json"):
+                    continue
+                sample_str = name[: -len(".diagnostics.json")]
+                sid = int(sample_str)
+            except Exception:
+                continue
+            try:
+                data = json.loads(j.read_text(encoding="utf-8"))
+            except Exception:
+                continue
+            out.setdefault(tid, {})[sid] = data
+        return out
+    raw = json.loads(p.read_text(encoding="utf-8"))
+    out: Dict[int, Dict[int, Dict[str, Any]]] = {}
+    for tid_str, samples in raw.items():
+        try:
+            tid = int(tid_str)
+        except Exception:
+            continue
+        out[tid] = {}
+        for sid_str, variants in (samples or {}).items():
+            try:
+                sid = int(sid_str)
+            except Exception:
+                continue
+            if isinstance(variants, list) and variants:
+                m = variants[0].get("image_metrics")
+                if isinstance(m, dict):
+                    out[tid][sid] = m
+    return out
+
+
+def _select_relevant_image_metrics(m: Dict[str, Any]) -> Dict[str, Any]:
+    res = m.get("resolution", {})
+    color = m.get("color", {})
+    q = m.get("quality", {})
+    mb = q.get("motion_blur", {}) if isinstance(q.get("motion_blur"), dict) else {}
+    return {
+        "width_px": res.get("width_px"),
+        "height_px": res.get("height_px"),
+        "is_grayscale": color.get("is_grayscale"),
+        "blur_vol": q.get("blur_vol"),
+        "blur_normalized_0_1": q.get("blur_normalized_0_1"),
+        "tenengrad": q.get("tenengrad"),
+        "noise_sigma_luma": q.get("noise_sigma_luma"),
+        "motion_blur": {
+            "angle_deg": (mb or {}).get("angle_deg"),
+            "confidence": (mb or {}).get("confidence"),
+        },
+        "blockiness": q.get("blockiness"),
+        "ringing": q.get("ringing"),
+        "percent_clipped_shadows": q.get("percent_clipped_shadows"),
+        "percent_clipped_highlights": q.get("percent_clipped_highlights"),
+    }
+
+
+def _derive_targets(task_query: str, m: Dict[str, Any]) -> Dict[str, Any]:
+    w = m.get("width_px") or 0
+    h = m.get("height_px") or 0
+    shorter = min(w, h) if (w and h) else 0
+    blur_norm = m.get("blur_normalized_0_1")
+    noise = m.get("noise_sigma_luma") or 0.0
+    mb_conf = (m.get("motion_blur") or {}).get("confidence") or 0.0
+    is_gray = bool(m.get("is_grayscale"))
+    has_blur = (isinstance(blur_norm, (int, float)) and blur_norm >= 0.4)
+    has_noise = noise >= 2.5
+    low_res = bool(shorter and shorter < 256)
+    has_motion = mb_conf >= 0.5
+    rec: List[str] = []
+    if is_gray:
+        rec.append("image_colorization")
+    if has_blur or has_motion:
+        rec.append("image_deblurring")
+    if has_noise:
+        rec.append("image_denoising")
+    if low_res:
+        rec.append("image_super_resolution")
+    return {
+        "flags": {
+            "has_blur": bool(has_blur),
+            "has_noise": bool(has_noise),
+            "low_resolution": bool(low_res),
+            "is_grayscale": is_gray,
+            "has_motion_blur": bool(has_motion),
+        },
+        "severity": {
+            "blur": float(blur_norm) if isinstance(blur_norm, (int, float)) else None,
+            "noise": float(min(noise / 10.0, 1.0)),
+        },
+        "recommended_tools": rec,
+    }
+
+
+def load_image_metrics_map_default(seq: bool) -> Dict[int, Dict[int, Dict[str, Any]]]:
+    return load_image_metrics_map(Path("/Users/joshinshaji/dev/GEPA-CATC/gepa_logs/image_diagnostics"))
 
 
 def _compute_importance_vector(current_level: int, k: int) -> List[float]:
@@ -214,7 +327,8 @@ def build_valid_plans_examples(
     dataset: CATPDataset,
     train_size: int,
     test_size: int,
-    seed: int = 0
+    seed: int = 0,
+    image_metrics_map: Optional[Dict[int, Dict[int, Dict[str, Any]]]] = None,
 ) -> Tuple[List[dspy.Example], List[dspy.Example], List[dspy.Example]]:
     examples: List[dspy.Example] = []
     # Also collect per-task buckets as we go so we can split by task IDs
@@ -229,16 +343,13 @@ def build_valid_plans_examples(
             gold_idx = max(range(len(variants)), key=lambda i: (variants[i].qop or 0.0))
             task_query: Optional[str] = None
             plan_variants = []
-            # Build input attributes and augmented tool catalog for this specific sample
             input_attributes = _get_input_attributes(task_id, sample_id)
             # If possible, compute the discrete size level used by CATP-LLM
             try:
                 size_level = determine_sample_size(input_attributes, task_id, sample_id, data_path=GlobalPathConfig.data_path)
             except Exception:
                 size_level = determine_input_level(input_attributes)
-            augmented_tool_catalog_json = _build_augmented_tool_catalog_json({
-                **input_attributes,
-            }, current_size_level=size_level)
+            augmented_tool_catalog_json = _build_augmented_tool_catalog_json({**input_attributes}, current_size_level=size_level)
             for i, v in enumerate(variants):
                 if not task_query:
                     tq = getattr(v, "task_query", None)
@@ -261,6 +372,18 @@ def build_valid_plans_examples(
             gold_plan = variants[gold_idx].plan
             gold_qop = variants[gold_idx].qop if variants[gold_idx].qop is not None else 0.0
             gold_plan_json = json.dumps(gold_plan)
+            enriched_attrs = dict(input_attributes)
+            if image_metrics_map:
+                try:
+                    m_src = image_metrics_map.get(int(task_id), {}).get(int(sample_id))  # type: ignore[arg-type]
+                except Exception:
+                    m_src = None
+                if isinstance(m_src, dict):
+                    mm = _select_relevant_image_metrics(m_src)
+                    t = _derive_targets(task_query or "", mm)
+                    enriched_attrs["image_metrics"] = mm
+                    enriched_attrs["restoration_targets"] = t
+
             ex = dspy.Example({
                 "task_id": task_id,
                 "sample_id": sample_id,
@@ -270,7 +393,7 @@ def build_valid_plans_examples(
                 "plan_variants_json": plan_variants_json,
                 "gold_plan_json": gold_plan_json,
                 "gold_qop": gold_qop,
-                "input_attributes_json": json.dumps(input_attributes),
+                "input_attributes_json": json.dumps(enriched_attrs),
                 "current_size_level": size_level,
             }).with_inputs("task_query", "tool_catalog_json_with_description", "input_attributes_json")
             examples.append(ex)

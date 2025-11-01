@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 import pickle
+from typing import Optional
 from pydantic import BaseModel
 from openai import OpenAI
 from src.catpllm.data.plan_dataset import PlanDataset
@@ -18,6 +19,8 @@ class Config(BaseModel):
     training_size: int
     test_size: int
     catp_alpha: float
+    enrich_with_image_metrics: bool = True
+    image_metrics_path: Optional[str] = None
 
 def get_metric(metric: str):# -> Callable[..., Prediction]:# -> Callable[..., Prediction]:
     metrics = {

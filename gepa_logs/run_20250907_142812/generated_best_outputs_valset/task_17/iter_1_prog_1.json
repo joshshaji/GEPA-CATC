@@ -1,0 +1,12 @@
+{
+    "plan_json": [
+        "object_detection",
+        [
+            "input_of_query"
+        ],
+        "machine_translation",
+        [
+            "output_of_previous_tool"
+        ]
+    ]
+}

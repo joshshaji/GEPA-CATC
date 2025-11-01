@@ -1,0 +1,16 @@
+{
+    "plan_json": [
+        "image_colorization",
+        [
+            "input_of_query"
+        ],
+        "object_detection",
+        [
+            "image_colorization"
+        ],
+        "image_captioning",
+        [
+            "image_colorization"
+        ]
+    ]
+}

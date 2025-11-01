@@ -1,0 +1,28 @@
+{
+    "plan_json": [
+        "image_deblurring",
+        [
+            "input_of_query"
+        ],
+        "image_denoising",
+        [
+            "output_of_image_deblurring"
+        ],
+        "image_colorization",
+        [
+            "output_of_image_denoising"
+        ],
+        "object_detection",
+        [
+            "output_of_image_colorization"
+        ],
+        "image_captioning",
+        [
+            "output_of_object_detection"
+        ],
+        "machine_translation",
+        [
+            "output_of_image_captioning"
+        ]
+    ]
+}

@@ -6,16 +6,14 @@ from pathlib import Path
 from typing import Any, Dict, List, Tuple, Optional
 
 import torch
-from torch.utils.data import DataLoader
 
 from src.config import GlobalMetricsConfig, GlobalPathConfig
 from src.catpllm.utils.cost_utils import calc_plan_price
-from src.metrics.evaluator import calculate_qop, calculate_task_score
-from src.plan import Plan
-from src.data_loader import TaskDataset
+from scripts.image_metrics import build_bundle
 
 
 _TASK_DESCRIPTIONS: List[str] = []
+_IMAGE_METRICS_CACHE: Dict[Tuple[int, int], Optional[Dict[str, Any]]] = {}
 
 
 def _load_task_descriptions(path: Path) -> List[str]:
@@ -78,6 +76,11 @@ def _recompute_runtime_metrics(
     Returns a dict with keys: task_score, cost_price, exec_time, qop; or None if execution fails.
     """
     try:
+        from src.plan import Plan
+        from src.data_loader import TaskDataset
+        from src.metrics import calculate_task_score as _calculate_task_score
+        from torch.utils.data import DataLoader
+
         ds = TaskDataset(data_path or GlobalPathConfig.data_path, task_id=task_id)
         dl = DataLoader(ds, batch_size=1, shuffle=False)
         # Find the requested sample
@@ -98,10 +101,10 @@ def _recompute_runtime_metrics(
         if result is None:
             return None
 
-        task_score = calculate_task_score(result, batch["output"], sequential=task_id < 200)
+        task_score = _calculate_task_score(result, batch["output"], sequential=task_id < 200)
         cost_price = float(p.price)
         exec_time = float(p.exec_time)
-        qop = float(calculate_qop(task_score, cost_price))
+        qop = float(_calculate_qop_local(task_score, cost_price))
 
         return {
             "task_score": float(task_score),
@@ -118,6 +121,57 @@ def _stringify_plan(plan: Any) -> str:
         return str(plan)
     except Exception:
         return json.dumps(plan, ensure_ascii=False)
+
+
+def _calculate_qop_local(
+    avg_score: float,
+    cost_price: float,
+    *,
+    alpha: float = GlobalMetricsConfig.ALPHA,
+    min_score: float = GlobalMetricsConfig.MIN_SCORE,
+    max_score: float = GlobalMetricsConfig.MAX_SCORE,
+    min_cost: float = GlobalMetricsConfig.MIN_COST,
+    max_cost: float = GlobalMetricsConfig.MAX_COST,
+) -> float:
+    norm_score = (avg_score - min_score) / (max_score - min_score)
+    norm_cost = (cost_price - min_cost) / (max_cost - min_cost)
+    return alpha * norm_score - (1 - alpha) * norm_cost
+
+
+def _image_path_for_sample(data_path: str, task_id: int, sample_id: int) -> Optional[Path]:
+    images_dir = Path(data_path) / str(task_id) / "inputs" / "images"
+    if not images_dir.exists() or not images_dir.is_dir():
+        return None
+    stem = str(sample_id)
+    for p in images_dir.iterdir():
+        if p.is_file() and p.stem == stem:
+            return p
+    return None
+
+
+def _get_image_metrics(task_id: int, sample_id: int, *, data_path: Optional[str]) -> Optional[Dict[str, Any]]:
+    key = (int(task_id), int(sample_id))
+    if key in _IMAGE_METRICS_CACHE:
+        return _IMAGE_METRICS_CACHE[key]
+    base_path = data_path or GlobalPathConfig.data_path
+    img_path = _image_path_for_sample(base_path, int(task_id), int(sample_id))
+    if img_path is None:
+        _IMAGE_METRICS_CACHE[key] = None
+        return None
+    try:
+        bundle = build_bundle(img_path)
+    except SystemExit:
+        bundle = None
+    except Exception:
+        bundle = None
+    _IMAGE_METRICS_CACHE[key] = bundle
+    return bundle
+
+
+def _get_image_path_str(task_id: int, sample_id: int, *, data_path: Optional[str]) -> Optional[str]:
+    base_path = data_path or GlobalPathConfig.data_path
+    p = _image_path_for_sample(base_path, int(task_id), int(sample_id))
+    return str(p.resolve()) if p is not None else None
 
 
 def process_pkl(
@@ -149,17 +203,21 @@ def process_pkl(
 
                 valid_variants = []
                 invalid_variants = []
+                image_path = _get_image_path_str(task_id, sample_id, data_path=data_path)
                 for n in range(len(plans)):
                     plan = plans[n]
                     score_tuple = scores[n]
                     if not _is_valid_score(score_tuple):
+                        metrics = _get_image_metrics(task_id, sample_id, data_path=data_path)
                         invalid_variants.append({
                             "plan": _stringify_plan(plan),
                             "task_score": GlobalMetricsConfig.score_penalty,
                             "cost_price": GlobalMetricsConfig.cost_penalty,
                             "exec_time": None,
                             "qop": None,
-                            "task_query": _task_query_for(task_id)
+                            "task_query": _task_query_for(task_id),
+                            "image_metrics": metrics,
+                            "image_path": image_path
                         })
                         continue
 
@@ -169,26 +227,32 @@ def process_pkl(
                     gpu_short = tools_gpu_mem[n] if tools_gpu_mem[n] is not None else None
 
                     if exec_times is None or cpu_short is None or gpu_short is None:
+                        metrics = _get_image_metrics(task_id, sample_id, data_path=data_path)
                         invalid_variants.append({
                             "plan": _stringify_plan(plan),
                             "task_score": GlobalMetricsConfig.score_penalty,
                             "cost_price": GlobalMetricsConfig.cost_penalty,
                             "exec_time": None,
                             "qop": None,
-                            "task_query": _task_query_for(task_id)
+                            "task_query": _task_query_for(task_id),
+                            "image_metrics": metrics,
+                            "image_path": image_path
                         })
                         continue
 
                     cost_price, exec_time_total = _compute_price_and_time(plan, exec_times, cpu_short, gpu_short)
-                    qop = calculate_qop(score_value, cost_price)
+                    qop = _calculate_qop_local(score_value, cost_price)
 
+                    metrics = _get_image_metrics(task_id, sample_id, data_path=data_path)
                     variant = {
                         "plan": _stringify_plan(plan),
                         "task_score": float(score_value),
                         "cost_price": float(cost_price),
                         "exec_time": float(exec_time_total),
                         "qop": float(qop),
-                        "task_query": _task_query_for(task_id)
+                        "task_query": _task_query_for(task_id),
+                        "image_metrics": metrics,
+                        "image_path": image_path
                     }
 
                     # Optional: recompute using the exact runtime method used in testing.

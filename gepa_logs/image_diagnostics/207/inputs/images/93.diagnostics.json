@@ -1,0 +1,122 @@
+{
+  "source": {
+    "filename": "93.jpg",
+    "sha256": "51ff3c63259907700424a4ee8f0adcb4d51ca250d39ff024494ee44d8679e15c",
+    "format": "JPEG",
+    "mime": "image/jpeg",
+    "byte_size": 36186
+  },
+  "resolution": {
+    "width_px": 640,
+    "height_px": 480,
+    "aspect_ratio": "4:3",
+    "dpi": null
+  },
+  "color": {
+    "is_grayscale": false,
+    "icc_profile": null,
+    "icc_sha256": null,
+    "colorfulness": 34.201,
+    "bit_depth": 8
+  },
+  "quality": {
+    "blur_vol": 89.203,
+    "tenengrad": 3529.433,
+    "motion_blur": {
+      "angle_deg": 135.56,
+      "length_px": 5.29,
+      "confidence": 0.5630686283111572,
+      "method": "radon_spectrum"
+    },
+    "noise_sigma_luma": 2.122,
+    "banding_score": null,
+    "blockiness": 0.0169,
+    "ringing": 1.261,
+    "brisque": null,
+    "percent_clipped_shadows": 0.605,
+    "percent_clipped_highlights": 0.334,
+    "entropy_bits": 6.832,
+    "blur_normalized_0_1": 0.357
+  },
+  "content": {
+    "faces": [
+      {
+        "bbox": [
+          182,
+          121,
+          41,
+          41
+        ],
+        "interocular_px": 18.86
+      },
+      {
+        "bbox": [
+          16,
+          110,
+          47,
+          47
+        ],
+        "interocular_px": 21.62
+      },
+      {
+        "bbox": [
+          373,
+          115,
+          64,
+          64
+        ],
+        "interocular_px": 29.44
+      }
+    ],
+    "text": {
+      "present": null,
+      "avg_char_px_height": null,
+      "component_count": null
+    },
+    "objects_summary": {
+      "count": null,
+      "smallest_obj_px": null
+    },
+    "scene_type": "unknown"
+  },
+  "ocr": {
+    "text": null,
+    "lang": null,
+    "confidence": null,
+    "error": "tesseract is not installed or it's not in your PATH. See README file for more information."
+  },
+  "compression": {
+    "format": "JPEG",
+    "jpeg_quant_hint": {
+      "qtables_count": 2,
+      "avg_table_value": 36.23
+    }
+  },
+  "exposure_capture": {
+    "iso": null,
+    "shutter_s": null,
+    "aperture_f": null,
+    "focal_length_mm": null
+  },
+  "identity": {
+    "phash": "c31ec5a83dc11e79",
+    "dhash": "e674484b33c3cec6"
+  },
+  "pipeline": {
+    "created_utc": null,
+    "tools": [
+      {
+        "name": "pillow",
+        "version": "11.3.0"
+      },
+      {
+        "name": "opencv-python",
+        "version": "4.12.0"
+      },
+      {
+        "name": "imagehash",
+        "version": "4.3.2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "plan_json": [
+        "image_colorization",
+        [
+            "input_of_query"
+        ]
+    ]
+}

@@ -586,7 +586,10 @@ def metric_dag_loss(
     feedback_lines.append(f"The user query is: {task_query}")
     feedback_lines.append(f"{tool_catalog}")
     feedback_lines.append(f"Input attributes for this task: {input_attrs}")
-    feedback_lines.append("Your job is to produce a cost-aware, valid tool plan in this exact JSON format: [tool, [deps], tool, [deps], ...]. The dependency list for each tool must reference either 'input_of_query', 'output_of_previous_tool' (only from the second tool onward), or a specific earlier tool by name.")
+    feedback_lines.append("Your job is to produce a cost-aware, valid tool plan in this exact JSON format: [tool, [deps], tool, [deps], ...]. The dependency list for each tool must reference either 'input_of_query', '<previous_tool_name>' (only from the second tool onward), or a specific earlier tool by name.")
+    feedback_lines.append("example: ['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising']]")
+
+
 
     # Cost-aware analysis
     tool_costs = _extract_tool_costs(tool_catalog)

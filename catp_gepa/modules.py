@@ -16,6 +16,8 @@ class GeneratePlan(dspy.Signature):
     - `weighted_cost` is the importance-weighted cost to prefer at this input level.
     - Consider `input_type`, `output_type`, and `dependencies` for compatibility.
 
+    When available in `input_attributes_json`, use `image_metrics` (blur, noise, motion_blur, grayscale, resolution) and `restoration_targets` (flags, severity, recommended_tools) to decide which tools are necessary and in what order.
+
     Objective: Maximize task performance while minimizing execution cost. Prefer plans with lower `weighted_cost` while remaining functionally valid and sufficient for the task. Output format must strictly alternate tool then its dependency list.
     """
     task_query: str = dspy.InputField(
@@ -30,7 +32,7 @@ class GeneratePlan(dspy.Signature):
     )
     input_attributes_json: str = dspy.InputField(
         desc=(
-            "A JSON object containing the input attributes for the task. Whether the task has an image or text, and the size of the image or text."
+            "A JSON object containing the input attributes for the task. It can include image_metrics and restoration_targets when available."
         )
     )
     plan_json: List[Union[str, List[str]]] = dspy.OutputField(
@@ -39,7 +41,6 @@ class GeneratePlan(dspy.Signature):
             "It must strictly alternate between two types of elements: "
             "1. A tool name (a string, e.g., 'image_denoising'). "
             "2. Its direct dependency (a list containing exactly one string, "
-            "e.g., ['input_of_query'] or ['output_of_previous_tool']). "
             "The overall list must contain an even number of elements."
         )
     )

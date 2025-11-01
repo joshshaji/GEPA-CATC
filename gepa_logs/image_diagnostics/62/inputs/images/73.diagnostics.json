@@ -1,0 +1,149 @@
+{
+  "source": {
+    "filename": "73.jpg",
+    "sha256": "10ed13eb61599791f694780555d0cda3e2174fe8d6172ff0d558f5c2086734d8",
+    "format": "JPEG",
+    "mime": "image/jpeg",
+    "byte_size": 247497
+  },
+  "resolution": {
+    "width_px": 1898,
+    "height_px": 2657,
+    "aspect_ratio": "1898:2657",
+    "dpi": null
+  },
+  "color": {
+    "is_grayscale": false,
+    "icc_profile": null,
+    "icc_sha256": null,
+    "colorfulness": 22.694,
+    "bit_depth": 8
+  },
+  "quality": {
+    "blur_vol": 54.634,
+    "tenengrad": 2832.403,
+    "motion_blur": {
+      "angle_deg": 135.0,
+      "length_px": 6.76,
+      "confidence": 1.0,
+      "method": "radon_spectrum"
+    },
+    "noise_sigma_luma": 1.729,
+    "banding_score": null,
+    "blockiness": 0.0872,
+    "ringing": 1.2787,
+    "brisque": null,
+    "percent_clipped_shadows": 0.002,
+    "percent_clipped_highlights": 1.851,
+    "entropy_bits": 7.372,
+    "blur_normalized_0_1": 0.219
+  },
+  "content": {
+    "faces": [
+      {
+        "bbox": [
+          1775,
+          37,
+          45,
+          45
+        ],
+        "interocular_px": 20.7
+      },
+      {
+        "bbox": [
+          504,
+          412,
+          54,
+          54
+        ],
+        "interocular_px": 24.84
+      },
+      {
+        "bbox": [
+          868,
+          68,
+          916,
+          916
+        ],
+        "interocular_px": 421.36
+      },
+      {
+        "bbox": [
+          950,
+          828,
+          58,
+          58
+        ],
+        "interocular_px": 26.68
+      },
+      {
+        "bbox": [
+          1679,
+          1089,
+          56,
+          56
+        ],
+        "interocular_px": 25.76
+      },
+      {
+        "bbox": [
+          318,
+          1277,
+          73,
+          73
+        ],
+        "interocular_px": 33.58
+      }
+    ],
+    "text": {
+      "present": null,
+      "avg_char_px_height": null,
+      "component_count": null
+    },
+    "objects_summary": {
+      "count": null,
+      "smallest_obj_px": null
+    },
+    "scene_type": "unknown"
+  },
+  "ocr": {
+    "text": null,
+    "lang": null,
+    "confidence": null,
+    "error": "tesseract is not installed or it's not in your PATH. See README file for more information."
+  },
+  "compression": {
+    "format": "JPEG",
+    "jpeg_quant_hint": {
+      "qtables_count": 2,
+      "avg_table_value": 119.11
+    }
+  },
+  "exposure_capture": {
+    "iso": null,
+    "shutter_s": null,
+    "aperture_f": null,
+    "focal_length_mm": null
+  },
+  "identity": {
+    "phash": "c1c6c756b83332d9",
+    "dhash": "c464ca99918d5ad3"
+  },
+  "pipeline": {
+    "created_utc": null,
+    "tools": [
+      {
+        "name": "pillow",
+        "version": "11.3.0"
+      },
+      {
+        "name": "opencv-python",
+        "version": "4.12.0"
+      },
+      {
+        "name": "imagehash",
+        "version": "4.3.2"
+      }
+    ]
+  }
+}

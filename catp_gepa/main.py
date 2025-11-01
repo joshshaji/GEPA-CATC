@@ -12,7 +12,7 @@ from catp_gepa.run_state import RunState
 from catp_gepa.metric import metric_dag_loss, metric_qop, metric_qop_feedback, vanila_gepa_metric, make_logged_metric
 
 from catp_gepa.config import Config, get_metric, load_config, get_dataset
-from catp_gepa.dataset import build_valid_plans_examples
+from catp_gepa.dataset import build_valid_plans_examples, load_image_metrics_map_default, load_image_metrics_map
 from catp_gepa.modules import PlanGenerator
 
 
@@ -22,11 +22,18 @@ load_dotenv()
 def init_dataset():
     cfg = load_config()
     dataset = get_dataset(cfg)
+    seq = cfg.dataset.startswith("seq_data")
+    if getattr(cfg, "enrich_with_image_metrics", True):
+        p = getattr(cfg, "image_metrics_path", None)
+        metrics_map = load_image_metrics_map(p) if p else load_image_metrics_map_default(seq)
+    else:
+        metrics_map = None
     train_set, val_set, test_set = build_valid_plans_examples(
         dataset,
         train_size=cfg.training_size,
         test_size=cfg.test_size,
         seed=0,
+        image_metrics_map=metrics_map,
     )
     return train_set, val_set, test_set
 
@@ -75,6 +82,7 @@ def optimize_and_evaluate():
             logger.exception("Exception during pre-optimization eval (state already saved)")
         raise
     logger.info("Pre-optimization score: %s", pre_score)
+    run_state.meta["pre_opt_score"] = float(pre_score)
     
     optimizer = dspy.GEPA(
         metric=make_logged_metric(metric_from_config, run_state, stage_label="gepa"),
@@ -117,6 +125,7 @@ def optimize_and_evaluate():
             logger.exception("Exception during post-optimization eval (state already saved)")
         raise
     logger.info("Post-optimization score: %s", post_score)
+    run_state.meta["post_opt_score"] = float(post_score)
 
 
     # save the optimized program to a file
@@ -149,9 +158,10 @@ def load_llms(cfg: Config):
         
     params_reflective = {
         "api_key": api_key_reflective,
+        "max_tokens": 64000,
     }
-    if api_base:
-        params_base["api_base"] = api_base_reflective
+    if api_base_reflective:
+        params_reflective["api_base"] = api_base_reflective
     
     base_lm = dspy.LM(base_llm, temperature=0, **params_base)
     reflector_lm = dspy.LM(reflective_llm, temperature=1.0, **params_reflective)

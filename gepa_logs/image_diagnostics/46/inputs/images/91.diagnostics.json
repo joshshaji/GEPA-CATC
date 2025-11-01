@@ -1,0 +1,94 @@
+{
+  "source": {
+    "filename": "91.jpg",
+    "sha256": "5c8503a066d1f62a274b87640d66ee4134769356a440167f0e564d1dba42f37c",
+    "format": "JPEG",
+    "mime": "image/jpeg",
+    "byte_size": 24082
+  },
+  "resolution": {
+    "width_px": 640,
+    "height_px": 480,
+    "aspect_ratio": "4:3",
+    "dpi": null
+  },
+  "color": {
+    "is_grayscale": true,
+    "icc_profile": null,
+    "icc_sha256": null,
+    "colorfulness": 0.0,
+    "bit_depth": 8
+  },
+  "quality": {
+    "blur_vol": 1064.505,
+    "tenengrad": 14230.113,
+    "motion_blur": {
+      "angle_deg": 38.25,
+      "length_px": 1.53,
+      "confidence": 0.6667009353637695,
+      "method": "radon_spectrum"
+    },
+    "noise_sigma_luma": 7.335,
+    "banding_score": null,
+    "blockiness": 0.0481,
+    "ringing": 1.1821,
+    "brisque": null,
+    "percent_clipped_shadows": 0.263,
+    "percent_clipped_highlights": 0.132,
+    "entropy_bits": 7.714,
+    "blur_normalized_0_1": 1.0
+  },
+  "content": {
+    "faces": [],
+    "text": {
+      "present": null,
+      "avg_char_px_height": null,
+      "component_count": null
+    },
+    "objects_summary": {
+      "count": null,
+      "smallest_obj_px": null
+    },
+    "scene_type": "unknown"
+  },
+  "ocr": {
+    "text": null,
+    "lang": null,
+    "confidence": null,
+    "error": "tesseract is not installed or it's not in your PATH. See README file for more information."
+  },
+  "compression": {
+    "format": "JPEG",
+    "jpeg_quant_hint": {
+      "qtables_count": 2,
+      "avg_table_value": 119.11
+    }
+  },
+  "exposure_capture": {
+    "iso": null,
+    "shutter_s": null,
+    "aperture_f": null,
+    "focal_length_mm": null
+  },
+  "identity": {
+    "phash": "c5278edc2c67b226",
+    "dhash": "e6c8cecab8f4e0c4"
+  },
+  "pipeline": {
+    "created_utc": null,
+    "tools": [
+      {
+        "name": "pillow",
+        "version": "11.3.0"
+      },
+      {
+        "name": "opencv-python",
+        "version": "4.12.0"
+      },
+      {
+        "name": "imagehash",
+        "version": "4.3.2"
+      }
+    ]
+  }
+}

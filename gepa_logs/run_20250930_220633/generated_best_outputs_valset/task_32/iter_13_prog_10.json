@@ -1,0 +1,12 @@
+{
+    "plan_json": [
+        "image_deblurring",
+        [
+            "input_of_query"
+        ],
+        "object_detection",
+        [
+            "output_of_previous_tool"
+        ]
+    ]
+}

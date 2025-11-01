@@ -1,0 +1,36 @@
+{
+    "plan_json": [
+        "image_super_resolution",
+        [
+            "input_of_query"
+        ],
+        "image_denoising",
+        [
+            "image_super_resolution"
+        ],
+        "image_deblurring",
+        [
+            "image_denoising"
+        ],
+        "image_colorization",
+        [
+            "image_deblurring"
+        ],
+        "object_detection",
+        [
+            "image_colorization"
+        ],
+        "image_classification",
+        [
+            "image_colorization"
+        ],
+        "image_captioning",
+        [
+            "image_classification"
+        ],
+        "machine_translation",
+        [
+            "image_captioning"
+        ]
+    ]
+}

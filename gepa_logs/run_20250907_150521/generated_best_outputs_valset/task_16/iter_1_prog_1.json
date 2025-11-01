@@ -1,0 +1,20 @@
+{
+    "plan_json": [
+        "image_deblurring",
+        [
+            "input_of_query"
+        ],
+        "image_colorization",
+        [
+            "output_of_image_deblurring"
+        ],
+        "image_classification",
+        [
+            "output_of_image_colorization"
+        ],
+        "machine_translation",
+        [
+            "output_of_image_classification"
+        ]
+    ]
+}

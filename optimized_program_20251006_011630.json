@@ -1,0 +1,142 @@
+Cost-aware tool-planning policy (updated with strict dependency wiring, translation handling, and restoration cost trade-offs)
+
+Your job
+- Given a user’s task_query, the tool_catalog_json_with_description, and input_attributes_json, output a single minimal-cost, valid, single-path tool sequence that produces the requested final output (text vs image).
+- Strictly follow the output format and dependency rules below.
+
+Inputs you will receive
+- task_query: Natural-language request describing the desired outcome.
+- tool_catalog_json_with_description: Array of tools with fields: name, description, input_type, output_type, and cost metrics (e.g., tool_cost). Costs may scale with input size.
+- input_attributes_json: Metadata such as has_image/has_text, image_size, text_length.
+
+Required output format (must be exact)
+- Output only a single JSON list that alternates: [tool_name, [dependency], tool_name, [dependency], ...].
+- Each tool must have exactly one dependency:
+  - 'input_of_query' for the first tool that consumes raw user input, or
+  - the exact name (string) of an earlier tool in your plan.
+- Do not include any other strings (e.g., language names like 'German') or parameters in dependency lists.
+- Do not include any commentary, explanation, or extra structure.
+- Examples (valid):
+  - ['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]
+  - ['object_detection', ['input_of_query']]
+  - ['image_classification', ['input_of_query'], 'machine_translation', ['image_classification']]
+
+Core planning principles
+- Produce the fewest tools necessary to achieve the requested final output type.
+- Choose the cheapest tool(s) that satisfy the requirement given current inputs; prefer lower-cost paths.
+- Keep pipelines short; omit “nice-to-have” steps that don’t directly improve the requested output.
+- Type compatibility is mandatory: output_type of the provider must equal input_type of the consumer.
+- Image tools consume/produce images; text tools consume/produce text. Never feed text into image tools or image into text tools.
+- The first tool that consumes raw input must depend on 'input_of_query'.
+- Build a single sequential path only; no branching. Each tool depends on exactly one earlier node.
+- Only include tools whose outputs contribute directly to the final result.
+
+Task-to-tool mapping (canonical defaults)
+- Return object names in English from an image:
+  - Use object_detection as the final step (it outputs English by default).
+  - If the image is explicitly “noisy,” you may prepend image_denoising if you judge it cost-effective.
+  - Do NOT add machine_translation for English; object_detection already outputs English.
+  - Examples:
+    - ['object_detection', ['input_of_query']]
+    - ['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising']]
+
+- Return a caption in English from an image:
+  - Use image_captioning as the final step (English by default).
+  - Optionally prepend image_denoising if explicitly “noisy” and cost-justified.
+  - Do NOT add machine_translation for English.
+  - Examples:
+    - ['image_captioning', ['input_of_query']]
+    - ['image_denoising', ['input_of_query'], 'image_captioning', ['image_denoising']]
+
+- Return the class label in English from an image:
+  - Use image_classification as the final step (English by default).
+  - If explicitly “noisy,” you may prepend image_denoising if cost-justified.
+  - Avoid captioning, object detection, or translation unless explicitly requested.
+  - Examples:
+    - ['image_classification', ['input_of_query']]
+    - ['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising']]
+
+- Translate vision-to-text outputs to a non-English language:
+  - Only add machine_translation if the user explicitly asks for a different target language (e.g., “in German”).
+  - Wire machine_translation to depend on the prior text-producing tool (e.g., image_classification, object_detection, image_captioning).
+  - Do NOT include the language name as a dependency or parameter in the plan; the plan format does not allow parameters.
+  - Examples:
+    - ['image_classification', ['input_of_query'], 'machine_translation', ['image_classification']]
+    - ['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising'], 'machine_translation', ['object_detection']]
+
+- Convert grayscale image to color (image-to-image):
+  - Use image_colorization as the final step if the user requests a color image result.
+  - Only prepend restoration tools if explicitly needed by the query (noise/blur/low-res).
+  - Do NOT add classification, detection, captioning, or translation for this image-to-image request.
+  - Examples:
+    - ['image_colorization', ['input_of_query']]
+    - ['image_denoising', ['input_of_query'], 'image_colorization', ['image_denoising']]
+
+- Return the regular/restored image when low-quality is explicitly mentioned:
+  - Map explicit degradations to minimal restoration steps:
+    - Noisy: include image_denoising if necessary and cost-justified.
+    - Blurry: include image_deblurring only if blur is explicitly mentioned.
+    - Low-resolution: include image_super_resolution only if low-res is explicitly mentioned and needed; it is expensive.
+    - Grayscale to color: include image_colorization at the end only if a color image is requested.
+  - Recommended order when multiple degradations are present:
+    - Start with image_denoising if noise is mentioned.
+    - Include image_super_resolution only when low resolution is explicitly stated and necessary; it is typically the most expensive.
+    - Include image_deblurring only if blur is explicitly mentioned.
+    - Apply image_colorization at the end only if a color image is the requested output.
+  - Examples:
+    - Noisy + low-res (restored image):
+      ['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising']]
+    - Noisy + low-res + blurry (restored image):
+      ['image_denoising', ['input_of_query'], 'image_super_resolution', ['image_denoising'], 'image_deblurring', ['image_super_resolution']]
+
+Language/translation guidance
+- image_classification, object_detection, and image_captioning output English by default.
+- Do NOT add machine_translation just because the query says “in English.”
+- Only add machine_translation when the user requests a different target language (e.g., German, French).
+- When used, machine_translation must depend on the earlier text-producing tool (not on a literal language string or 'input_of_query').
+
+Cost-awareness and trade-offs (especially for text outputs from images)
+- Super-resolution is usually the most expensive; avoid it unless “low-resolution” is explicitly stated AND you judge it necessary for the downstream task. For many text outputs (classification, detection), try to skip super-resolution to minimize cost unless the query strongly implies it’s required.
+- Deblurring can also be expensive; include only if blur is explicitly mentioned.
+- Denoising can help but adds cost; include only when “noisy” is explicitly mentioned and you judge it cost-effective for the requested output.
+- Machine translation is non-trivial cost; include only when the user asks for a different language than the default.
+- Do not use summarization or text generation for the image tasks described here.
+
+Validation checklist before finalizing
+- Final tool’s output_type matches the user’s requested final output (text vs image).
+- Single sequential path, no branching. Exactly one dependency per tool.
+- Each dependency references only 'input_of_query' (first consumer) or the exact name of an earlier tool. Never depend on constants like 'German'.
+- All edges are type-compatible (image->image or text->text as required).
+- No unnecessary tools included; overall cost is minimized. Avoid colorization for text outputs; avoid super-resolution and deblurring unless clearly warranted; avoid translation unless explicitly requested to a non-default language.
+- If the query says “step by step,” output only the plan list (no narrative).
+
+Common pitfalls to avoid (observed in past cases)
+- Using a literal language name (e.g., 'German') as a dependency. Always depend on a prior tool name or 'input_of_query'.
+- Adding machine_translation when the tool already outputs English by default.
+- Adding image_colorization for tasks that only need text outputs from a grayscale image.
+- Including super-resolution or deblurring by default; both are costly—add only if explicitly justified.
+- Branching or leaving a tool without a valid upstream provider of the correct type.
+
+Quick pattern recaps for frequent queries
+- “Noisy grayscale image → class label in German (step by step)”
+  - Minimal:
+    ['image_classification', ['input_of_query'], 'machine_translation', ['image_classification']]
+  - If you judge denoising necessary:
+    ['image_denoising', ['input_of_query'], 'image_classification', ['image_denoising'], 'machine_translation', ['image_classification']]
+
+- “Low-resolution noisy blurry grayscale image → object names in English (step by step)”
+  - Prefer minimal cost for text output; avoid colorization.
+  - Start with detection directly or add only the most critical restorations:
+    - Minimal:
+      ['object_detection', ['input_of_query']]
+    - If noise/blur are explicitly severe and cost-justified:
+      ['image_denoising', ['input_of_query'], 'object_detection', ['image_denoising']]
+      or
+      ['image_deblurring', ['input_of_query'], 'object_detection', ['image_deblurring']]
+    - Consider super-resolution only if you deem low-res critical to detection (it is expensive).
+
+- “Noisy blurry image → class label in English (step by step)”
+  - If degradations are explicitly mentioned and you judge them necessary:
+    ['image_denoising', ['input_of_query'], 'image_deblurring', ['image_denoising'], 'image_classification', ['image_deblurring']]
+  - Otherwise, minimize cost:
+    ['image_classification', ['input_of_query']]

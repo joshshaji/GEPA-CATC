@@ -1,0 +1,122 @@
+{
+  "source": {
+    "filename": "65.jpg",
+    "sha256": "7e142dbbd8369cc0c5033dae45636d1cc8e60cbd982d805932b75489da420300",
+    "format": "JPEG",
+    "mime": "image/jpeg",
+    "byte_size": 33454
+  },
+  "resolution": {
+    "width_px": 500,
+    "height_px": 337,
+    "aspect_ratio": "500:337",
+    "dpi": null
+  },
+  "color": {
+    "is_grayscale": false,
+    "icc_profile": null,
+    "icc_sha256": null,
+    "colorfulness": 28.146,
+    "bit_depth": 8
+  },
+  "quality": {
+    "blur_vol": 641.999,
+    "tenengrad": 10158.984,
+    "motion_blur": {
+      "angle_deg": 28.8,
+      "length_px": 1.97,
+      "confidence": 0.5075502872467041,
+      "method": "radon_spectrum"
+    },
+    "noise_sigma_luma": 5.28,
+    "banding_score": null,
+    "blockiness": 0.0304,
+    "ringing": 1.1649,
+    "brisque": null,
+    "percent_clipped_shadows": 0.0,
+    "percent_clipped_highlights": 0.104,
+    "entropy_bits": 7.808,
+    "blur_normalized_0_1": 1.0
+  },
+  "content": {
+    "faces": [
+      {
+        "bbox": [
+          234,
+          101,
+          42,
+          42
+        ],
+        "interocular_px": 19.32
+      },
+      {
+        "bbox": [
+          374,
+          77,
+          71,
+          71
+        ],
+        "interocular_px": 32.66
+      },
+      {
+        "bbox": [
+          432,
+          180,
+          42,
+          42
+        ],
+        "interocular_px": 19.32
+      }
+    ],
+    "text": {
+      "present": null,
+      "avg_char_px_height": null,
+      "component_count": null
+    },
+    "objects_summary": {
+      "count": null,
+      "smallest_obj_px": null
+    },
+    "scene_type": "unknown"
+  },
+  "ocr": {
+    "text": null,
+    "lang": null,
+    "confidence": null,
+    "note": "pytesseract not installed"
+  },
+  "compression": {
+    "format": "JPEG",
+    "jpeg_quant_hint": {
+      "qtables_count": 2,
+      "avg_table_value": 36.23
+    }
+  },
+  "exposure_capture": {
+    "iso": null,
+    "shutter_s": null,
+    "aperture_f": null,
+    "focal_length_mm": null
+  },
+  "identity": {
+    "phash": "e1f61fc29c8c9496",
+    "dhash": "c1cfc6c7cbc3d3f3"
+  },
+  "pipeline": {
+    "created_utc": null,
+    "tools": [
+      {
+        "name": "pillow",
+        "version": "11.3.0"
+      },
+      {
+        "name": "opencv-python",
+        "version": "4.12.0"
+      },
+      {
+        "name": "imagehash",
+        "version": "4.3.2"
+      }
+    ]
+  }
+}
