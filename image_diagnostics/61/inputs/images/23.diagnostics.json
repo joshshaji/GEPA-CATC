@@ -1,0 +1,94 @@
+{
+  "source": {
+    "filename": "23.jpg",
+    "sha256": "2feeefe8abf5f9056f469f672f8d5fb512fec6cbe541e939a7416e17b7161536",
+    "format": "JPEG",
+    "mime": "image/jpeg",
+    "byte_size": 10820
+  },
+  "resolution": {
+    "width_px": 640,
+    "height_px": 427,
+    "aspect_ratio": "640:427",
+    "dpi": null
+  },
+  "color": {
+    "is_grayscale": false,
+    "icc_profile": null,
+    "icc_sha256": null,
+    "colorfulness": 60.652,
+    "bit_depth": 8
+  },
+  "quality": {
+    "blur_vol": 16.282,
+    "tenengrad": 1269.244,
+    "motion_blur": {
+      "angle_deg": 45.0,
+      "length_px": 12.39,
+      "confidence": 1.0,
+      "method": "radon_spectrum"
+    },
+    "noise_sigma_luma": 0.964,
+    "banding_score": null,
+    "blockiness": 0.1752,
+    "ringing": 1.3428,
+    "brisque": null,
+    "percent_clipped_shadows": 1.967,
+    "percent_clipped_highlights": 0.001,
+    "entropy_bits": 7.222,
+    "blur_normalized_0_1": 0.065
+  },
+  "content": {
+    "faces": [],
+    "text": {
+      "present": null,
+      "avg_char_px_height": null,
+      "component_count": null
+    },
+    "objects_summary": {
+      "count": null,
+      "smallest_obj_px": null
+    },
+    "scene_type": "unknown"
+  },
+  "ocr": {
+    "text": null,
+    "lang": null,
+    "confidence": null,
+    "error": "tesseract is not installed or it's not in your PATH. See README file for more information."
+  },
+  "compression": {
+    "format": "JPEG",
+    "jpeg_quant_hint": {
+      "qtables_count": 2,
+      "avg_table_value": 119.11
+    }
+  },
+  "exposure_capture": {
+    "iso": null,
+    "shutter_s": null,
+    "aperture_f": null,
+    "focal_length_mm": null
+  },
+  "identity": {
+    "phash": "e2161178be69c1b7",
+    "dhash": "114cee632d9393b8"
+  },
+  "pipeline": {
+    "created_utc": null,
+    "tools": [
+      {
+        "name": "pillow",
+        "version": "11.3.0"
+      },
+      {
+        "name": "opencv-python",
+        "version": "4.12.0"
+      },
+      {
+        "name": "imagehash",
+        "version": "4.3.2"
+      }
+    ]
+  }
+}

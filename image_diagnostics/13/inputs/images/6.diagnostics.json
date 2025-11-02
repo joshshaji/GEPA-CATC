@@ -1,0 +1,104 @@
+{
+  "source": {
+    "filename": "6.jpg",
+    "sha256": "b3cf0d3741181894a8b23f9bbe1e2ed8ae7ebca12735d4c46763e3f998bfbccc",
+    "format": "JPEG",
+    "mime": "image/jpeg",
+    "byte_size": 12242
+  },
+  "resolution": {
+    "width_px": 424,
+    "height_px": 640,
+    "aspect_ratio": "53:80",
+    "dpi": null
+  },
+  "color": {
+    "is_grayscale": true,
+    "icc_profile": null,
+    "icc_sha256": null,
+    "colorfulness": 0.839,
+    "bit_depth": 8
+  },
+  "quality": {
+    "blur_vol": 57.076,
+    "tenengrad": 2169.639,
+    "motion_blur": {
+      "angle_deg": 52.88,
+      "length_px": 6.62,
+      "confidence": 0.42969560623168945,
+      "method": "radon_spectrum"
+    },
+    "noise_sigma_luma": 1.785,
+    "banding_score": null,
+    "blockiness": 0.1004,
+    "ringing": 1.2721,
+    "brisque": null,
+    "percent_clipped_shadows": 0.0,
+    "percent_clipped_highlights": 0.017,
+    "entropy_bits": 7.078,
+    "blur_normalized_0_1": 0.228
+  },
+  "content": {
+    "faces": [
+      {
+        "bbox": [
+          4,
+          285,
+          166,
+          166
+        ],
+        "interocular_px": 76.36
+      }
+    ],
+    "text": {
+      "present": null,
+      "avg_char_px_height": null,
+      "component_count": null
+    },
+    "objects_summary": {
+      "count": null,
+      "smallest_obj_px": null
+    },
+    "scene_type": "unknown"
+  },
+  "ocr": {
+    "text": null,
+    "lang": null,
+    "confidence": null,
+    "error": "tesseract is not installed or it's not in your PATH. See README file for more information."
+  },
+  "compression": {
+    "format": "JPEG",
+    "jpeg_quant_hint": {
+      "qtables_count": 2,
+      "avg_table_value": 119.11
+    }
+  },
+  "exposure_capture": {
+    "iso": null,
+    "shutter_s": null,
+    "aperture_f": null,
+    "focal_length_mm": null
+  },
+  "identity": {
+    "phash": "bf044cf39c96946c",
+    "dhash": "5151755d4d4d4971"
+  },
+  "pipeline": {
+    "created_utc": null,
+    "tools": [
+      {
+        "name": "pillow",
+        "version": "11.3.0"
+      },
+      {
+        "name": "opencv-python",
+        "version": "4.12.0"
+      },
+      {
+        "name": "imagehash",
+        "version": "4.3.2"
+      }
+    ]
+  }
+}

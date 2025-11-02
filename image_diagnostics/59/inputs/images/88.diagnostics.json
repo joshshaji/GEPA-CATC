@@ -1,0 +1,94 @@
+{
+  "source": {
+    "filename": "88.jpg",
+    "sha256": "411804949134bc54f396b45e2c782d25a983c21bc158210de65bbdb97f5c6fd9",
+    "format": "JPEG",
+    "mime": "image/jpeg",
+    "byte_size": 30732
+  },
+  "resolution": {
+    "width_px": 500,
+    "height_px": 346,
+    "aspect_ratio": "250:173",
+    "dpi": null
+  },
+  "color": {
+    "is_grayscale": false,
+    "icc_profile": null,
+    "icc_sha256": null,
+    "colorfulness": 65.572,
+    "bit_depth": 8
+  },
+  "quality": {
+    "blur_vol": 425.346,
+    "tenengrad": 3956.638,
+    "motion_blur": {
+      "angle_deg": 142.56,
+      "length_px": 2.42,
+      "confidence": 0.5661397457122803,
+      "method": "radon_spectrum"
+    },
+    "noise_sigma_luma": 4.294,
+    "banding_score": null,
+    "blockiness": 0.0,
+    "ringing": 1.1205,
+    "brisque": null,
+    "percent_clipped_shadows": 0.0,
+    "percent_clipped_highlights": 0.0,
+    "entropy_bits": 6.797,
+    "blur_normalized_0_1": 1.0
+  },
+  "content": {
+    "faces": [],
+    "text": {
+      "present": null,
+      "avg_char_px_height": null,
+      "component_count": null
+    },
+    "objects_summary": {
+      "count": null,
+      "smallest_obj_px": null
+    },
+    "scene_type": "unknown"
+  },
+  "ocr": {
+    "text": null,
+    "lang": null,
+    "confidence": null,
+    "note": "pytesseract not installed"
+  },
+  "compression": {
+    "format": "JPEG",
+    "jpeg_quant_hint": {
+      "qtables_count": 2,
+      "avg_table_value": 36.23
+    }
+  },
+  "exposure_capture": {
+    "iso": null,
+    "shutter_s": null,
+    "aperture_f": null,
+    "focal_length_mm": null
+  },
+  "identity": {
+    "phash": "ed66666436c8c999",
+    "dhash": "8fcfb3b333b3330b"
+  },
+  "pipeline": {
+    "created_utc": null,
+    "tools": [
+      {
+        "name": "pillow",
+        "version": "11.3.0"
+      },
+      {
+        "name": "opencv-python",
+        "version": "4.12.0"
+      },
+      {
+        "name": "imagehash",
+        "version": "4.3.2"
+      }
+    ]
+  }
+}

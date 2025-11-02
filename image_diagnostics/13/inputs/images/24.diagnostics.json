@@ -1,0 +1,94 @@
+{
+  "source": {
+    "filename": "24.jpg",
+    "sha256": "65cbe86d7c7cb4e3d8b22545e90e91038bedfd4acfe0ba32b45ea97f1f3314ac",
+    "format": "JPEG",
+    "mime": "image/jpeg",
+    "byte_size": 17369
+  },
+  "resolution": {
+    "width_px": 640,
+    "height_px": 480,
+    "aspect_ratio": "4:3",
+    "dpi": null
+  },
+  "color": {
+    "is_grayscale": true,
+    "icc_profile": null,
+    "icc_sha256": null,
+    "colorfulness": 0.0,
+    "bit_depth": 8
+  },
+  "quality": {
+    "blur_vol": 80.113,
+    "tenengrad": 2904.721,
+    "motion_blur": {
+      "angle_deg": 42.19,
+      "length_px": 5.59,
+      "confidence": 0.8360136032104493,
+      "method": "radon_spectrum"
+    },
+    "noise_sigma_luma": 2.098,
+    "banding_score": null,
+    "blockiness": 0.0263,
+    "ringing": 1.2938,
+    "brisque": null,
+    "percent_clipped_shadows": 0.0,
+    "percent_clipped_highlights": 0.0,
+    "entropy_bits": 6.304,
+    "blur_normalized_0_1": 0.32
+  },
+  "content": {
+    "faces": [],
+    "text": {
+      "present": null,
+      "avg_char_px_height": null,
+      "component_count": null
+    },
+    "objects_summary": {
+      "count": null,
+      "smallest_obj_px": null
+    },
+    "scene_type": "unknown"
+  },
+  "ocr": {
+    "text": null,
+    "lang": null,
+    "confidence": null,
+    "error": "tesseract is not installed or it's not in your PATH. See README file for more information."
+  },
+  "compression": {
+    "format": "JPEG",
+    "jpeg_quant_hint": {
+      "qtables_count": 2,
+      "avg_table_value": 119.11
+    }
+  },
+  "exposure_capture": {
+    "iso": null,
+    "shutter_s": null,
+    "aperture_f": null,
+    "focal_length_mm": null
+  },
+  "identity": {
+    "phash": "c2d8a4363be4dbc2",
+    "dhash": "ea90f1eac9a9c6ca"
+  },
+  "pipeline": {
+    "created_utc": null,
+    "tools": [
+      {
+        "name": "pillow",
+        "version": "11.3.0"
+      },
+      {
+        "name": "opencv-python",
+        "version": "4.12.0"
+      },
+      {
+        "name": "imagehash",
+        "version": "4.3.2"
+      }
+    ]
+  }
+}

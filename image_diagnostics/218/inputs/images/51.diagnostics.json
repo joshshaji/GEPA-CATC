@@ -1,0 +1,94 @@
+{
+  "source": {
+    "filename": "51.jpg",
+    "sha256": "7078cf7b308676056a0d8d70bdafb8d3c0f0c50f9f97cd9000c8ef79271fdc67",
+    "format": "JPEG",
+    "mime": "image/jpeg",
+    "byte_size": 47281
+  },
+  "resolution": {
+    "width_px": 640,
+    "height_px": 349,
+    "aspect_ratio": "640:349",
+    "dpi": null
+  },
+  "color": {
+    "is_grayscale": false,
+    "icc_profile": null,
+    "icc_sha256": null,
+    "colorfulness": 3.716,
+    "bit_depth": 8
+  },
+  "quality": {
+    "blur_vol": 1955.355,
+    "tenengrad": 11458.314,
+    "motion_blur": {
+      "angle_deg": 45.0,
+      "length_px": 1.13,
+      "confidence": 1.0,
+      "method": "radon_spectrum"
+    },
+    "noise_sigma_luma": 9.305,
+    "banding_score": null,
+    "blockiness": 0.0215,
+    "ringing": 1.1232,
+    "brisque": null,
+    "percent_clipped_shadows": 0.152,
+    "percent_clipped_highlights": 0.024,
+    "entropy_bits": 7.067,
+    "blur_normalized_0_1": 1.0
+  },
+  "content": {
+    "faces": [],
+    "text": {
+      "present": null,
+      "avg_char_px_height": null,
+      "component_count": null
+    },
+    "objects_summary": {
+      "count": null,
+      "smallest_obj_px": null
+    },
+    "scene_type": "unknown"
+  },
+  "ocr": {
+    "text": null,
+    "lang": null,
+    "confidence": null,
+    "error": "tesseract is not installed or it's not in your PATH. See README file for more information."
+  },
+  "compression": {
+    "format": "JPEG",
+    "jpeg_quant_hint": {
+      "qtables_count": 2,
+      "avg_table_value": 36.23
+    }
+  },
+  "exposure_capture": {
+    "iso": null,
+    "shutter_s": null,
+    "aperture_f": null,
+    "focal_length_mm": null
+  },
+  "identity": {
+    "phash": "af94706b86625dc6",
+    "dhash": "8d1e726d4e538ffc"
+  },
+  "pipeline": {
+    "created_utc": null,
+    "tools": [
+      {
+        "name": "pillow",
+        "version": "11.3.0"
+      },
+      {
+        "name": "opencv-python",
+        "version": "4.12.0"
+      },
+      {
+        "name": "imagehash",
+        "version": "4.3.2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "source": {
+    "filename": "50.jpg",
+    "sha256": "0dce20195f9cd82b921a92dd04a914cfe95997b4648155eb98b9ce9ca28157a9",
+    "format": "JPEG",
+    "mime": "image/jpeg",
+    "byte_size": 23784
+  },
+  "resolution": {
+    "width_px": 640,
+    "height_px": 425,
+    "aspect_ratio": "128:85",
+    "dpi": null
+  },
+  "color": {
+    "is_grayscale": true,
+    "icc_profile": null,
+    "icc_sha256": null,
+    "colorfulness": 0.516,
+    "bit_depth": 8
+  },
+  "quality": {
+    "blur_vol": 1763.992,
+    "tenengrad": 13966.195,
+    "motion_blur": {
+      "angle_deg": 44.44,
+      "length_px": 1.19,
+      "confidence": 0.8384787559509277,
+      "method": "radon_spectrum"
+    },
+    "noise_sigma_luma": 9.007,
+    "banding_score": null,
+    "blockiness": 0.0508,
+    "ringing": 1.1382,
+    "brisque": null,
+    "percent_clipped_shadows": 0.318,
+    "percent_clipped_highlights": 0.065,
+    "entropy_bits": 7.448,
+    "blur_normalized_0_1": 1.0
+  },
+  "content": {
+    "faces": [
+      {
+        "bbox": [
+          406,
+          120,
+          49,
+          49
+        ],
+        "interocular_px": 22.54
+      },
+      {
+        "bbox": [
+          181,
+          135,
+          55,
+          55
+        ],
+        "interocular_px": 25.3
+      },
+      {
+        "bbox": [
+          262,
+          80,
+          61,
+          61
+        ],
+        "interocular_px": 28.06
+      },
+      {
+        "bbox": [
+          322,
+          194,
+          54,
+          54
+        ],
+        "interocular_px": 24.84
+      }
+    ],
+    "text": {
+      "present": null,
+      "avg_char_px_height": null,
+      "component_count": null
+    },
+    "objects_summary": {
+      "count": null,
+      "smallest_obj_px": null
+    },
+    "scene_type": "unknown"
+  },
+  "ocr": {
+    "text": null,
+    "lang": null,
+    "confidence": null,
+    "error": "tesseract is not installed or it's not in your PATH. See README file for more information."
+  },
+  "compression": {
+    "format": "JPEG",
+    "jpeg_quant_hint": {
+      "qtables_count": 2,
+      "avg_table_value": 119.11
+    }
+  },
+  "exposure_capture": {
+    "iso": null,
+    "shutter_s": null,
+    "aperture_f": null,
+    "focal_length_mm": null
+  },
+  "identity": {
+    "phash": "bc0bb163984ecd2e",
+    "dhash": "9b1f333707060f3e"
+  },
+  "pipeline": {
+    "created_utc": null,
+    "tools": [
+      {
+        "name": "pillow",
+        "version": "11.3.0"
+      },
+      {
+        "name": "opencv-python",
+        "version": "4.12.0"
+      },
+      {
+        "name": "imagehash",
+        "version": "4.3.2"
+      }
+    ]
+  }
+}

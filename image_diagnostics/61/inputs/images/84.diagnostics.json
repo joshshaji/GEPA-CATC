@@ -1,0 +1,94 @@
+{
+  "source": {
+    "filename": "84.jpg",
+    "sha256": "6ba759497c0c5d5a8b0a8171be7d21d2b29673e3625f7c5396956ede34dad0d1",
+    "format": "JPEG",
+    "mime": "image/jpeg",
+    "byte_size": 22475
+  },
+  "resolution": {
+    "width_px": 640,
+    "height_px": 459,
+    "aspect_ratio": "640:459",
+    "dpi": null
+  },
+  "color": {
+    "is_grayscale": false,
+    "icc_profile": null,
+    "icc_sha256": null,
+    "colorfulness": 38.518,
+    "bit_depth": 8
+  },
+  "quality": {
+    "blur_vol": 199.918,
+    "tenengrad": 10713.844,
+    "motion_blur": {
+      "angle_deg": 47.81,
+      "length_px": 3.54,
+      "confidence": 1.0,
+      "method": "radon_spectrum"
+    },
+    "noise_sigma_luma": 3.356,
+    "banding_score": null,
+    "blockiness": 0.0027,
+    "ringing": 1.3275,
+    "brisque": null,
+    "percent_clipped_shadows": 0.0,
+    "percent_clipped_highlights": 0.0,
+    "entropy_bits": 7.71,
+    "blur_normalized_0_1": 0.8
+  },
+  "content": {
+    "faces": [],
+    "text": {
+      "present": null,
+      "avg_char_px_height": null,
+      "component_count": null
+    },
+    "objects_summary": {
+      "count": null,
+      "smallest_obj_px": null
+    },
+    "scene_type": "unknown"
+  },
+  "ocr": {
+    "text": null,
+    "lang": null,
+    "confidence": null,
+    "error": "tesseract is not installed or it's not in your PATH. See README file for more information."
+  },
+  "compression": {
+    "format": "JPEG",
+    "jpeg_quant_hint": {
+      "qtables_count": 2,
+      "avg_table_value": 119.11
+    }
+  },
+  "exposure_capture": {
+    "iso": null,
+    "shutter_s": null,
+    "aperture_f": null,
+    "focal_length_mm": null
+  },
+  "identity": {
+    "phash": "9150ce2f6b470d8f",
+    "dhash": "91989c9c3b73ebfc"
+  },
+  "pipeline": {
+    "created_utc": null,
+    "tools": [
+      {
+        "name": "pillow",
+        "version": "11.3.0"
+      },
+      {
+        "name": "opencv-python",
+        "version": "4.12.0"
+      },
+      {
+        "name": "imagehash",
+        "version": "4.3.2"
+      }
+    ]
+  }
+}

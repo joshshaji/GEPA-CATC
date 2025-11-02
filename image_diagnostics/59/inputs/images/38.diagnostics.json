@@ -1,0 +1,94 @@
+{
+  "source": {
+    "filename": "38.jpg",
+    "sha256": "c80a6bb50c2f66df1afe5a02dc906f093085545231865a2c915b610306adba8d",
+    "format": "JPEG",
+    "mime": "image/jpeg",
+    "byte_size": 35969
+  },
+  "resolution": {
+    "width_px": 500,
+    "height_px": 375,
+    "aspect_ratio": "4:3",
+    "dpi": null
+  },
+  "color": {
+    "is_grayscale": false,
+    "icc_profile": null,
+    "icc_sha256": null,
+    "colorfulness": 35.878,
+    "bit_depth": 8
+  },
+  "quality": {
+    "blur_vol": 438.404,
+    "tenengrad": 6519.439,
+    "motion_blur": {
+      "angle_deg": 136.08,
+      "length_px": 2.39,
+      "confidence": 0.6178395271301269,
+      "method": "radon_spectrum"
+    },
+    "noise_sigma_luma": 4.453,
+    "banding_score": null,
+    "blockiness": 0.0,
+    "ringing": 1.1923,
+    "brisque": null,
+    "percent_clipped_shadows": 0.001,
+    "percent_clipped_highlights": 0.0,
+    "entropy_bits": 7.593,
+    "blur_normalized_0_1": 1.0
+  },
+  "content": {
+    "faces": [],
+    "text": {
+      "present": null,
+      "avg_char_px_height": null,
+      "component_count": null
+    },
+    "objects_summary": {
+      "count": null,
+      "smallest_obj_px": null
+    },
+    "scene_type": "unknown"
+  },
+  "ocr": {
+    "text": null,
+    "lang": null,
+    "confidence": null,
+    "note": "pytesseract not installed"
+  },
+  "compression": {
+    "format": "JPEG",
+    "jpeg_quant_hint": {
+      "qtables_count": 2,
+      "avg_table_value": 36.23
+    }
+  },
+  "exposure_capture": {
+    "iso": null,
+    "shutter_s": null,
+    "aperture_f": null,
+    "focal_length_mm": null
+  },
+  "identity": {
+    "phash": "f4871e46308b3ed3",
+    "dhash": "0c0e0e0f8e26071f"
+  },
+  "pipeline": {
+    "created_utc": null,
+    "tools": [
+      {
+        "name": "pillow",
+        "version": "11.3.0"
+      },
+      {
+        "name": "opencv-python",
+        "version": "4.12.0"
+      },
+      {
+        "name": "imagehash",
+        "version": "4.3.2"
+      }
+    ]
+  }
+}

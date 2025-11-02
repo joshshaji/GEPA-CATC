@@ -1,0 +1,113 @@
+{
+  "source": {
+    "filename": "57.jpg",
+    "sha256": "2becfb67afeacf9a7993a3e88ab4be380f82a38c9dd483c0ed3ec279467d73d5",
+    "format": "JPEG",
+    "mime": "image/jpeg",
+    "byte_size": 29219
+  },
+  "resolution": {
+    "width_px": 640,
+    "height_px": 531,
+    "aspect_ratio": "640:531",
+    "dpi": null
+  },
+  "color": {
+    "is_grayscale": true,
+    "icc_profile": null,
+    "icc_sha256": null,
+    "colorfulness": 0.668,
+    "bit_depth": 8
+  },
+  "quality": {
+    "blur_vol": 216.481,
+    "tenengrad": 8386.317,
+    "motion_blur": {
+      "angle_deg": 47.81,
+      "length_px": 3.4,
+      "confidence": 0.6121423721313477,
+      "method": "radon_spectrum"
+    },
+    "noise_sigma_luma": 3.351,
+    "banding_score": null,
+    "blockiness": 0.0043,
+    "ringing": 1.2531,
+    "brisque": null,
+    "percent_clipped_shadows": 0.001,
+    "percent_clipped_highlights": 0.009,
+    "entropy_bits": 7.705,
+    "blur_normalized_0_1": 0.866
+  },
+  "content": {
+    "faces": [
+      {
+        "bbox": [
+          91,
+          40,
+          58,
+          58
+        ],
+        "interocular_px": 26.68
+      },
+      {
+        "bbox": [
+          381,
+          108,
+          41,
+          41
+        ],
+        "interocular_px": 18.86
+      }
+    ],
+    "text": {
+      "present": null,
+      "avg_char_px_height": null,
+      "component_count": null
+    },
+    "objects_summary": {
+      "count": null,
+      "smallest_obj_px": null
+    },
+    "scene_type": "unknown"
+  },
+  "ocr": {
+    "text": null,
+    "lang": null,
+    "confidence": null,
+    "error": "tesseract is not installed or it's not in your PATH. See README file for more information."
+  },
+  "compression": {
+    "format": "JPEG",
+    "jpeg_quant_hint": {
+      "qtables_count": 2,
+      "avg_table_value": 119.11
+    }
+  },
+  "exposure_capture": {
+    "iso": null,
+    "shutter_s": null,
+    "aperture_f": null,
+    "focal_length_mm": null
+  },
+  "identity": {
+    "phash": "e6ce078d72d1483e",
+    "dhash": "2a2b698e2bb2554d"
+  },
+  "pipeline": {
+    "created_utc": null,
+    "tools": [
+      {
+        "name": "pillow",
+        "version": "11.3.0"
+      },
+      {
+        "name": "opencv-python",
+        "version": "4.12.0"
+      },
+      {
+        "name": "imagehash",
+        "version": "4.3.2"
+      }
+    ]
+  }
+}

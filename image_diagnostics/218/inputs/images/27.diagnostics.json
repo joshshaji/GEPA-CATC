@@ -1,0 +1,221 @@
+{
+  "source": {
+    "filename": "27.jpg",
+    "sha256": "93eec47e86f096f4ee25e6f0a49d8cb96e23f708d2acb250ef7d4df52f1c2a7e",
+    "format": "JPEG",
+    "mime": "image/jpeg",
+    "byte_size": 52963
+  },
+  "resolution": {
+    "width_px": 500,
+    "height_px": 302,
+    "aspect_ratio": "250:151",
+    "dpi": null
+  },
+  "color": {
+    "is_grayscale": false,
+    "icc_profile": null,
+    "icc_sha256": null,
+    "colorfulness": 3.009,
+    "bit_depth": 8
+  },
+  "quality": {
+    "blur_vol": 7580.349,
+    "tenengrad": 63511.212,
+    "motion_blur": {
+      "angle_deg": 144.72,
+      "length_px": 0.57,
+      "confidence": 0.6369221210479736,
+      "method": "radon_spectrum"
+    },
+    "noise_sigma_luma": 18.198,
+    "banding_score": null,
+    "blockiness": 0.0,
+    "ringing": 1.1403,
+    "brisque": null,
+    "percent_clipped_shadows": 1.876,
+    "percent_clipped_highlights": 0.633,
+    "entropy_bits": 7.907,
+    "blur_normalized_0_1": 1.0
+  },
+  "content": {
+    "faces": [
+      {
+        "bbox": [
+          83,
+          142,
+          25,
+          25
+        ],
+        "interocular_px": 11.5
+      },
+      {
+        "bbox": [
+          109,
+          88,
+          25,
+          25
+        ],
+        "interocular_px": 11.5
+      },
+      {
+        "bbox": [
+          196,
+          88,
+          25,
+          25
+        ],
+        "interocular_px": 11.5
+      },
+      {
+        "bbox": [
+          356,
+          31,
+          26,
+          26
+        ],
+        "interocular_px": 11.96
+      },
+      {
+        "bbox": [
+          242,
+          75,
+          26,
+          26
+        ],
+        "interocular_px": 11.96
+      },
+      {
+        "bbox": [
+          328,
+          89,
+          25,
+          25
+        ],
+        "interocular_px": 11.5
+      },
+      {
+        "bbox": [
+          416,
+          87,
+          27,
+          27
+        ],
+        "interocular_px": 12.42
+      },
+      {
+        "bbox": [
+          226,
+          133,
+          26,
+          26
+        ],
+        "interocular_px": 11.96
+      },
+      {
+        "bbox": [
+          13,
+          157,
+          25,
+          25
+        ],
+        "interocular_px": 11.5
+      },
+      {
+        "bbox": [
+          331,
+          135,
+          24,
+          24
+        ],
+        "interocular_px": 11.04
+      },
+      {
+        "bbox": [
+          401,
+          136,
+          27,
+          27
+        ],
+        "interocular_px": 12.42
+      },
+      {
+        "bbox": [
+          438,
+          136,
+          26,
+          26
+        ],
+        "interocular_px": 11.96
+      },
+      {
+        "bbox": [
+          452,
+          96,
+          25,
+          25
+        ],
+        "interocular_px": 11.5
+      },
+      {
+        "bbox": [
+          404,
+          205,
+          25,
+          25
+        ],
+        "interocular_px": 11.5
+      }
+    ],
+    "text": {
+      "present": null,
+      "avg_char_px_height": null,
+      "component_count": null
+    },
+    "objects_summary": {
+      "count": null,
+      "smallest_obj_px": null
+    },
+    "scene_type": "unknown"
+  },
+  "ocr": {
+    "text": null,
+    "lang": null,
+    "confidence": null,
+    "error": "tesseract is not installed or it's not in your PATH. See README file for more information."
+  },
+  "compression": {
+    "format": "JPEG",
+    "jpeg_quant_hint": {
+      "qtables_count": 2,
+      "avg_table_value": 36.23
+    }
+  },
+  "exposure_capture": {
+    "iso": null,
+    "shutter_s": null,
+    "aperture_f": null,
+    "focal_length_mm": null
+  },
+  "identity": {
+    "phash": "a0576e893e4afb21",
+    "dhash": "65c48e455695918d"
+  },
+  "pipeline": {
+    "created_utc": null,
+    "tools": [
+      {
+        "name": "pillow",
+        "version": "11.3.0"
+      },
+      {
+        "name": "opencv-python",
+        "version": "4.12.0"
+      },
+      {
+        "name": "imagehash",
+        "version": "4.3.2"
+      }
+    ]
+  }
+}

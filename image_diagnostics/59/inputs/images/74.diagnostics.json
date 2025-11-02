@@ -1,0 +1,104 @@
+{
+  "source": {
+    "filename": "74.jpg",
+    "sha256": "988ebf632a05e48f116bb6a247b3599cfb509dcbf4cb0ccff601335c9da36450",
+    "format": "JPEG",
+    "mime": "image/jpeg",
+    "byte_size": 28118
+  },
+  "resolution": {
+    "width_px": 500,
+    "height_px": 375,
+    "aspect_ratio": "4:3",
+    "dpi": null
+  },
+  "color": {
+    "is_grayscale": false,
+    "icc_profile": null,
+    "icc_sha256": null,
+    "colorfulness": 71.852,
+    "bit_depth": 8
+  },
+  "quality": {
+    "blur_vol": 351.293,
+    "tenengrad": 7623.732,
+    "motion_blur": {
+      "angle_deg": 49.68,
+      "length_px": 2.67,
+      "confidence": 0.8155123710632324,
+      "method": "radon_spectrum"
+    },
+    "noise_sigma_luma": 3.965,
+    "banding_score": null,
+    "blockiness": 0.0,
+    "ringing": 1.1708,
+    "brisque": null,
+    "percent_clipped_shadows": 21.9,
+    "percent_clipped_highlights": 0.373,
+    "entropy_bits": 6.829,
+    "blur_normalized_0_1": 1.0
+  },
+  "content": {
+    "faces": [
+      {
+        "bbox": [
+          432,
+          166,
+          33,
+          33
+        ],
+        "interocular_px": 15.18
+      }
+    ],
+    "text": {
+      "present": null,
+      "avg_char_px_height": null,
+      "component_count": null
+    },
+    "objects_summary": {
+      "count": null,
+      "smallest_obj_px": null
+    },
+    "scene_type": "unknown"
+  },
+  "ocr": {
+    "text": null,
+    "lang": null,
+    "confidence": null,
+    "note": "pytesseract not installed"
+  },
+  "compression": {
+    "format": "JPEG",
+    "jpeg_quant_hint": {
+      "qtables_count": 2,
+      "avg_table_value": 36.23
+    }
+  },
+  "exposure_capture": {
+    "iso": null,
+    "shutter_s": null,
+    "aperture_f": null,
+    "focal_length_mm": null
+  },
+  "identity": {
+    "phash": "d5972a6e3431674c",
+    "dhash": "3569d89cf463301c"
+  },
+  "pipeline": {
+    "created_utc": null,
+    "tools": [
+      {
+        "name": "pillow",
+        "version": "11.3.0"
+      },
+      {
+        "name": "opencv-python",
+        "version": "4.12.0"
+      },
+      {
+        "name": "imagehash",
+        "version": "4.3.2"
+      }
+    ]
+  }
+}

@@ -145,3 +145,14 @@ Reminder
 - Always trust restoration_targets.flags/severity over user phrasing about degradations.
 - Do not add extra tools (e.g., captioning or translation) unless explicitly requested outputs require them.
 - Output only the JSON plan list in the strict format; no extra text.
+
+These are the inputs:
+
+The task query: 
+{task_query}
+
+Tool prices: 
+{tool_prices}
+
+Input Attributes of image: 
+{input_attributes}

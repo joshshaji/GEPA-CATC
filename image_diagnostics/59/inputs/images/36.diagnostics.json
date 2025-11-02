@@ -1,0 +1,113 @@
+{
+  "source": {
+    "filename": "36.jpg",
+    "sha256": "cf7639efc13d45b06cdd349487334183c26c9c7df2f9c0e028341d4126cf032c",
+    "format": "JPEG",
+    "mime": "image/jpeg",
+    "byte_size": 26617
+  },
+  "resolution": {
+    "width_px": 375,
+    "height_px": 500,
+    "aspect_ratio": "3:4",
+    "dpi": null
+  },
+  "color": {
+    "is_grayscale": false,
+    "icc_profile": null,
+    "icc_sha256": null,
+    "colorfulness": 47.566,
+    "bit_depth": 8
+  },
+  "quality": {
+    "blur_vol": 184.511,
+    "tenengrad": 4965.207,
+    "motion_blur": {
+      "angle_deg": 43.2,
+      "length_px": 3.68,
+      "confidence": 0.6882720470428467,
+      "method": "radon_spectrum"
+    },
+    "noise_sigma_luma": 2.899,
+    "banding_score": null,
+    "blockiness": 0.0004,
+    "ringing": 1.2005,
+    "brisque": null,
+    "percent_clipped_shadows": 0.018,
+    "percent_clipped_highlights": 0.0,
+    "entropy_bits": 7.349,
+    "blur_normalized_0_1": 0.738
+  },
+  "content": {
+    "faces": [
+      {
+        "bbox": [
+          29,
+          171,
+          73,
+          73
+        ],
+        "interocular_px": 33.58
+      },
+      {
+        "bbox": [
+          218,
+          420,
+          75,
+          75
+        ],
+        "interocular_px": 34.5
+      }
+    ],
+    "text": {
+      "present": null,
+      "avg_char_px_height": null,
+      "component_count": null
+    },
+    "objects_summary": {
+      "count": null,
+      "smallest_obj_px": null
+    },
+    "scene_type": "unknown"
+  },
+  "ocr": {
+    "text": null,
+    "lang": null,
+    "confidence": null,
+    "note": "pytesseract not installed"
+  },
+  "compression": {
+    "format": "JPEG",
+    "jpeg_quant_hint": {
+      "qtables_count": 2,
+      "avg_table_value": 36.23
+    }
+  },
+  "exposure_capture": {
+    "iso": null,
+    "shutter_s": null,
+    "aperture_f": null,
+    "focal_length_mm": null
+  },
+  "identity": {
+    "phash": "c630372fedc93816",
+    "dhash": "36acf4f0e169e1e4"
+  },
+  "pipeline": {
+    "created_utc": null,
+    "tools": [
+      {
+        "name": "pillow",
+        "version": "11.3.0"
+      },
+      {
+        "name": "opencv-python",
+        "version": "4.12.0"
+      },
+      {
+        "name": "imagehash",
+        "version": "4.3.2"
+      }
+    ]
+  }
+}

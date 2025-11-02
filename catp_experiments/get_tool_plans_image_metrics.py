@@ -24,6 +24,7 @@ from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Sequence, Tuple
 
+from dotenv import load_dotenv
 import numpy as np
 from PIL import Image
 
@@ -32,6 +33,7 @@ from PIL import Image
 # LLM Provider Abstractions
 # ---------------------------------------------------------------------------
 
+load_dotenv()
 
 class BaseLLMProvider(ABC):
     """Abstract base class for LLM providers."""
@@ -124,11 +126,11 @@ def get_tool_prices(image_size: Tuple[int, int]) -> Dict[str, float]:
     return {tool: float(np.dot(prices, sims)) for tool, prices in tool_prices.items()}
 
 
-def render_prompt(template: str, task_query: str, input_attributes: Dict[str, Any], tool_prices: Dict[str, float]) -> str:
+def render_prompt(template: str, task_query: str, tool_prices: Dict[str, float], input_attributes: Dict[str, Any]) -> str:
     return (
         template.replace("{task_query}", task_query)
-        .replace("{input_attributes_json}", json.dumps(input_attributes, indent=2))
         .replace("{tool_prices}", json.dumps(tool_prices, indent=2))
+        .replace("{input_attributes}", json.dumps(input_attributes, indent=2))
     )
 
 
@@ -137,77 +139,88 @@ def render_prompt(template: str, task_query: str, input_attributes: Dict[str, An
 # ---------------------------------------------------------------------------
 
 
-def load_image_metrics_map(path: Path) -> Dict[int, Dict[int, Dict[str, Any]]]:
-    if not path.exists():
+def load_image_metrics_map(path: str | Path | None = None) -> dict[int, dict[int, dict[str, Any]]]:
+    default_dir = Path("/Users/joshinshaji/dev/GEPA-CATC/gepa_logs/image_diagnostics")
+    p = Path(path) if path else default_dir
+    if not p.exists():
         return {}
-    raw = json.loads(path.read_text(encoding="utf-8"))
-    out: Dict[int, Dict[int, Dict[str, Any]]] = {}
+    if p.is_dir():
+        out: dict[int, dict[int, dict[str, Any]]] = {}
+        for j in p.rglob("*.diagnostics.json"):
+            parts = j.parts
+            try:
+                img_idx = len(parts) - 1 - parts[::-1].index("images")
+                if img_idx - 2 < 0 or parts[img_idx - 1] != "inputs":
+                    continue
+                task_str = parts[img_idx - 2]
+                tid = int(task_str)
+                name = j.name
+                if not name.endswith(".diagnostics.json"):
+                    continue
+                sample_str = name[: -len(".diagnostics.json")]
+                sid = int(sample_str)
+            except Exception:
+                continue
+            try:
+                data = json.loads(j.read_text(encoding="utf-8"))
+            except Exception:
+                continue
+            out.setdefault(tid, {})[sid] = data
+        return out
+    raw = json.loads(p.read_text(encoding="utf-8"))
+    out: dict[int, dict[int, dict[str, Any]]] = {}
     for tid_str, samples in raw.items():
         try:
             tid = int(tid_str)
-        except ValueError:
+        except Exception:
             continue
         out[tid] = {}
         for sid_str, variants in (samples or {}).items():
             try:
                 sid = int(sid_str)
-            except ValueError:
+            except Exception:
                 continue
             if isinstance(variants, list) and variants:
-                metrics = variants[0].get("image_metrics")
-                if isinstance(metrics, dict):
-                    out[tid][sid] = metrics
+                m = variants[0].get("image_metrics")
+                if isinstance(m, dict):
+                    out[tid][sid] = m
     return out
 
-
-def _select_relevant_image_metrics(metrics: Dict[str, Any] | None) -> Dict[str, Any]:
-    metrics = metrics or {}
-    res = metrics.get("resolution", {})
-    color = metrics.get("color", {})
-    quality = metrics.get("quality", {})
-    motion = quality.get("motion_blur", {}) if isinstance(quality.get("motion_blur"), dict) else {}
+def _select_relevant_image_metrics(m: dict[str, Any]) -> dict[str, Any]:
+    res = m.get("resolution", {})
+    color = m.get("color", {})
+    q = m.get("quality", {})
+    mb = q.get("motion_blur", {}) if isinstance(q.get("motion_blur"), dict) else {}
     return {
         "width_px": res.get("width_px"),
         "height_px": res.get("height_px"),
         "is_grayscale": color.get("is_grayscale"),
-        "blur_vol": quality.get("blur_vol"),
-        "blur_normalized_0_1": quality.get("blur_normalized_0_1"),
-        "tenengrad": quality.get("tenengrad"),
-        "noise_sigma_luma": quality.get("noise_sigma_luma"),
+        "blur_vol": q.get("blur_vol"),
+        "blur_normalized_0_1": q.get("blur_normalized_0_1"),
+        "tenengrad": q.get("tenengrad"),
+        "noise_sigma_luma": q.get("noise_sigma_luma"),
         "motion_blur": {
-            "angle_deg": (motion or {}).get("angle_deg"),
-            "confidence": (motion or {}).get("confidence"),
+            "angle_deg": (mb or {}).get("angle_deg"),
+            "confidence": (mb or {}).get("confidence"),
         },
-        "blockiness": quality.get("blockiness"),
-        "ringing": quality.get("ringing"),
-        "percent_clipped_shadows": quality.get("percent_clipped_shadows"),
-        "percent_clipped_highlights": quality.get("percent_clipped_highlights"),
+        "blockiness": q.get("blockiness"),
+        "ringing": q.get("ringing"),
+        "percent_clipped_shadows": q.get("percent_clipped_shadows"),
+        "percent_clipped_highlights": q.get("percent_clipped_highlights"),
     }
 
-
-def _derive_targets(task_query: str, metrics: Dict[str, Any]) -> Dict[str, Any]:
-    width = metrics.get("width_px") or 0
-    height = metrics.get("height_px") or 0
-    shorter = min(width, height) if (width and height) else 0
-    blur_norm = metrics.get("blur_normalized_0_1")
-    noise = metrics.get("noise_sigma_luma") or 0.0
-    motion_conf = (metrics.get("motion_blur") or {}).get("confidence") or 0.0
-    is_gray = bool(metrics.get("is_grayscale"))
-    has_blur = isinstance(blur_norm, (int, float)) and blur_norm >= 0.4
+def _derive_targets(task_query: str, m: dict[str, Any]) -> dict[str, Any]:
+    w = m.get("width_px") or 0
+    h = m.get("height_px") or 0
+    shorter = min(w, h) if (w and h) else 0
+    blur_norm = m.get("blur_normalized_0_1")
+    noise = m.get("noise_sigma_luma") or 0.0
+    mb_conf = (m.get("motion_blur") or {}).get("confidence") or 0.0
+    is_gray = bool(m.get("is_grayscale"))
+    has_blur = (isinstance(blur_norm, (int, float)) and blur_norm >= 0.4)
     has_noise = noise >= 2.5
     low_res = bool(shorter and shorter < 256)
-    has_motion = motion_conf >= 0.5
-
-    recommended: List[str] = []
-    if is_gray:
-        recommended.append("image_colorization")
-    if has_blur or has_motion:
-        recommended.append("image_deblurring")
-    if has_noise:
-        recommended.append("image_denoising")
-    if low_res:
-        recommended.append("image_super_resolution")
-
+    has_motion = mb_conf >= 0.5
     return {
         "flags": {
             "has_blur": bool(has_blur),
@@ -220,7 +233,6 @@ def _derive_targets(task_query: str, metrics: Dict[str, Any]) -> Dict[str, Any]:
             "blur": float(blur_norm) if isinstance(blur_norm, (int, float)) else None,
             "noise": float(min(noise / 10.0, 1.0)),
         },
-        "recommended_tools": recommended,
     }
 
 
